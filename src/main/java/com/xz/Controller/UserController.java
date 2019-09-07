@@ -1,0 +1,96 @@
+package com.xz.Controller;
+
+
+import com.xz.pojo.User;
+import com.xz.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+@Controller
+@RequestMapping("/user")
+public class UserController {
+
+    @Autowired//自动注入&获取对象
+    private UserService userService;
+
+    @RequestMapping("/login")
+    //@ResponseBody
+    public String login(@ModelAttribute("user") User user, HttpSession session) {
+
+        //前置处理
+        if (user.getPassword() == null || user.getPassword() == "") {
+            return "redirect:/jsp/login.jsp";
+        }
+
+        user = userService.get(user);
+        if (user != null) {
+            System.out.println("login  success");
+            session.setAttribute("SESSION_USER", user);
+            return "index-fix";
+        } else {
+            return "redirect:/jsp/login.jsp";
+        }
+    }
+
+    @RequestMapping("/register")
+    public String register(@ModelAttribute("user") User user, HttpSession session) {
+        User u = new User();
+
+        System.out.println(user.getPassword() + user.getAddr() + user.getTel());
+
+        u.setUsername(user.getUsername());
+        u.setPassword(user.getPassword());
+        u.setTel(user.getTel());
+        u.setRole(user.getRole());
+        u.setEmail(user.getEmail());
+        u.setAddr(user.getAddr());
+
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        u.setCreate_date(sdf.format(date));
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.YEAR, 1);
+        date = cal.getTime();
+        u.setEnd_date(sdf.format(date));
+
+        userService.insert_register(u);
+        System.out.println("注册成功！！！");
+        return "redirect:/jsp/login.jsp";
+    }
+
+
+    //注册时检查是否出现用户名重复
+    @RequestMapping("/checkname")
+    @ResponseBody
+    public Map<String, Integer> checkName(@RequestBody User user) {
+        Map<String, Integer> map = new HashMap<>();
+        System.out.println("传入的 username"+user.getUsername());
+        //表示不重名
+        int code = 400;
+        User u=new User();
+        u = userService.exist(user);
+
+        //如果 user 为空 则 用户名可用
+        if (u == null) {
+            //可用
+            code = 2000;
+        } else {
+            //不可用
+            code = 400;
+            System.out.println("查询得到的username"+u.getUsername());
+        }
+
+        map.put("code", code);
+        return map;
+    }
+}

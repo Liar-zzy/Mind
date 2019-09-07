@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xz.mapper.UserMapper">
+
+    <select id="select" resultType="com.xz.pojo.User">
+        select * from j2ee.user
+        where username = #{username}
+        and pwd = #{password}
+    </select>
+
+
+    <insert id="insert" parameterType="com.xz.pojo.User">
+        insert into j2ee.user(username, pwd, role, tel, email, addr, create_date, end_date) values(
+        #{u.username},#{u.password},#{u.role},#{u.tel},#{u.email},#{u.addr},#{u.create_date},#{u.end_date}
+        )
+    </insert>
+
+    <select id="isExist" resultType="com.xz.pojo.User">
+        select * from j2ee.user
+        where username=#{username}
+    </select>
+</mapper>
