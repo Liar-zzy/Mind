@@ -78,7 +78,7 @@ public class UserController {
         //表示不重名
         int code = 400;
         User u=new User();
-        u = userService.exist(user);
+        u = userService.selectExist(user);
 
         //如果 user 为空 则 用户名可用
         if (u == null) {

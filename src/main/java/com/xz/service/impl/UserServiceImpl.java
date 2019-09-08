@@ -28,8 +28,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User exist(User u) {
-        User user=userMapper.isExist(u);
+    public User selectExist(User u) {
+        User user=userMapper.selectExist(u);
         return user;
     }
 }

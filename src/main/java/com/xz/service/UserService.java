@@ -10,6 +10,6 @@ public interface UserService {
 
     boolean insert_register(User u);
 
-    User exist(User u);
+    User selectExist(User u);
 
 }

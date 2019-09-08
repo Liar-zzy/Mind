@@ -1,0 +1,33 @@
+index
+-------------------------------------------
+index-admin 平台管理员主页
+index-machine 设备运营商主页
+index-manufac 商品管理员主页
+index-fix 维修人员主页
+
+machine
+-------------------------------------------
+machine  平台管理员 设备列表
+machine-manage 设备运营商 设备管理
+machine-fix 维修人员 维修列表
+
+merchandise
+-------------------------------------------
+merchandise 平台管理员商品管理
+merchandise-machine 设备运营商 商品列表
+merchandise-manufac 商品管理员商品管理
+
+user
+-------------------------------------------
+user-manage 平台管理员用户管理
+user-fix  维修人员 用户中心
+user-machine 设备运营商用户中心
+user-manufac 商品管理员用户中心
+
+-----------------------------------------
+login登录注册页面
+
+------------------------------------------
+data-all.jsp
+data-display.jsp
+需要根据人物身份 返回不同的页面

@@ -9,5 +9,5 @@ public interface UserMapper {
 
     int insert(@Param("u") User user);
 
-    User isExist(User u);
+    User selectExist(User u);
 }
