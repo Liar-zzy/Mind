@@ -15,7 +15,7 @@
         )
     </insert>
 
-    <select id="isExist" resultType="com.xz.pojo.User">
+    <select id="selectExist" resultType="com.xz.pojo.User">
         select * from j2ee.user
         where username=#{username}
     </select>

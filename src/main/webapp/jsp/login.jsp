@@ -19,10 +19,10 @@
     <!-- ace styles -->
     <link rel="stylesheet" href="../ace-master/assets/css/ace.min.css" />
 
-   
+
     <link rel="stylesheet" href="../ace-master/assets/css/ace-rtl.min.css" />
 
-   
+
 </head>
 
 <body class="login-layout">
@@ -61,7 +61,7 @@
 															<i class="ace-icon fa fa-user"></i>
 														</span>
                                             </label>
-									
+
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
@@ -171,7 +171,7 @@
 														</span>
                                             </label>
 
-                                            
+
 
                                             <div class="space-24"></div>
 
@@ -233,24 +233,24 @@
 
 <!-- 验证代码 试验login_form  register_form -->
 <script>
-$.validator.setDefaults({
-    submitHandler: function() {
-      alert("提交事件!");
-    }
-});
-$().ready(function() {
-    $("#login_form").validate();
-});
+    $.validator.setDefaults({
+        submitHandler: function() {
+            alert("提交事件!");
+        }
+    });
+    $().ready(function() {
+        $("#login_form").validate();
+    });
 </script>
 <script>
-$.validator.setDefaults({
-    submitHandler: function() {
-      alert("提交事件!");
-    }
-});
-$().ready(function() {
-    $("#register_form").validate();
-});
+    $.validator.setDefaults({
+        submitHandler: function() {
+            alert("提交事件!");
+        }
+    });
+    $().ready(function() {
+        $("#register_form").validate();
+    });
 </script>
 
 
