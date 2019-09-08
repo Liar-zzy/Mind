@@ -45,7 +45,7 @@
 		</button>
 
 		<div class="navbar-header pull-left">
-			<a href="index.html" class="navbar-brand">
+			<a href="${ctx}/redirectTo/index" class="navbar-brand">
 				<small>
 					<i class="fa fa-leaf"></i>
 					Mind
@@ -238,7 +238,7 @@
 		<ul class="nav nav-list">
 			<!-- 当前活动窗口 -->
 			<li class="">
-				<a href="index.html">
+				<a href="${ctx}/redirectTo/index">
 					<i class="menu-icon fa fa-home"></i>
 					<span class="menu-text">
 								首页
@@ -577,36 +577,6 @@
 										</span>
 							</button>
 
-							<!-- <div class="clearfix">
-                                <div class="pull-right tableTools-container"></div>
-
-                            </div> -->
-							<!-- <div class="pull-right tableTools-container">
-                                <div class="dt-buttons btn-overlap btn-group">
-                                    <a class="dt-button buttons-collection buttons-colvis btn btn-white btn-primary btn-bold" tabindex="0"
-                                     aria-controls="dynamic-table" data-original-title="" title="">
-                                        <span>
-                                            <i class="fa fa-search bigger-110 blue"></i>
-                                            <span class="hidden">Show/hide columns</span>
-                                        </span>
-                                    </a>
-                                    <a class="dt-button buttons-copy buttons-html5 btn btn-white btn-primary btn-bold" tabindex="0"
-                                     aria-controls="dynamic-table" data-original-title="" title="">
-                                        <span><i class="fa fa-copy bigger-110 pink"></i>
-                                            <span class="hidden">Copy to clipboard</span>
-                                        </span></a>
-                                    <a class="dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table"
-                                     data-original-title="" title="">
-                                        <span><i class="fa fa-database bigger-110 orange"></i>
-                                            <span class="hidden">Export to CSV</span>
-                                        </span></a>
-                                    <a class="dt-button buttons-print btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table"
-                                     data-original-title="" title="">
-                                        <span><i class="fa fa-print bigger-110 grey"></i>
-                                            <span class="hidden">Print</span>
-                                        </span>
-                                    </a>
-                                </div> -->
 						</div>
 
 					</div><!-- 表格的头部  结束-->

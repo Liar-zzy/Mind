@@ -46,7 +46,7 @@
         </button>
 
         <div class="navbar-header pull-left">
-            <a href="index-manufac.html" class="navbar-brand">
+            <a href="${ctx}/redirectTo/index" class="navbar-brand">
                 <small>
                     <i class="fa fa-leaf"></i>
                     Mind
@@ -126,7 +126,7 @@
         <ul class="nav nav-list">
             <!-- 当前活动窗口 -->
             <li class="">
-                <a href="index-manufac.html">
+                <a href="${ctx}/redirectTo/index">
                     <i class="menu-icon fa fa-home"></i>
                     <span class="menu-text">
 									首页

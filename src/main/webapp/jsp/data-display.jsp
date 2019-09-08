@@ -45,7 +45,7 @@
 		</button>
 
 		<div class="navbar-header pull-left">
-			<a href="index.html" class="navbar-brand">
+			<a href="${ctx}/redirectTo/index" class="navbar-brand">
 				<small>
 					<i class="fa fa-leaf"></i>
 					Mind
@@ -77,7 +77,7 @@
 
 						<li>
 							<!-- 个人中心 -->
-							<a href="uesr.html">
+							<a href="user.html">
 								<i class="ace-icon fa fa-user" style="font-family: microsoft yahei"></i>
 								个人中心
 							</a>
@@ -127,7 +127,7 @@
 		<ul class="nav nav-list">
 			<!-- 当前活动窗口 -->
 			<li class="">
-				<a href="index.html">
+				<a href="${ctx}/redirectTo/index">
 					<i class="menu-icon fa fa-home"></i>
 					<span class="menu-text">
 								首页

@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="../ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 	<!-- font awesome -->
-	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 
 	<!-- text fonts -->
 	<link rel="stylesheet" href="../ace-master/assets/css/fonts.googleapis.com.css" />
@@ -45,7 +45,7 @@
 		</button>
 
 		<div class="navbar-header pull-left">
-			<a href="index.html" class="navbar-brand">
+			<a href="${ctx}/redirectTo/index" class="navbar-brand">
 				<small>
 					<i class="fa fa-leaf"></i>
 					Mind
@@ -56,114 +56,7 @@
 		<div class="navbar-buttons navbar-header pull-right " role="navigation">
 			<ul class="nav ace-nav">
 
-				<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-					<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
-					<span class="badge badge-success">5</span>
-				</a>
 
-				<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-					<li class="dropdown-header">
-						<i class="ace-icon fa fa-envelope-o"></i>
-						5 Messages
-					</li>
-
-					<li class="dropdown-content">
-						<ul class="dropdown-menu dropdown-navbar">
-							<li>
-								<a href="#" class="clearfix">
-									<img src="assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
-									<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">Alex:</span>
-														Ciao sociis natoque penatibus et auctor ...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>a moment ago</span>
-													</span>
-												</span>
-								</a>
-							</li>
-
-							<li>
-								<a href="#" class="clearfix">
-									<img src="assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
-									<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">Susan:</span>
-														Vestibulum id ligula porta felis euismod ...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>20 minutes ago</span>
-													</span>
-												</span>
-								</a>
-							</li>
-
-							<li>
-								<a href="#" class="clearfix">
-									<img src="assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
-									<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">Bob:</span>
-														Nullam quis risus eget urna mollis ornare ...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>3:15 pm</span>
-													</span>
-												</span>
-								</a>
-							</li>
-
-							<li>
-								<a href="#" class="clearfix">
-									<img src="assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
-									<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">Kate:</span>
-														Ciao sociis natoque eget urna mollis ornare ...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>1:33 pm</span>
-													</span>
-												</span>
-								</a>
-							</li>
-
-							<li>
-								<a href="#" class="clearfix">
-									<img src="assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
-									<span class="msg-body">
-													<span class="msg-title">
-														<span class="blue">Fred:</span>
-														Vestibulum id penatibus et auctor  ...
-													</span>
-
-													<span class="msg-time">
-														<i class="ace-icon fa fa-clock-o"></i>
-														<span>10:09 am</span>
-													</span>
-												</span>
-								</a>
-							</li>
-						</ul>
-					</li>
-
-					<li class="dropdown-footer">
-						<a href="inbox.html">
-							See all messages
-							<i class="ace-icon fa fa-arrow-right"></i>
-						</a>
-					</li>
-				</ul>
-				</li> -->
 
 				<!-- 蓝色 方块 个人中心 必要 -->
 				<li class="light-blue dropdown-modal">
@@ -234,42 +127,12 @@
 		</script>
 
 
-		<!-- <div class="sidebar-shortcuts" id="sidebar-shortcuts">
-            <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-                <button class="btn btn-success">
-                    <i class="ace-icon fa fa-signal"></i>
-                </button>
-
-                <button class="btn btn-info">
-                    <i class="ace-icon fa fa-pencil"></i>
-                </button>
-
-                <button class="btn btn-warning">
-                    <i class="ace-icon fa fa-users"></i>
-                </button>
-
-                <button class="btn btn-danger">
-                    <i class="ace-icon fa fa-cogs"></i>
-                </button>
-            </div>
-
-            <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-                <span class="btn btn-success"></span>
-
-                <span class="btn btn-info"></span>
-
-                <span class="btn btn-warning"></span>
-
-                <span class="btn btn-danger"></span>
-            </div>
-        </div> /.sidebar-shortcuts -->
-
 
 		<!-- 侧边菜单选项 -->
 		<ul class="nav nav-list">
 			<!-- 当前活动窗口 -->
 			<li class="active">
-				<a href="index.html">
+				<a href="${ctx}/redirectTo/index">
 					<i class="menu-icon fa fa-home"></i>
 					<span class="menu-text">
 								首页
