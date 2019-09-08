@@ -53,11 +53,11 @@
 
                                     <div class="space-6"></div>
 
-                                    <form action="/user/login" method="post" id="login_form">
+                                    <form   id="login_form">
                                         <fieldset>
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" name="username"  placeholder="请输入用户名" minlength="4" maxlength="10" required />
+															<input type="text" class="form-control" name="username" id="username" placeholder="请输入用户名" minlength="4" maxlength="10" required />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
                                             </label>
@@ -65,7 +65,7 @@
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control"  name="password" placeholder="请输入密码" minlength="6"  required />
+															<input type="password" class="form-control"  name="password" id="password" placeholder="请输入密码" minlength="6"  required />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
                                             </label>
@@ -74,7 +74,7 @@
 
                                             <div class="clearfix">
 
-                                                <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                                                <button type="submit" id="login" class="width-35 pull-right btn btn-sm btn-primary">
                                                     <i class="ace-icon fa fa-key"></i>
                                                     <span class="bigger-110">Login</span>
                                                 </button>
@@ -231,11 +231,73 @@
 <script src ="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"> </script>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
 
+<!-- 验证 登录是否成功 -->
+<script>
+    layui.use(['element','jquery','layer'],function () {
+        var element=layui.element;
+        var jquery=layui.jquery;
+        var layer=layui.layer;
+    })
+
+    $('#login').click(function () {
+
+        var name=$('input[id=username]').val();
+        var password=$('input[id=password]').val();
+
+        var obj={
+            username:name,
+            password:password
+        }
+        $.ajax({
+            url:'${ctx}/user/login',
+            type:'post',
+            contentType:'application/json',
+            data:JSON.stringify(obj),
+            success:function (data) {
+                if(data.logincheck=="success"){
+                    layer.msg('登录成功');
+                    window.setTimeout( function(){}, 5 * 1000 );
+                    if(data.role=="ACE"){
+                        window.location.href="index-admin.jsp";
+                    }
+                    else if(data.role=="FIX"){
+                        window.location.href="index-fix.jsp";
+                    }
+                    else if(data.role=="MAC"){
+                        window.location.href="index-machine.jsp";
+                    }
+                    else if(data.role=="CH"){
+                        window.location.href="index-manufac.jsp";
+                    }
+                }
+                else if (data.logincheck=="failure"){
+
+                    layer.msg('账号密码错误');
+                    $('input[id=username]').val("");
+                    $('input[id=password]').val("");
+                }
+            }
+
+        })
+
+    });
+
+    $('input[id=login_checkpwd]').blur(function () {
+        var checkpwd=input[id=login_checkpwd].val();
+        var pwd=input[id=login_pwd].val();
+
+        if(checkpwd!=pwd){
+            lay.msg('密码不一致')
+        }
+    })
+
+</script>
+
 <!-- 验证代码 试验login_form  register_form -->
 <script>
     $.validator.setDefaults({
         submitHandler: function() {
-            alert("提交事件!");
+            <!--alert("提交事件!");-->
         }
     });
     $().ready(function() {
@@ -245,7 +307,7 @@
 <script>
     $.validator.setDefaults({
         submitHandler: function() {
-            alert("提交事件!");
+            <!--alert("提交事件!");-->
         }
     });
     $().ready(function() {

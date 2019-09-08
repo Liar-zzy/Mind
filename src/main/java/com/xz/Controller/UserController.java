@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequestMapping("/user")
@@ -21,23 +18,47 @@ public class UserController {
     @Autowired//自动注入&获取对象
     private UserService userService;
 
+//    @RequestMapping("/login")
+//    //@ResponseBody
+//    public String login(@ModelAttribute("user") User user, HttpSession session) {
+//
+//        //前置处理
+//        if (user.getPassword() == null || user.getPassword() == "") {
+//            return "redirect:/jsp/login.jsp";
+//        }
+//
+//        user = userService.get(user);
+//        if (user != null) {
+//            System.out.println("login  success");
+//            session.setAttribute("SESSION_USER", user);
+//            return "index-fix";
+//        } else {
+//            return "redirect:/jsp/login.jsp";
+//        }
+//    }
+
     @RequestMapping("/login")
-    //@ResponseBody
-    public String login(@ModelAttribute("user") User user, HttpSession session) {
-
-        //前置处理
-        if (user.getPassword() == null || user.getPassword() == "") {
-            return "redirect:/jsp/login.jsp";
-        }
-
-        user = userService.get(user);
-        if (user != null) {
-            System.out.println("login  success");
+    @ResponseBody
+    public Map<String,String> login(@RequestBody User user,HttpSession session){
+        Map<String,String> map=new HashMap<>();
+        System.out.println("传入的 User :   "+user.getUsername()+"   pwd:    "+user.getPassword()  );
+        user=userService.get(user);
+        if(user!=null){
+            System.out.println("login success");
             session.setAttribute("SESSION_USER", user);
-            return "index-fix";
-        } else {
-            return "redirect:/jsp/login.jsp";
+
+            map.put("logincheck","success");
+
+            //成功后 传回角色信息
+            map.put("role",user.getRole());
         }
+        else{
+            map.put("logincheck","failure");
+        }
+
+
+
+        return map;
     }
 
     @RequestMapping("/register")
