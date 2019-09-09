@@ -2,29 +2,30 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
     <title>Merchandise-manufac-Mind</title>
 
-    <meta name="description" content="overview &amp; stats" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
 
     <!-- bootstrap & fontawesome -->
-    <link rel="stylesheet" href="../ace-master/assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../ace-master/assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
     <!-- font awesome -->
     <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 
     <!-- text fonts -->
-    <link rel="stylesheet" href="../ace-master/assets/css/fonts.googleapis.com.css" />
+    <link rel="stylesheet" href="../ace-master/assets/css/fonts.googleapis.com.css"/>
 
     <!-- ace styles -->
-    <link rel="stylesheet" href="../ace-master/assets/css/ace.min.css" class="../ace-master/ace-main-stylesheet" id="main-ace-style" />
+    <link rel="stylesheet" href="../ace-master/assets/css/ace.min.css" class="../ace-master/ace-main-stylesheet"
+          id="main-ace-style"/>
 
-    <link rel="stylesheet" href="../ace-master/assets/css/ace-skins.min.css" />
-    <link rel="stylesheet" href="../ace-master/assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="../ace-master/assets/css/ace-skins.min.css"/>
+    <link rel="stylesheet" href="../ace-master/assets/css/ace-rtl.min.css"/>
 
     <script src="../ace-master/assets/js/ace-extra.min.js"></script>
 </head>
@@ -59,7 +60,8 @@
                 <!-- 蓝色 方块 个人中心 必要 -->
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <img class="nav-user-photo" src="../ace-master/assets/images/avatars/user.jpg" alt="Jason's Photo" />
+                        <img class="nav-user-photo" src="../ace-master/assets/images/avatars/user.jpg"
+                             alt="Jason's Photo"/>
                         <span class="user-info">
 
 									<small>Welcome,</small>
@@ -154,8 +156,8 @@
 
                 <a href="data-all.html">
                     <!-- <i class="menu-icon fa fa-picture-o"> -->
-                    <i class="menu-icon fa fa-google-plus" >
-								<span class="menu-text"style="font-family: microsoft yahei">
+                    <i class="menu-icon fa fa-google-plus">
+								<span class="menu-text" style="font-family: microsoft yahei">
 									数据统计
 								</span>
                     </i>
@@ -181,7 +183,7 @@
 
                 <a href="user-manufac.html">
                     <i class="menu-icon fa fa-user">
-								<span class="menu-text"style="font-family: microsoft yahei">
+								<span class="menu-text" style="font-family: microsoft yahei">
 									个人中心
 								</span>
                     </i>
@@ -209,7 +211,7 @@
 									<a href="#">
 										首页
 									</a>
-								</span>
+                        </span>
 
                     </li>
                     <li>
@@ -254,172 +256,56 @@
                         <div class="modal-body">
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>商品ID</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span
+                                            style="color: #FF0000;">*</span>商品ID</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
+                                        <input type="text" id="form-field-1" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>名</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span
+                                            style="color: #FF0000;">*</span>商品名</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
+                                        <input type="text" id="form-field-2" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>类型</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-3"> <span
+                                            style="color: #FF0000;">*</span>价格</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-3" class="col-xs-10 col-sm-5" placeholder=" "/>
+                                        <input type="text" id="form-field-3" class="col-xs-10 col-sm-5"
+                                               placeholder=" "/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-8"> <span style="color: #FF0000;">*</span>屏幕</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-8"> <span
+                                            style="color: #FF0000;">*</span>库存</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-8" class="col-xs-10 col-sm-5" placeholder=" "/>
+                                        <input type="text" id="form-field-8" class="col-xs-10 col-sm-5"
+                                               placeholder=" "/>
                                     </div>
                                 </div>
                             </form>
 
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-4 "><span style="color: #FF0000;">*</span>持有人id</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-4" class="col-xs-10 col-sm-5" placeholder=" "/>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>货道数量</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-6"> <span style="color: #FF0000;">*</span>货道容量</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-6" class="col-xs-10 col-sm-5" />
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-7"> <span style="color: #FF0000;">*</span>gps</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-7" class="col-xs-10 col-sm-5" />
-                                    </div>
-                                </div>
-                            </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alter-modal">修改</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#alter-modal">确定
+                            </button>
                         </div>
                     </div><!-- modal-dialog -->
                 </div><!-- 结束/添加商品弹出框 -->
 
-                <!-- 管理商品 -->
-                <div class="modal" id="manage-modal" backdrop="true" keyboard="false">
-                    <div class="modal-dialog" style="background-color: #FFFFFF">
-                        <div class="modal-header">
-                            <i class="ace-icon fa fa-cog bigger-120"></i>
-                            <span style="font-family: microsoft yahei">
-										管理商品
-									</span>
-                        </div>
-                        <!-- 记得修改 class中的 placeholder -->
-                        <div class="modal-body">
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>商品ID</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>名</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>类型</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-3" class="col-xs-10 col-sm-5" placeholder=" "/>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-8"> <span style="color: #FF0000;">*</span>屏幕</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-8" class="col-xs-10 col-sm-5" placeholder=" "/>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-4 "><span style="color: #FF0000;">*</span>持有人id</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-4" class="col-xs-10 col-sm-5" placeholder=" "/>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>货道数量</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-6"> <span style="color: #FF0000;">*</span>货道容量</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-6" class="col-xs-10 col-sm-5" />
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-7"> <span style="color: #FF0000;">*</span>gps</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-7" class="col-xs-10 col-sm-5" />
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alter-modal">修改</button>
-                        </div>
-                    </div><!-- modal-dialog -->
-                </div>
 
                 <!-- 修改商品弹出框 -->
                 <div class="modal" id="alter-modal" backdrop="true" keyboard="false">
@@ -434,72 +320,42 @@
                         <div class="modal-body">
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>商品ID</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span
+                                            style="color: #FF0000;">*</span>商品ID</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
+                                        <input type="text" readonly="" id="form-field-1" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>名</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span
+                                            style="color: #FF0000;">*</span>商品名</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
+                                        <input type="text" id="form-field-2" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>类型</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-3"> <span
+                                            style="color: #FF0000;">*</span>价格</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-3" class="col-xs-10 col-sm-5" placeholder=" "/>
+                                        <input type="text" id="form-field-3" class="col-xs-10 col-sm-5"
+                                               placeholder=" "/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-8"> <span style="color: #FF0000;">*</span>屏幕</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-8"> <span
+                                            style="color: #FF0000;">*</span>余量</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-8" class="col-xs-10 col-sm-5" placeholder=" "/>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-4 "><span style="color: #FF0000;">*</span>持有人id</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-4" class="col-xs-10 col-sm-5" placeholder=" "/>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>货道数量</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-6"> <span style="color: #FF0000;">*</span>货道容量</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-6" class="col-xs-10 col-sm-5" />
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-7"> <span style="color: #FF0000;">*</span>gps</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-7" class="col-xs-10 col-sm-5" />
+                                        <input type="text" readonly="" id="form-field-8" class="col-xs-10 col-sm-5"
+                                               placeholder=" "/>
                                     </div>
                                 </div>
                             </form>
@@ -507,7 +363,9 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">确定</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">
+                                确定
+                            </button>
                         </div>
                     </div><!-- modal-dialog -->
                 </div>
@@ -522,7 +380,8 @@
 
                             <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
                             <a href="" class=""> 请选择操作 </a>
-                            <button class="btn btn-white btn-info btn-bold" data-toggle="modal" data-target="#add-modal">
+                            <button class="btn btn-white btn-info btn-bold" data-toggle="modal"
+                                    data-target="#add-modal">
                                 <i class="ace-icon fa fa-plus bigger-120 blue"></i>
                                 <span style="font-family: microsoft yahei">
 											添加商品
@@ -530,15 +389,9 @@
 
                             </button>
 
-                            <button class="btn btn-white btn-info btn-bold" data-toggle="modal" data-target="#manage-modal">
-                                <i class="ace-icon fa fa-cog bigger-120 blue"></i>
-                                <span style="font-family: microsoft yahei">
-											管理商品
-										</span>
 
-                            </button>
-
-                            <button class="btn btn-white btn-default btn-round"data-toggle="modal" data-target="#alter-modal">
+                            <button class="btn btn-white btn-default btn-round" data-toggle="modal"
+                                    data-target="#alter-modal">
                                 <i class="ace-icon fa fa-pencil-square-o red2"></i>
                                 <span style="font-family: microsoft yahei">
 											修改商品
@@ -559,7 +412,6 @@
                     </div><!-- 表格的头部  结束-->
 
 
-
                     <!-- 表格主体部分 -->
                     <div>
                         <table id="dynamic-table" class="table table-striped table-bordered table-hover">
@@ -567,12 +419,12 @@
                             <tr>
                                 <th class="center">
                                     <label class="pos-rel">
-                                        <input type="checkbox" class="ace" />
+                                        <input type="checkbox" class="ace"/>
                                         <span class="lbl"></span>
                                     </label>
                                 </th>
                                 <th>商品ID</th>
-                                <th>名</th>
+                                <th>商品名</th>
                                 <th>价格</th>
                                 <th>生产商</th>
 
@@ -589,7 +441,7 @@
                             <tr>
                                 <td class="center">
                                     <label class="pos-rel">
-                                        <input type="checkbox" class="ace" />
+                                        <input type="checkbox" class="ace"/>
                                         <span class="lbl"></span>
                                     </label>
                                 </td>
@@ -602,99 +454,32 @@
                                 <td>价格 1</td>
 
 
-                                <td> 生产商1 </td>
-                                <td class="hidden-480"> 上货时间1 </td>
+                                <td> 生产商1</td>
+                                <td class="hidden-480"> 上货时间1</td>
                                 <td class="hidden-480"> 库存1</td>
-                                <!-- <td>
-                                    <div class="hidden-sm hidden-xs action-buttons">
-                                        <a class="blue" href="#">
-                                            <i class="ace-icon fa fa-search-plus bigger-130"></i>
-                                            管理商品
-                                        </a>
 
-
-                                    </div>
-
-                                    <div class="hidden-md hidden-lg">
-                                        <div class="inline pos-rel">
-                                            <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                                                <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
-                                            </button>
-
-                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                                <li>
-                                                    <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-                                                        <span class="blue">
-                                                            <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                                                            管理商品
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td> -->
-
-                                <!-- <td>
-                                    <div class="hidden-sm hidden-xs action-buttons">
-                                        <a class="blue" href="#">
-                                            <i class="ace-icon fa fa-search-plus bigger-130"></i>
-                                        </a>
-
-                                        <a class="green" href="#">
-                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                        </a>
-
-                                        <a class="red" href="#">
-                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                                        </a>
-                                    </div>
-                                </td> -->
                             </tr>
 
                             <tr>
                                 <td class="center">
                                     <label class="pos-rel">
-                                        <input type="checkbox" class="ace" />
+                                        <input type="checkbox" class="ace"/>
                                         <span class="lbl"></span>
                                     </label>
                                 </td>
-
-                                <td>
-                                    id 2
-                                </td>
+                                <td>id 2</td>
                                 <td> 名2</td>
-
                                 <td>价格 2</td>
-
-
                                 <td> 生产商2</td>
-                                <td class="hidden-480"> 上货时间2 </td>
+                                <td class="hidden-480"> 上货时间2</td>
                                 <td class="hidden-480"> 库存2</td>
-
                             </tr>
                             </tbody>
-
-
                         </table>
                     </div>
-
-
-
-
-
-
                 </div>
             </div>
-
-
-
-
-
-
-
         </div><!-- page-content -->
-
     </div>
 </div>
 <!-- 页面脚底 -->
@@ -718,7 +503,7 @@
 							<a href="#">
 								<i class="ace-icon fa fa-weixin  bigger-150"></i>
 							</a>
-						</span>
+            </span>
         </div>
     </div>
 </div>
@@ -737,7 +522,7 @@
 <script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
-    if('ontouchstart' in document.documentElement) document.write("<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    if ('ontouchstart' in document.documentElement) document.write("<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
 <script src="../ace-master/assets/js/bootstrap.min.js"></script>
 
@@ -757,16 +542,16 @@
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
-    jQuery(function($) {
+    jQuery(function ($) {
         //initiate dataTables plugin
         var myTable =
             $('#dynamic-table')
             //.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
-                .DataTable( {
+                .DataTable({
                     bAutoWidth: false,
                     "aoColumns": [
-                        { "bSortable": false },
-                        null, null,null, null, null,null
+                        {"bSortable": false},
+                        null, null, null, null, null, null
                         //{ "bSortable": false }
                     ],
                     "aaSorting": [],
@@ -792,13 +577,12 @@
                     select: {
                         style: 'multi'
                     }
-                } );
-
+                });
 
 
         $.fn.dataTable.Buttons.defaults.dom.container.className = 'dt-buttons btn-overlap btn-group btn-overlap';
 
-        new $.fn.dataTable.Buttons( myTable, {
+        new $.fn.dataTable.Buttons(myTable, {
             buttons: [
                 {
                     "extend": "colvis",
@@ -834,8 +618,8 @@
                     message: 'This print was produced using the Print button for DataTables'
                 }
             ]
-        } );
-        myTable.buttons().container().appendTo( $('.tableTools-container') );
+        });
+        myTable.buttons().container().appendTo($('.tableTools-container'));
 
         //style the message box
         var defaultCopyAction = myTable.button(1).action();
@@ -851,7 +635,7 @@
             defaultColvisAction(e, dt, button, config);
 
 
-            if($('.dt-button-collection > .dropdown-menu').length == 0) {
+            if ($('.dt-button-collection > .dropdown-menu').length == 0) {
                 $('.dt-button-collection')
                     .wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
                     .find('a').attr('href', '#').wrap("<li />")
@@ -861,30 +645,25 @@
 
         ////
 
-        setTimeout(function() {
-            $($('.tableTools-container')).find('a.dt-button').each(function() {
+        setTimeout(function () {
+            $($('.tableTools-container')).find('a.dt-button').each(function () {
                 var div = $(this).find(' > div').first();
-                if(div.length == 1) div.tooltip({container: 'body', title: div.parent().text()});
+                if (div.length == 1) div.tooltip({container: 'body', title: div.parent().text()});
                 else $(this).tooltip({container: 'body', title: $(this).text()});
             });
         }, 500);
 
 
-
-
-
-        myTable.on( 'select', function ( e, dt, type, index ) {
-            if ( type === 'row' ) {
-                $( myTable.row( index ).node() ).find('input:checkbox').prop('checked', true);
+        myTable.on('select', function (e, dt, type, index) {
+            if (type === 'row') {
+                $(myTable.row(index).node()).find('input:checkbox').prop('checked', true);
             }
-        } );
-        myTable.on( 'deselect', function ( e, dt, type, index ) {
-            if ( type === 'row' ) {
-                $( myTable.row( index ).node() ).find('input:checkbox').prop('checked', false);
+        });
+        myTable.on('deselect', function (e, dt, type, index) {
+            if (type === 'row') {
+                $(myTable.row(index).node()).find('input:checkbox').prop('checked', false);
             }
-        } );
-
-
+        });
 
 
         /////////////////////////////////
@@ -892,54 +671,51 @@
         $('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
 
         //select/deselect all rows according to table header checkbox
-        $('#dynamic-table > thead > tr > th input[type=checkbox], #dynamic-table_wrapper input[type=checkbox]').eq(0).on('click', function(){
+        $('#dynamic-table > thead > tr > th input[type=checkbox], #dynamic-table_wrapper input[type=checkbox]').eq(0).on('click', function () {
             var th_checked = this.checked;//checkbox inside "TH" table header
 
-            $('#dynamic-table').find('tbody > tr').each(function(){
+            $('#dynamic-table').find('tbody > tr').each(function () {
                 var row = this;
-                if(th_checked) myTable.row(row).select();
-                else  myTable.row(row).deselect();
+                if (th_checked) myTable.row(row).select();
+                else myTable.row(row).deselect();
             });
         });
 
         //select/deselect a row when the checkbox is checked/unchecked
-        $('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
+        $('#dynamic-table').on('click', 'td input[type=checkbox]', function () {
             var row = $(this).closest('tr').get(0);
-            if(this.checked) myTable.row(row).deselect();
+            if (this.checked) myTable.row(row).deselect();
             else myTable.row(row).select();
         });
 
 
-
-        $(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
+        $(document).on('click', '#dynamic-table .dropdown-toggle', function (e) {
             e.stopImmediatePropagation();
             e.stopPropagation();
             e.preventDefault();
         });
 
 
-
         //And for the first simple table, which doesn't have TableTools or dataTables
         //select/deselect all rows according to table header checkbox
         var active_class = 'active';
-        $('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
+        $('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function () {
             var th_checked = this.checked;//checkbox inside "TH" table header
 
-            $(this).closest('table').find('tbody > tr').each(function(){
+            $(this).closest('table').find('tbody > tr').each(function () {
                 var row = this;
-                if(th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
+                if (th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
                 else $(row).removeClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', false);
             });
         });
 
         //select/deselect a row when the checkbox is checked/unchecked
-        $('#simple-table').on('click', 'td input[type=checkbox]' , function(){
+        $('#simple-table').on('click', 'td input[type=checkbox]', function () {
             var $row = $(this).closest('tr');
-            if($row.is('.detail-row ')) return;
-            if(this.checked) $row.addClass(active_class);
+            if ($row.is('.detail-row ')) return;
+            if (this.checked) $row.addClass(active_class);
             else $row.removeClass(active_class);
         });
-
 
 
         /********************************/
@@ -956,23 +732,18 @@
             var off2 = $source.offset();
             //var w2 = $source.width();
 
-            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+            if (parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2)) return 'right';
             return 'left';
         }
 
 
-
-
         /***************/
-        $('.show-details-btn').on('click', function(e) {
+        $('.show-details-btn').on('click', function (e) {
             e.preventDefault();
             $(this).closest('tr').next().toggleClass('open');
             $(this).find(ace.vars['.icon']).toggleClass('fa-angle-double-down').toggleClass('fa-angle-double-up');
         });
         /***************/
-
-
-
 
 
         /**

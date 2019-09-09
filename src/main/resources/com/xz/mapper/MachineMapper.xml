@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xz.mapper.MachineMapper">
+
+<insert id="addMachine" parameterType="com.xz.pojo.Machine">
+    insert into j2ee.machine values (#{m.machine_id},#{m.name},#{m.type},#{m.screen},#{m.possessor},#{m.item_num},
+    #{m.capacity},#{m.gps},#{m.addr},#{m.distri_date},#{m.end_date},#{m.state})
+</insert>
+
+</mapper>

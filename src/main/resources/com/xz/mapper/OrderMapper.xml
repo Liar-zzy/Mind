@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xz.mapper.OrderMapper">
+
+
+    <insert id="addOrder" parameterType="com.xz.pojo.Order">
+        insert into j2ee.order(item_id, merchandise_id, machine_id, o_price, o_num, date) values
+        (#{o.item_id},#{o.merchandise_id},#{o.machine_id},#{o.o_price},#{o.o_num},#{o.date})
+    </insert>
+</mapper>
