@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xz.mapper.M_merchandiseMapper">
+
+    <insert id="addM_merchandise" parameterType="com.xz.mapper.M_merchandiseMapper">
+        insert into j2ee.m_merchandise values (#{M_mer.machine_id},#{M_mer.merchandise_id},#{M_mer.margin},
+        #{M_mer.item_id},#{M_mer.sold_num},#{M_mer.sold_sum})
+    </insert>
+</mapper>
