@@ -66,7 +66,7 @@
 
 									<small>Welcome,</small>
 							<!-- 此处名字可以替换 -->
-									Jason
+									${SESSION_USER.username}
 								</span>
 
 						<i class="ace-icon fa fa-caret-down"></i>
@@ -77,7 +77,7 @@
 
 						<li>
 							<!-- 个人中心 -->
-							<a href="uesr.html">
+							<a href="${ctx}/redirectTo/user">
 								<i class="ace-icon fa fa-user" style="font-family: microsoft yahei"></i>
 								个人中心
 							</a>
@@ -194,7 +194,7 @@
 			<!-- 数据统计 -->
 			<li class="">
 
-				<a href="data-all.html">
+				<a href="${ctx}/redirectTo/dataall">
 					<!-- <i class="menu-icon fa fa-picture-o"> -->
 					<i class="menu-icon fa fa-google-plus">
 								<span class="menu-text" style="font-family: microsoft yahei">
@@ -208,7 +208,7 @@
 			<!-- 图说数据 -->
 			<li class="">
 
-				<a href="data-display.html">
+				<a href="${ctx}/redirectTo/datadisplay">
 					<i class="menu-icon  fa fa-bar-chart">
 								<span class="menu-text" style="font-family: microsoft yahei">
 									图说数据
@@ -221,7 +221,7 @@
 			<!-- 个人中心 -->
 			<li class="">
 
-				<a href="user-manager.html">
+				<a href="${ctx}/redirectTo/user">
 					<i class="menu-icon fa fa-user">
 								<span class="menu-text" style="font-family: microsoft yahei">
 									个人中心

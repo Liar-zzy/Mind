@@ -67,7 +67,7 @@
 
 									<small>Welcome,</small>
 							<!-- 此处名字可以替换 -->
-									Jason
+									${SESSION_USER.username}
 								</span>
 
 						<i class="ace-icon fa fa-caret-down"></i>
@@ -195,7 +195,7 @@
 			<!-- 数据统计 -->
 			<li class="">
 
-				<a href="data-all.html">
+				<a href="${ctx}/redirectTo/dataall">
 					<!-- <i class="menu-icon fa fa-picture-o"> -->
 					<i class="menu-icon fa fa-google-plus">
 								<span class="menu-text" style="font-family: microsoft yahei">
@@ -209,7 +209,7 @@
 			<!-- 图说数据 -->
 			<li class="">
 
-				<a href="data-display.html">
+				<a href="${ctx}/redirectTo/datadisplay">
 					<i class="menu-icon  fa fa-bar-chart">
 								<span class="menu-text" style="font-family: microsoft yahei">
 									图说数据
@@ -298,7 +298,7 @@
 						<div class="modal-body">
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>设备ID</label>
+									<label class="col-sm-3 control-label no-padding-right" readonly=" for="form-field-1"> <span style="color: #FF0000;">*</span>用户名</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
 									</div>
@@ -307,7 +307,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>名</label>
+									<label class="col-sm-3 control-label no-padding-right"  for="form-field-2"> <span style="color: #FF0000;">*</span>密码</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
 									</div>
@@ -316,7 +316,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>类型</label>
+									<label class="col-sm-3 control-label no-padding-right" readonly=" for="form-field-3" > <span style="color: #FF0000;">*</span>角色</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-3" class="col-xs-10 col-sm-5" placeholder=" " />
 									</div>
@@ -325,7 +325,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-8"> <span style="color: #FF0000;">*</span>屏幕</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-8"> <span style="color: #FF0000;">*</span>联系方式</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-8" class="col-xs-10 col-sm-5" placeholder=" " />
 									</div>
@@ -334,7 +334,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-4 "><span style="color: #FF0000;">*</span>持有人id</label>
+									<label class="col-sm-3 control-label no-padding-right"  for="form-field-4"><span style="color: #FF0000;">*</span>邮箱</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-4" class="col-xs-10 col-sm-5" placeholder=" " />
 									</div>
@@ -343,7 +343,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>货道数量</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span style="color: #FF0000;">*</span>地址</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
 									</div>
@@ -352,7 +352,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-6"> <span style="color: #FF0000;">*</span>货道容量</label>
+									<label class="col-sm-3 control-label no-padding-right" readonly="" for="form-field-6"> <span style="color: #FF0000;">*</span>创建时间</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-6" class="col-xs-10 col-sm-5" />
 									</div>
@@ -361,7 +361,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-7"> <span style="color: #FF0000;">*</span>gps</label>
+									<label class="col-sm-3 control-label no-padding-right" readonly="  for="form-field-7" > <span style="color: #FF0000;">*</span>账号到期时间</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-7" class="col-xs-10 col-sm-5" />
 									</div>
@@ -420,7 +420,6 @@
 										<span class="lbl"></span>
 									</label>
 								</th>
-								<th>用户ID</th>
 								<th>用户名</th>
 								<th>密码</th>
 								<th>角色</th>
@@ -499,11 +498,7 @@
 
 <script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
 
-<!-- <![endif]-->
 
-<!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
 <script type="text/javascript">
 	if ('ontouchstart' in document.documentElement) document.write(
 			"<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
@@ -524,6 +519,21 @@
 <script src="../ace-master/assets/js/ace-elements.min.js"></script>
 <script src="../ace-master/assets/js/ace.min.js"></script>
 
+<script>
+	if (localStorage.pagecount)
+	{
+
+	}
+	else
+	{
+
+		$(function () {
+			window.location="${ctx}/user/getUserList";
+		})
+		localStorage.pagecount=1;
+	}
+
+</script>
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
 	jQuery(function($) {
@@ -536,30 +546,12 @@
 							"aoColumns": [{
 								"bSortable": false
 							},
-								null, null, null, null,null,null,null,null,
+								null, null, null, null,null,null,null,
 								{
 									"bSortable": false
 								}
 							],
 							"aaSorting": [],
-
-
-							//"bProcessing": true,
-							//"bServerSide": true,
-							//"sAjaxSource": "http://127.0.0.1/table.php"	,
-
-							//,
-							//"sScrollY": "200px",
-							//"bPaginate": false,
-
-							//"sScrollX": "100%",
-							//"sScrollXInner": "120%",
-							//"bScrollCollapse": true,
-							//Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
-							//you may want to wrap the table inside a "div.dataTables_borderWrap" element
-
-							//"iDisplayLength": 50
-
 
 							select: {
 								style: 'multi'

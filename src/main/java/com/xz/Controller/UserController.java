@@ -98,7 +98,6 @@ public class UserController {
         return map;
     }
 
-
     //注册时检查是否出现用户名重复
     @RequestMapping("/checkname")
     @ResponseBody
@@ -122,6 +121,7 @@ public class UserController {
         return map;
     }
 
+    //得到用户列表
     @RequestMapping("/getUserList")
     public String SelectAllUser(Model model){
         List<User> list;
