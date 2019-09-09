@@ -184,7 +184,7 @@
 					<!-- 设备列表页面 -->
 					<li class="">
 
-						<a href="machine.html">
+						<a href="${ctx}/redirectTo/machine">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
 									设备列表
@@ -198,7 +198,7 @@
 					<!-- 故障维修 -->
 					<li class="">
 
-						<a href="machine-fix.html">
+						<a href="${ctx}/redirectTo/machinefix">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
 									故障维修
@@ -214,7 +214,7 @@
 
 			<!-- 商品管理 -->
 			<li class="">
-				<a href="merchandise.html">
+				<a href="${ctx}/redirectTo/merchandise">
 					<i class="menu-icon fa fa-th-list">
 							<span class="menu-text" style="font-family: microsoft yahei">
 								商品管理

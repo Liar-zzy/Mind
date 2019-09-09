@@ -151,7 +151,7 @@
                     <!-- 设备列表页面 -->
                     <li class="">
 
-                        <a href="machine-manage.html">
+                        <a href="${ctx}/redirectTo/machine">
                             <i class="menu-icon fa fa-caret-right"></i>
                             <span style="font-family: microsoft yahei">
 										设备管理
@@ -180,7 +180,7 @@
             </li>
 
             <li class="">
-                <a href="mechanical-machine.html">
+                <a href="${ctx}/redirectTo/merchandise">
                     <i class="menu-icon fa fa-th-list">
 								<span class="menu-text" style="font-family: microsoft yahei">
 									商品列表
