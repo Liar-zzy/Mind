@@ -5,6 +5,7 @@ import com.xz.pojo.User;
 import com.xz.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -55,9 +56,6 @@ public class UserController {
         else{
             map.put("logincheck","failure");
         }
-
-
-
         return map;
     }
 
@@ -87,6 +85,7 @@ public class UserController {
         userService.insert_register(u);
         System.out.println("注册成功！！！");
         return "redirect:/jsp/login.jsp";
+
     }
 
 
@@ -100,7 +99,6 @@ public class UserController {
         int code = 400;
         User u=new User();
         u = userService.selectExist(user);
-
         //如果 user 为空 则 用户名可用
         if (u == null) {
             //可用
@@ -110,8 +108,20 @@ public class UserController {
             code = 400;
             System.out.println("查询得到的username"+u.getUsername());
         }
-
         map.put("code", code);
         return map;
+    }
+
+    @RequestMapping("/getUserList")
+    public String SelectAllUser(Model model){
+        List<User> list;
+        list = userService.selectAllUser();
+        model.addAttribute("ListAllUser",list);
+        for (int i = 0; i < list.size(); i++)
+        {
+            System.out.println(list.get(i).getCreate_date());
+        }
+        System.out.println("list all user");
+        return "user-manager";
     }
 }
