@@ -66,7 +66,7 @@
 
 									<small>Welcome,</small>
 							<!-- 此处名字可以替换 -->
-									Jason
+									${SESSION_USER.username}
 								</span>
 
 						<i class="ace-icon fa fa-caret-down"></i>
@@ -77,7 +77,7 @@
 
 						<li>
 							<!-- 个人中心 -->
-							<a href="user.html">
+							<a href="${ctx}/redirectTo/user">
 								<i class="ace-icon fa fa-user" style="font-family: microsoft yahei"></i>
 								个人中心
 							</a>
@@ -136,56 +136,13 @@
 				<b class="arrow"></b>
 			</li>
 
-			<!-- 机器管理 -->
-			<li class="">
-				<a href="#" class="dropdown-toggle">
-					<i class="menu-icon fa fa-desktop"></i>
-					<span class="menu-text" style="font-family: microsoft yahei">
-								机器管理
-							</span>
-					<!-- 展开箭头 -->
-					<b class="arrow fa fa-angle-down"></b>
-				</a>
-				<b class="arrow"></b>
-				<ul class="submenu">
-					<!-- 设备列表页面 -->
-					<li class="">
-
-						<a href="machine.html">
-							<i class="menu-icon fa fa-caret-right"></i>
-							<span style="font-family: microsoft yahei">
-										设备列表
-									</span>
-
-							<!-- <b class="arrow fa fa-angle-down"></b> -->
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-					<!-- 故障维修 -->
-					<li class="">
-
-						<a href="machine-fix.html">
-							<i class="menu-icon fa fa-caret-right"></i>
-							<span style="font-family: microsoft yahei">
-										故障维修
-									</span>
-							<!-- <b class="arrow fa fa-angle-down"></b> -->
-						</a>
-
-						<b class="arrow"></b>
-					</li>
-				</ul>
-
-			</li>
-
 			<!-- 商品管理 -->
 			<li class="">
-				<a href="merchandise.html">
+				<a href="${ctx}/redirectTo/merchandise">
 					<i class="menu-icon fa fa-th-list">
-								<span class="menu-text" style="font-family: microsoft yahei">
-									商品管理
-								</span>
+							<span class="menu-text" style="font-family: microsoft yahei">
+								商品管理
+							</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
@@ -194,12 +151,12 @@
 			<!-- 数据统计 -->
 			<li class="">
 
-				<a href="data-all.html">
+				<a href="${ctx}/redirectTo/dataall">
 					<!-- <i class="menu-icon fa fa-picture-o"> -->
-					<i class="menu-icon fa fa-google-plus">
-								<span class="menu-text" style="font-family: microsoft yahei">
-									数据统计
-								</span>
+					<i class="menu-icon fa fa-google-plus" >
+							<span class="menu-text"style="font-family: microsoft yahei">
+								数据统计
+							</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
@@ -208,11 +165,11 @@
 			<!-- 图说数据 -->
 			<li class="active">
 
-				<a href="data-display.html">
+				<a href="${ctx}/redirectTo/datadisplay">
 					<i class="menu-icon  fa fa-bar-chart">
-								<span class="menu-text" style="font-family: microsoft yahei">
-									图说数据
-								</span>
+							<span class="menu-text" style="font-family: microsoft yahei">
+								图说数据
+							</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
@@ -221,11 +178,11 @@
 			<!-- 个人中心 -->
 			<li class="">
 
-				<a href="user.html">
+				<a href="user-manufac.html">
 					<i class="menu-icon fa fa-user">
-								<span class="menu-text" style="font-family: microsoft yahei">
-									个人中心
-								</span>
+							<span class="menu-text"style="font-family: microsoft yahei">
+								个人中心
+							</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
@@ -802,7 +759,11 @@
 				$(this).addClass('dropup');
 			else $(this).removeClass('dropup');
 		});
-
+		$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
+			e.stopImmediatePropagation();
+			e.stopPropagation();
+			e.preventDefault();
+		});
 	})
 </script>
 </body>

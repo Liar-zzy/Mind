@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta charset="utf-8" />
-	<title>Machine-fix-fixer-Mind</title>
+	<title>Machine-fix-Mind</title>
 
 	<meta name="description" content="overview &amp; stats" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -55,7 +55,7 @@
 
 		<div class="navbar-buttons navbar-header pull-right " role="navigation">
 			<ul class="nav ace-nav">
-
+				
 
 				<!-- 蓝色 方块 个人中心 必要 -->
 				<li class="light-blue dropdown-modal">
@@ -126,41 +126,10 @@
 		</script>
 
 
-		<!-- <div class="sidebar-shortcuts" id="sidebar-shortcuts">
-            <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-                <button class="btn btn-success">
-                    <i class="ace-icon fa fa-signal"></i>
-                </button>
-
-                <button class="btn btn-info">
-                    <i class="ace-icon fa fa-pencil"></i>
-                </button>
-
-                <button class="btn btn-warning">
-                    <i class="ace-icon fa fa-users"></i>
-                </button>
-
-                <button class="btn btn-danger">
-                    <i class="ace-icon fa fa-cogs"></i>
-                </button>
-            </div>
-
-            <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-                <span class="btn btn-success"></span>
-
-                <span class="btn btn-info"></span>
-
-                <span class="btn btn-warning"></span>
-
-                <span class="btn btn-danger"></span>
-            </div>
-        </div> /.sidebar-shortcuts -->
-
-
 		<!-- 侧边菜单选项 -->
 		<ul class="nav nav-list">
 			<!-- 当前活动窗口 -->
-			<li class="active">
+			<li class="">
 				<a href="${ctx}/redirectTo/index">
 					<i class="menu-icon fa fa-home"></i>
 					<span class="menu-text">
@@ -182,6 +151,20 @@
 				</a>
 				<b class="arrow"></b>
 				<ul class="submenu">
+					<!-- 设备列表页面 -->
+					<li class="">
+
+						<a href="${ctx}/redirectTo/machine">
+							<i class="menu-icon fa fa-caret-right"></i>
+							<span style="font-family: microsoft yahei">
+										设备管理
+									</span>
+
+							<!-- <b class="arrow fa fa-angle-down"></b> -->
+						</a>
+
+						<b class="arrow"></b>
+					</li>
 					<!-- 故障维修 -->
 					<li class="active">
 
@@ -197,6 +180,45 @@
 					</li>
 				</ul>
 
+			</li>
+
+			<!-- 商品管理 -->
+			<li class="">
+				<a href="${ctx}/redirectTo/merchandise">
+					<i class="menu-icon fa fa-th-list">
+								<span class="menu-text" style="font-family: microsoft yahei">
+									商品列表
+								</span>
+					</i>
+				</a>
+				<b class="arrow"></b>
+			</li>
+
+			<!-- 数据统计 -->
+			<li class="">
+
+				<a href="${ctx}/redirectTo/dataall">
+					<!-- <i class="menu-icon fa fa-picture-o"> -->
+					<i class="menu-icon fa fa-google-plus">
+								<span class="menu-text" style="font-family: microsoft yahei">
+									数据统计
+								</span>
+					</i>
+				</a>
+				<b class="arrow"></b>
+			</li>
+
+			<!-- 图说数据 -->
+			<li class="">
+
+				<a href="${ctx}/redirectTo/datadisplay">
+					<i class="menu-icon  fa fa-bar-chart">
+								<span class="menu-text" style="font-family: microsoft yahei">
+									图说数据
+								</span>
+					</i>
+				</a>
+				<b class="arrow"></b>
 			</li>
 
 			<!-- 个人中心 -->
@@ -270,151 +292,6 @@
 				</div><!-- /.page-header -->
 
 
-				<!-- 添加设备弹出框 -->
-				<div class="modal" id="add-modal" backdrop="true" keyboard="false">
-					<div class="modal-dialog" style="background-color: #FFFFFF">
-						<div class="modal-header">
-							<i class="ace-icon fa fa-pencil-square-o red2"></i>
-							<span style="font-family: microsoft yahei">
-										修改设备
-									</span>
-						</div>
-						<!-- 记得修改 class中的 placeholder -->
-						<div class="modal-body">
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span style="color: #FF0000;">*</span>设备ID</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span style="color: #FF0000;">*</span>名</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-3"> <span style="color: #FF0000;">*</span>持有人id</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-3" class="col-xs-10 col-sm-5" placeholder=" " />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> <span style="color: #FF0000;">*</span>货道数量</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-4" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span style="color: #FF0000;">*</span>货道容量</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span style="color: #FF0000;">*</span>gps</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alter-modal">修改</button>
-						</div>
-					</div><!-- modal-dialog -->
-				</div><!-- 结束/添加设备弹出框 -->
-
-
-				<!-- 修改设备弹出框 -->
-				<div class="modal" id="alter-modal" backdrop="true" keyboard="false">
-					<div class="modal-dialog" style="background-color: #FFFFFF">
-						<div class="modal-header">
-							<i class="ace-icon fa fa-plus bigger-120 blue"></i>
-							<span style="font-family: microsoft yahei">
-										添加设备
-									</span>
-						</div>
-
-						<div class="modal-body">
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>设备ID</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>名</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>持有人id</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-3" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-4"> <span style="color: #FF0000;">*</span>货道数量</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-4" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>货道容量</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>gps</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">确定</button>
-						</div>
-					</div><!-- modal-dialog -->
-				</div>
-
 				<!-- 表格的绘制 -->
 				<div class="row">
 					<div class="col">
@@ -425,27 +302,6 @@
 
 							<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
 							<a href="" class=""> 请选择操作 </a>
-							<!-- <button class="btn btn-white btn-info btn-bold" data-toggle="modal" data-target="#add-modal">
-                                <i class="ace-icon fa fa-plus bigger-120 blue"></i>
-                                <span style="font-family: microsoft yahei">
-                                    添加设备
-                                </span>
-
-                            </button>
-
-                            <button class="btn btn-white btn-default btn-round"data-toggle="modal" data-target="#alter-modal">
-                                <i class="ace-icon fa fa-pencil-square-o red2"></i>
-                                <span style="font-family: microsoft yahei">
-                                    修改设备
-                                </span>
-                            </button> -->
-
-							<button class="btn btn-white btn-warning btn-bold">
-								<i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
-								<span style="font-family: microsoft yahei">
-											删除设备
-										</span>
-							</button>
 
 						</div>
 
@@ -518,24 +374,24 @@
 <div class="footer">
 	<div class="footer-inner">
 		<div class="footer-content">
-					<span class="bigger-120">
-						<span class="blue bolder">Mind</span>
-						Application &copy; 2019-2020
-					</span>
+						<span class="bigger-120">
+							<span class="blue bolder">Mind</span>
+							Application &copy; 2019-2020
+						</span>
 			&nbsp; &nbsp;
 			<span class="action-buttons">
-						<a href="#">
-							<i class="ace-icon fa fa-qq light-blue bigger-150"></i>
-						</a>
+							<a href="#">
+								<i class="ace-icon fa fa-qq light-blue bigger-150"></i>
+							</a>
 
-						<a href="#">
-							<i class="ace-icon fa fa-weibo text-primary bigger-150"></i>
-						</a>
+							<a href="#">
+								<i class="ace-icon fa fa-weibo text-primary bigger-150"></i>
+							</a>
 
-						<a href="#">
-							<i class="ace-icon fa fa-weixin  bigger-150"></i>
-						</a>
-					</span>
+							<a href="#">
+								<i class="ace-icon fa fa-weixin  bigger-150"></i>
+							</a>
+						</span>
 		</div>
 	</div>
 </div>
@@ -554,8 +410,7 @@
 <script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
-	if ('ontouchstart' in document.documentElement) document.write(
-			"<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+	if('ontouchstart' in document.documentElement) document.write("<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 </script>
 <script src="../ace-master/assets/js/bootstrap.min.js"></script>
 
@@ -580,11 +435,10 @@
 		var myTable =
 				$('#dynamic-table')
 				//.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
-						.DataTable({
+						.DataTable( {
 							bAutoWidth: false,
-							"aoColumns": [{
-								"bSortable": false
-							},
+							"aoColumns": [
+								{ "bSortable": false },
 								null, null
 							],
 							"aaSorting": [],
@@ -610,19 +464,20 @@
 							select: {
 								style: 'multi'
 							}
-						});
+						} );
 
 
 
 		$.fn.dataTable.Buttons.defaults.dom.container.className = 'dt-buttons btn-overlap btn-group btn-overlap';
 
-		new $.fn.dataTable.Buttons(myTable, {
-			buttons: [{
-				"extend": "colvis",
-				"text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
-				"className": "btn btn-white btn-primary btn-bold",
-				columns: ':not(:first):not(:last)'
-			},
+		new $.fn.dataTable.Buttons( myTable, {
+			buttons: [
+				{
+					"extend": "colvis",
+					"text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
+					"className": "btn btn-white btn-primary btn-bold",
+					columns: ':not(:first):not(:last)'
+				},
 				{
 					"extend": "copy",
 					"text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copy to clipboard</span>",
@@ -651,24 +506,24 @@
 					message: 'This print was produced using the Print button for DataTables'
 				}
 			]
-		});
-		myTable.buttons().container().appendTo($('.tableTools-container'));
+		} );
+		myTable.buttons().container().appendTo( $('.tableTools-container') );
 
 		//style the message box
 		var defaultCopyAction = myTable.button(1).action();
-		myTable.button(1).action(function(e, dt, button, config) {
+		myTable.button(1).action(function (e, dt, button, config) {
 			defaultCopyAction(e, dt, button, config);
 			$('.dt-button-info').addClass('gritter-item-wrapper gritter-info gritter-center white');
 		});
 
 
 		var defaultColvisAction = myTable.button(0).action();
-		myTable.button(0).action(function(e, dt, button, config) {
+		myTable.button(0).action(function (e, dt, button, config) {
 
 			defaultColvisAction(e, dt, button, config);
 
 
-			if ($('.dt-button-collection > .dropdown-menu').length == 0) {
+			if($('.dt-button-collection > .dropdown-menu').length == 0) {
 				$('.dt-button-collection')
 						.wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
 						.find('a').attr('href', '#').wrap("<li />")
@@ -681,14 +536,8 @@
 		setTimeout(function() {
 			$($('.tableTools-container')).find('a.dt-button').each(function() {
 				var div = $(this).find(' > div').first();
-				if (div.length == 1) div.tooltip({
-					container: 'body',
-					title: div.parent().text()
-				});
-				else $(this).tooltip({
-					container: 'body',
-					title: $(this).text()
-				});
+				if(div.length == 1) div.tooltip({container: 'body', title: div.parent().text()});
+				else $(this).tooltip({container: 'body', title: $(this).text()});
 			});
 		}, 500);
 
@@ -696,16 +545,16 @@
 
 
 
-		myTable.on('select', function(e, dt, type, index) {
-			if (type === 'row') {
-				$(myTable.row(index).node()).find('input:checkbox').prop('checked', true);
+		myTable.on( 'select', function ( e, dt, type, index ) {
+			if ( type === 'row' ) {
+				$( myTable.row( index ).node() ).find('input:checkbox').prop('checked', true);
 			}
-		});
-		myTable.on('deselect', function(e, dt, type, index) {
-			if (type === 'row') {
-				$(myTable.row(index).node()).find('input:checkbox').prop('checked', false);
+		} );
+		myTable.on( 'deselect', function ( e, dt, type, index ) {
+			if ( type === 'row' ) {
+				$( myTable.row( index ).node() ).find('input:checkbox').prop('checked', false);
 			}
-		});
+		} );
 
 
 
@@ -715,22 +564,20 @@
 		$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
 
 		//select/deselect all rows according to table header checkbox
-		$('#dynamic-table > thead > tr > th input[type=checkbox], #dynamic-table_wrapper input[type=checkbox]').eq(0).on(
-				'click',
-				function() {
-					var th_checked = this.checked; //checkbox inside "TH" table header
+		$('#dynamic-table > thead > tr > th input[type=checkbox], #dynamic-table_wrapper input[type=checkbox]').eq(0).on('click', function(){
+			var th_checked = this.checked;//checkbox inside "TH" table header
 
-					$('#dynamic-table').find('tbody > tr').each(function() {
-						var row = this;
-						if (th_checked) myTable.row(row).select();
-						else myTable.row(row).deselect();
-					});
-				});
+			$('#dynamic-table').find('tbody > tr').each(function(){
+				var row = this;
+				if(th_checked) myTable.row(row).select();
+				else  myTable.row(row).deselect();
+			});
+		});
 
 		//select/deselect a row when the checkbox is checked/unchecked
-		$('#dynamic-table').on('click', 'td input[type=checkbox]', function() {
+		$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
 			var row = $(this).closest('tr').get(0);
-			if (this.checked) myTable.row(row).deselect();
+			if(this.checked) myTable.row(row).deselect();
 			else myTable.row(row).select();
 		});
 
@@ -747,21 +594,21 @@
 		//And for the first simple table, which doesn't have TableTools or dataTables
 		//select/deselect all rows according to table header checkbox
 		var active_class = 'active';
-		$('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function() {
-			var th_checked = this.checked; //checkbox inside "TH" table header
+		$('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
+			var th_checked = this.checked;//checkbox inside "TH" table header
 
-			$(this).closest('table').find('tbody > tr').each(function() {
+			$(this).closest('table').find('tbody > tr').each(function(){
 				var row = this;
-				if (th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
+				if(th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
 				else $(row).removeClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', false);
 			});
 		});
 
 		//select/deselect a row when the checkbox is checked/unchecked
-		$('#simple-table').on('click', 'td input[type=checkbox]', function() {
+		$('#simple-table').on('click', 'td input[type=checkbox]' , function(){
 			var $row = $(this).closest('tr');
-			if ($row.is('.detail-row ')) return;
-			if (this.checked) $row.addClass(active_class);
+			if($row.is('.detail-row ')) return;
+			if(this.checked) $row.addClass(active_class);
 			else $row.removeClass(active_class);
 		});
 
@@ -769,9 +616,7 @@
 
 		/********************************/
 		//add tooltip for small view action buttons in dropdown menu
-		$('[data-rel="tooltip"]').tooltip({
-			placement: tooltip_placement
-		});
+		$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
 
 		//tooltip placement on right or left
 		function tooltip_placement(context, source) {
@@ -783,7 +628,7 @@
 			var off2 = $source.offset();
 			//var w2 = $source.width();
 
-			if (parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2)) return 'right';
+			if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
 			return 'left';
 		}
 
