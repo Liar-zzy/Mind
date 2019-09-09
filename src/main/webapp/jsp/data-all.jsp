@@ -66,7 +66,7 @@
 
 									<small>Welcome,</small>
 							<!-- 此处名字可以替换 -->
-									${SESSION_USER.username}
+									Jason
 								</span>
 
 						<i class="ace-icon fa fa-caret-down"></i>
@@ -77,7 +77,7 @@
 
 						<li>
 							<!-- 个人中心 -->
-							<a href="${ctx}/redirectTo/user">
+							<a href="uesr.html">
 								<i class="ace-icon fa fa-user" style="font-family: microsoft yahei"></i>
 								个人中心
 							</a>
@@ -121,6 +121,8 @@
 			}
 		</script>
 
+
+
 		<!-- 侧边菜单选项 -->
 		<ul class="nav nav-list">
 			<!-- 当前活动窗口 -->
@@ -139,8 +141,8 @@
 				<a href="#" class="dropdown-toggle">
 					<i class="menu-icon fa fa-desktop"></i>
 					<span class="menu-text" style="font-family: microsoft yahei">
-							机器管理
-						</span>
+								机器管理
+							</span>
 					<!-- 展开箭头 -->
 					<b class="arrow fa fa-angle-down"></b>
 				</a>
@@ -149,11 +151,11 @@
 					<!-- 设备列表页面 -->
 					<li class="">
 
-						<a href="${ctx}/redirectTo/machine">
+						<a href="machine.html">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
-									设备管理
-								</span>
+										设备列表
+									</span>
 
 							<!-- <b class="arrow fa fa-angle-down"></b> -->
 						</a>
@@ -163,11 +165,11 @@
 					<!-- 故障维修 -->
 					<li class="">
 
-						<a href="${ctx}/redirectTo/machinefix">
+						<a href="machine-fix.html">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
-									故障维修
-								</span>
+										故障维修
+									</span>
 							<!-- <b class="arrow fa fa-angle-down"></b> -->
 						</a>
 
@@ -177,12 +179,13 @@
 
 			</li>
 
+			<!-- 商品管理 -->
 			<li class="">
-				<a href="${ctx}/redirectTo/merchandise">
+				<a href="merchandise.html">
 					<i class="menu-icon fa fa-th-list">
-							<span class="menu-text" style="font-family: microsoft yahei">
-								商品列表
-							</span>
+								<span class="menu-text" style="font-family: microsoft yahei">
+									商品管理
+								</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
@@ -191,12 +194,12 @@
 			<!-- 数据统计 -->
 			<li class="active">
 
-				<a href="${ctx}/redirectTo/dataall">
+				<a href="data-all.html">
 					<!-- <i class="menu-icon fa fa-picture-o"> -->
-					<i class="menu-icon fa fa-google-plus" >
-							<span class="menu-text"style="font-family: microsoft yahei">
-								数据统计
-							</span>
+					<i class="menu-icon fa fa-google-plus">
+								<span class="menu-text" style="font-family: microsoft yahei">
+									数据统计
+								</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
@@ -205,11 +208,11 @@
 			<!-- 图说数据 -->
 			<li class="">
 
-				<a href="${ctx}/redirectTo/datadisplay">
+				<a href="data-display.html">
 					<i class="menu-icon  fa fa-bar-chart">
-							<span class="menu-text" style="font-family: microsoft yahei">
-								图说数据
-							</span>
+								<span class="menu-text" style="font-family: microsoft yahei">
+									图说数据
+								</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
@@ -218,11 +221,11 @@
 			<!-- 个人中心 -->
 			<li class="">
 
-				<a href="${ctx}/redirectTo/user">
+				<a href="user.html">
 					<i class="menu-icon fa fa-user">
-							<span class="menu-text"style="font-family: microsoft yahei">
-								个人中心
-							</span>
+								<span class="menu-text" style="font-family: microsoft yahei">
+									个人中心
+								</span>
 					</i>
 				</a>
 				<b class="arrow"></b>

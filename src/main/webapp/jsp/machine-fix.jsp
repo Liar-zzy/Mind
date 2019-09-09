@@ -56,6 +56,114 @@
 		<div class="navbar-buttons navbar-header pull-right " role="navigation">
 			<ul class="nav ace-nav">
 
+				<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+					<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+					<span class="badge badge-success">5</span>
+				</a>
+
+				<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+					<li class="dropdown-header">
+						<i class="ace-icon fa fa-envelope-o"></i>
+						5 Messages
+					</li>
+
+					<li class="dropdown-content">
+						<ul class="dropdown-menu dropdown-navbar">
+							<li>
+								<a href="#" class="clearfix">
+									<img src="assets/images/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+									<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Alex:</span>
+														Ciao sociis natoque penatibus et auctor ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>a moment ago</span>
+													</span>
+												</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="clearfix">
+									<img src="assets/images/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+									<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Susan:</span>
+														Vestibulum id ligula porta felis euismod ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>20 minutes ago</span>
+													</span>
+												</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="clearfix">
+									<img src="assets/images/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+									<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Bob:</span>
+														Nullam quis risus eget urna mollis ornare ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>3:15 pm</span>
+													</span>
+												</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="clearfix">
+									<img src="assets/images/avatars/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+									<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Kate:</span>
+														Ciao sociis natoque eget urna mollis ornare ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>1:33 pm</span>
+													</span>
+												</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="#" class="clearfix">
+									<img src="assets/images/avatars/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+									<span class="msg-body">
+													<span class="msg-title">
+														<span class="blue">Fred:</span>
+														Vestibulum id penatibus et auctor  ...
+													</span>
+
+													<span class="msg-time">
+														<i class="ace-icon fa fa-clock-o"></i>
+														<span>10:09 am</span>
+													</span>
+												</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="dropdown-footer">
+						<a href="inbox.html">
+							See all messages
+							<i class="ace-icon fa fa-arrow-right"></i>
+						</a>
+					</li>
+				</ul>
+				</li> -->
 
 				<!-- 蓝色 方块 个人中心 必要 -->
 				<li class="light-blue dropdown-modal">
@@ -65,7 +173,7 @@
 
 									<small>Welcome,</small>
 							<!-- 此处名字可以替换 -->
-									${SESSION_USER.username}
+									Jason
 								</span>
 
 						<i class="ace-icon fa fa-caret-down"></i>
@@ -81,9 +189,9 @@
 
 						<li>
 							<!-- 个人中心 -->
-							<a href="${ctx}/redirectTo/user">
+							<a href="uesr.html">
 								<i class="ace-icon fa fa-user" style="font-family: microsoft yahei"></i>
-								账号管理
+								个人中心
 							</a>
 						</li>
 
@@ -154,7 +262,7 @@
 					<!-- 设备列表页面 -->
 					<li class="">
 
-						<a href="${ctx}/redirectTo/machine">
+						<a href="machine.html">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
 										设备列表
@@ -168,7 +276,7 @@
 					<!-- 故障维修 -->
 					<li class="active">
 
-						<a href="${ctx}/redirectTo/machinefix">
+						<a href="fix.html">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
 										故障维修
@@ -184,7 +292,7 @@
 
 			<!-- 商品管理 -->
 			<li class="">
-				<a href="${ctx}/redirectTo/merchandise">
+				<a href="merchandise.html">
 					<i class="menu-icon fa fa-th-list">
 								<span class="menu-text" style="font-family: microsoft yahei">
 									商品管理
@@ -197,7 +305,7 @@
 			<!-- 数据统计 -->
 			<li class="">
 
-				<a href="${ctx}/redirectTo/dataall">
+				<a href="data-all.html">
 					<!-- <i class="menu-icon fa fa-picture-o"> -->
 					<i class="menu-icon fa fa-google-plus">
 								<span class="menu-text" style="font-family: microsoft yahei">
@@ -211,7 +319,7 @@
 			<!-- 图说数据 -->
 			<li class="">
 
-				<a href="${ctx}/redirectTo/datadisplay">
+				<a href="data-display.html">
 					<i class="menu-icon  fa fa-bar-chart">
 								<span class="menu-text" style="font-family: microsoft yahei">
 									图说数据
@@ -224,10 +332,10 @@
 			<!-- 个人中心 -->
 			<li class="">
 
-				<a href="${ctx}/redirectTo/user">
+				<a href="user.html">
 					<i class="menu-icon fa fa-user">
 								<span class="menu-text" style="font-family: microsoft yahei">
-									账号管理
+									个人中心
 								</span>
 					</i>
 				</a>
@@ -305,7 +413,7 @@
 						<div class="modal-body">
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span style="color: #FF0000;">*</span>设备ID</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>设备ID</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
 									</div>
@@ -314,7 +422,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span style="color: #FF0000;">*</span>名</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>名</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
 									</div>
@@ -323,7 +431,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-3"> <span style="color: #FF0000;">*</span>持有人id</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>持有人id</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-3" class="col-xs-10 col-sm-5" placeholder=" "/>
 									</div>
@@ -332,7 +440,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> <span style="color: #FF0000;">*</span>货道数量</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-4"> <span style="color: #FF0000;">*</span>货道数量</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-4" class="col-xs-10 col-sm-5" />
 									</div>
@@ -341,7 +449,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span style="color: #FF0000;">*</span>货道容量</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>货道容量</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
 									</div>
@@ -350,7 +458,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span style="color: #FF0000;">*</span>gps</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>gps</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
 									</div>
@@ -378,7 +486,7 @@
 						<div class="modal-body">
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span style="color: #FF0000;">*</span>设备ID</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>设备ID</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
 									</div>
@@ -387,7 +495,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span style="color: #FF0000;">*</span>名</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>名</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
 									</div>
@@ -396,7 +504,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-3"> <span style="color: #FF0000;">*</span>持有人id</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>持有人id</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-3" class="col-xs-10 col-sm-5" />
 									</div>
@@ -405,7 +513,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> <span style="color: #FF0000;">*</span>货道数量</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-4"> <span style="color: #FF0000;">*</span>货道数量</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-4" class="col-xs-10 col-sm-5" />
 									</div>
@@ -414,7 +522,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span style="color: #FF0000;">*</span>货道容量</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>货道容量</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
 									</div>
@@ -423,7 +531,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span style="color: #FF0000;">*</span>gps</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>gps</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
 									</div>

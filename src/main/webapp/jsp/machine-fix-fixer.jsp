@@ -65,7 +65,7 @@
 
 									<small>Welcome,</small>
 							<!-- 此处名字可以替换 -->
-									${SESSION_USER.username}
+									Jason
 								</span>
 
 						<i class="ace-icon fa fa-caret-down"></i>
@@ -81,7 +81,7 @@
 
 						<li>
 							<!-- 个人中心 -->
-							<a href="${ctx}/redirectTo/user">
+							<a href="uesr.html">
 								<i class="ace-icon fa fa-user" style="font-family: microsoft yahei"></i>
 								个人中心
 							</a>
@@ -185,7 +185,7 @@
 					<!-- 故障维修 -->
 					<li class="active">
 
-						<a href="${ctx}/redirectTo/machinefix">
+						<a href="machine-fix-fixer.html">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
 										故障维修
@@ -202,7 +202,7 @@
 			<!-- 个人中心 -->
 			<li class="">
 
-				<a href="${ctx}/redirectTo/user">
+				<a href="user.html">
 					<i class="menu-icon fa fa-user">
 								<span class="menu-text" style="font-family: microsoft yahei">
 									个人中心
@@ -283,7 +283,7 @@
 						<div class="modal-body">
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span style="color: #FF0000;">*</span>设备ID</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>设备ID</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
 									</div>
@@ -292,7 +292,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span style="color: #FF0000;">*</span>名</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>名</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
 									</div>
@@ -301,7 +301,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-3"> <span style="color: #FF0000;">*</span>持有人id</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>持有人id</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-3" class="col-xs-10 col-sm-5" placeholder=" " />
 									</div>
@@ -310,7 +310,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> <span style="color: #FF0000;">*</span>货道数量</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-4"> <span style="color: #FF0000;">*</span>货道数量</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-4" class="col-xs-10 col-sm-5" />
 									</div>
@@ -319,7 +319,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span style="color: #FF0000;">*</span>货道容量</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>货道容量</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
 									</div>
@@ -328,7 +328,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span style="color: #FF0000;">*</span>gps</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>gps</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
 									</div>
@@ -447,6 +447,36 @@
 										</span>
 							</button>
 
+							<!-- <div class="clearfix">
+                                <div class="pull-right tableTools-container"></div>
+
+                            </div> -->
+							<!-- <div class="pull-right tableTools-container">
+                                <div class="dt-buttons btn-overlap btn-group">
+                                    <a class="dt-button buttons-collection buttons-colvis btn btn-white btn-primary btn-bold" tabindex="0"
+                                     aria-controls="dynamic-table" data-original-title="" title="">
+                                        <span>
+                                            <i class="fa fa-search bigger-110 blue"></i>
+                                            <span class="hidden">Show/hide columns</span>
+                                        </span>
+                                    </a>
+                                    <a class="dt-button buttons-copy buttons-html5 btn btn-white btn-primary btn-bold" tabindex="0"
+                                     aria-controls="dynamic-table" data-original-title="" title="">
+                                        <span><i class="fa fa-copy bigger-110 pink"></i>
+                                            <span class="hidden">Copy to clipboard</span>
+                                        </span></a>
+                                    <a class="dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table"
+                                     data-original-title="" title="">
+                                        <span><i class="fa fa-database bigger-110 orange"></i>
+                                            <span class="hidden">Export to CSV</span>
+                                        </span></a>
+                                    <a class="dt-button buttons-print btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table"
+                                     data-original-title="" title="">
+                                        <span><i class="fa fa-print bigger-110 grey"></i>
+                                            <span class="hidden">Print</span>
+                                        </span>
+                                    </a>
+                                </div> -->
 						</div>
 
 					</div><!-- 表格的头部  结束-->

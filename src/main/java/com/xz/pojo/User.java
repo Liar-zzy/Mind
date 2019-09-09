@@ -1,5 +1,7 @@
 package com.xz.pojo;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class User {

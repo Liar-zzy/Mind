@@ -66,7 +66,7 @@
 
 									<small>Welcome,</small>
                             <!-- 此处名字可以替换 -->
-									${SESSION_USER.username}
+									Jason
 								</span>
 
                         <i class="ace-icon fa fa-caret-down"></i>
@@ -76,7 +76,7 @@
 
                         <li>
                             <!-- 个人中心 -->
-                            <a href="${ctx}/redirectTo/user">
+                            <a href="user-fix.html">
                                 <i class="ace-icon fa fa-user" style="font-family: microsoft yahei"></i>
                                 个人中心
                             </a>
@@ -149,7 +149,7 @@
                     <!-- 故障维修 -->
                     <li class="">
 
-                        <a href="${ctx}/redirectTo/machinefix">
+                        <a href="machine-fix-fixer.html">
                             <i class="menu-icon fa fa-caret-right"></i>
                             <span style="font-family: microsoft yahei">
 										故障维修
@@ -166,7 +166,7 @@
             <!-- 个人中心 -->
             <li class="active">
 
-                <a href="${ctx}/redirectTo/user">
+                <a href="user-fix.html">
                     <i class="menu-icon fa fa-user">
 								<span class="menu-text" style="font-family: microsoft yahei">
 									个人中心

@@ -60,12 +60,13 @@
                 <!-- 蓝色 方块 个人中心 必要 -->
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <img class="nav-user-photo" src="../ace-master/assets/images/avatars/user.jpg"  alt="Jason's Photo"/>
+                        <img class="nav-user-photo" src="../ace-master/assets/images/avatars/user.jpg"
+                             alt="Jason's Photo"/>
                         <span class="user-info">
 
 									<small>Welcome,</small>
                             <!-- 此处名字可以替换 -->
-									${SESSION_USER.username}
+									Jason
 								</span>
 
                         <i class="ace-icon fa fa-caret-down"></i>
@@ -140,7 +141,7 @@
 
             <!-- 商品管理 -->
             <li class="active">
-                <a href="${ctx}/redirectTo/merchandise">
+                <a href="merchandise-manufac.html">
                     <i class="menu-icon fa fa-th-list">
 								<span class="menu-text" style="font-family: microsoft yahei">
 									商品管理
@@ -153,7 +154,7 @@
             <!-- 数据统计 -->
             <li class="">
 
-                <a href="${ctx}/redirectTo/dataall">
+                <a href="data-all.html">
                     <!-- <i class="menu-icon fa fa-picture-o"> -->
                     <i class="menu-icon fa fa-google-plus">
 								<span class="menu-text" style="font-family: microsoft yahei">
@@ -167,7 +168,7 @@
             <!-- 图说数据 -->
             <li class="">
 
-                <a href="${ctx}/redirectTo/datadisplay">
+                <a href="data-display.html">
                     <i class="menu-icon  fa fa-bar-chart">
 								<span class="menu-text" style="font-family: microsoft yahei">
 									图说数据

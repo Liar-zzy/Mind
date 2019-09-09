@@ -72,12 +72,18 @@
 					</a>
 
 					<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+						<!-- <li>
+                            <a href="#">
+                                <i class="ace-icon fa fa-cog"></i>
+                                Settings
+                            </a>
+                        </li> -->
 
 						<li>
 							<!-- 个人中心 -->
-							<a href="${ctx}/redirectTo/user">
+							<a href="uesr.html">
 								<i class="ace-icon fa fa-user"style="font-family: microsoft yahei"></i>
-								账号管理
+								个人中心
 							</a>
 						</li>
 
@@ -119,6 +125,37 @@
 		</script>
 
 
+		<!-- <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+            <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                <button class="btn btn-success">
+                    <i class="ace-icon fa fa-signal"></i>
+                </button>
+
+                <button class="btn btn-info">
+                    <i class="ace-icon fa fa-pencil"></i>
+                </button>
+
+                <button class="btn btn-warning">
+                    <i class="ace-icon fa fa-users"></i>
+                </button>
+
+                <button class="btn btn-danger">
+                    <i class="ace-icon fa fa-cogs"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                <span class="btn btn-success"></span>
+
+                <span class="btn btn-info"></span>
+
+                <span class="btn btn-warning"></span>
+
+                <span class="btn btn-danger"></span>
+            </div>
+        </div> /.sidebar-shortcuts -->
+
+
 		<!-- 侧边菜单选项 -->
 		<ul class="nav nav-list">
 			<!-- 当前活动窗口 -->
@@ -147,7 +184,7 @@
 					<!-- 设备列表页面 -->
 					<li class="">
 
-						<a href="${ctx}/redirectTo/machine">
+						<a href="machine.html">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
 									设备列表
@@ -161,7 +198,7 @@
 					<!-- 故障维修 -->
 					<li class="">
 
-						<a href="${ctx}/redirectTo/machinefix">
+						<a href="machine-fix.html">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
 									故障维修
@@ -177,7 +214,7 @@
 
 			<!-- 商品管理 -->
 			<li class="">
-				<a href="${ctx}/redirectTo/merchandise">
+				<a href="merchandise.html">
 					<i class="menu-icon fa fa-th-list">
 							<span class="menu-text" style="font-family: microsoft yahei">
 								商品管理
@@ -190,7 +227,7 @@
 			<!-- 数据统计 -->
 			<li class="">
 
-				<a href="${ctx}/redirectTo/dataall">
+				<a href="data-all.html">
 					<!-- <i class="menu-icon fa fa-picture-o"> -->
 					<i class="menu-icon fa fa-google-plus" >
 							<span class="menu-text"style="font-family: microsoft yahei">
@@ -204,7 +241,7 @@
 			<!-- 图说数据 -->
 			<li class="">
 
-				<a href="${ctx}/redirectTo/datadisplay">
+				<a href="data-display.html">
 					<i class="menu-icon  fa fa-bar-chart">
 							<span class="menu-text" style="font-family: microsoft yahei">
 								图说数据
@@ -217,7 +254,7 @@
 			<!-- 个人中心 -->
 			<li class="">
 
-				<a href="${ctx}/redirectTo/user">
+				<a href="user-manager.html">
 					<i class="menu-icon fa fa-user">
 							<span class="menu-text"style="font-family: microsoft yahei"> 
 								账号管理

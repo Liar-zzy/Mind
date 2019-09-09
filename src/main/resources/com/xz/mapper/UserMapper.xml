@@ -4,13 +4,12 @@
 
     <select id="select" resultType="com.xz.pojo.User">
         select * from j2ee.user
-        where username = #{username}
-        and pwd = #{password}
+        where user.username = #{username}
+        and user.password = #{password}
     </select>
 
-
     <insert id="insert" parameterType="com.xz.pojo.User">
-        insert into j2ee.user(username, pwd, role, tel, email, addr, create_date, end_date) values(
+        insert into j2ee.user(username, password, role, tel, email, addr, create_date, end_date) values(
         #{u.username},#{u.password},#{u.role},#{u.tel},#{u.email},#{u.addr},#{u.create_date},#{u.end_date}
         )
     </insert>
@@ -18,5 +17,10 @@
     <select id="selectExist" resultType="com.xz.pojo.User">
         select * from j2ee.user
         where username=#{username}
+    </select>
+
+    <select id="select_allUser" resultType="com.xz.pojo.User">
+        select user_id, username, password, role, tel, email, addr, str_to_date(create_date,'%Y-%m-%d %H:%i:%s') as create_date,
+        str_to_date(end_date,'%Y-%m-%d %H:%i:%s') as end_date from j2ee.user
     </select>
 </mapper>

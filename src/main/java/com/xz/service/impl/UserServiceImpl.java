@@ -6,6 +6,8 @@ import com.xz.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
@@ -31,5 +33,11 @@ public class UserServiceImpl implements UserService {
     public User selectExist(User u) {
         User user=userMapper.selectExist(u);
         return user;
+    }
+
+    @Override
+    public List<User> selectAllUser() {
+        List<User> list = userMapper.select_allUser();
+        return list;
     }
 }

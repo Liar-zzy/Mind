@@ -3,6 +3,8 @@ package com.xz.service;
 import com.xz.pojo.User;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 public interface UserService {
 
@@ -12,4 +14,5 @@ public interface UserService {
 
     User selectExist(User u);
 
+    List<User> selectAllUser();
 }
