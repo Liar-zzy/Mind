@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta charset="utf-8" />
-	<title>Home-Mind</title>
+	<title>Data-display-Mind</title>
 
 	<meta name="description" content="overview &amp; stats" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -73,12 +73,7 @@
 					</a>
 
 					<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-						<!-- <li>
-                            <a href="#">
-                                <i class="ace-icon fa fa-cog"></i>
-                                Settings
-                            </a>
-                        </li> -->
+
 
 						<li>
 							<!-- 个人中心 -->
@@ -131,7 +126,7 @@
 		<!-- 侧边菜单选项 -->
 		<ul class="nav nav-list">
 			<!-- 当前活动窗口 -->
-			<li class="active">
+			<li class="">
 				<a href="${ctx}/redirectTo/index">
 					<i class="menu-icon fa fa-home"></i>
 					<span class="menu-text">
@@ -146,21 +141,35 @@
 				<a href="#" class="dropdown-toggle">
 					<i class="menu-icon fa fa-desktop"></i>
 					<span class="menu-text" style="font-family: microsoft yahei">
-								机器管理
-							</span>
+							机器管理
+						</span>
 					<!-- 展开箭头 -->
 					<b class="arrow fa fa-angle-down"></b>
 				</a>
 				<b class="arrow"></b>
 				<ul class="submenu">
+					<!-- 设备列表页面 -->
+					<li class="">
+
+						<a href="${ctx}/redirectTo/machine">
+							<i class="menu-icon fa fa-caret-right"></i>
+							<span style="font-family: microsoft yahei">
+									设备管理
+								</span>
+
+							<!-- <b class="arrow fa fa-angle-down"></b> -->
+						</a>
+
+						<b class="arrow"></b>
+					</li>
 					<!-- 故障维修 -->
 					<li class="">
 
 						<a href="${ctx}/redirectTo/machinefix">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
-										故障维修
-									</span>
+									故障维修
+								</span>
 							<!-- <b class="arrow fa fa-angle-down"></b> -->
 						</a>
 
@@ -170,14 +179,52 @@
 
 			</li>
 
+			<li class="">
+				<a href="${ctx}/redirectTo/merchandise">
+					<i class="menu-icon fa fa-th-list">
+							<span class="menu-text" style="font-family: microsoft yahei">
+								商品列表
+							</span>
+					</i>
+				</a>
+				<b class="arrow"></b>
+			</li>
+
+			<!-- 数据统计 -->
+			<li class="">
+
+				<a href="${ctx}/redirectTo/dataall">
+					<!-- <i class="menu-icon fa fa-picture-o"> -->
+					<i class="menu-icon fa fa-google-plus" >
+							<span class="menu-text"style="font-family: microsoft yahei">
+								数据统计
+							</span>
+					</i>
+				</a>
+				<b class="arrow"></b>
+			</li>
+
+			<!-- 图说数据 -->
+			<li class="active">
+
+				<a href="${ctx}/redirectTo/datadisplay">
+					<i class="menu-icon  fa fa-bar-chart">
+							<span class="menu-text" style="font-family: microsoft yahei">
+								图说数据
+							</span>
+					</i>
+				</a>
+				<b class="arrow"></b>
+			</li>
+
 			<!-- 个人中心 -->
 			<li class="">
 
 				<a href="${ctx}/redirectTo/user">
 					<i class="menu-icon fa fa-user">
-								<span class="menu-text" style="font-family: microsoft yahei">
-									个人中心
-								</span>
+							<span class="menu-text"style="font-family: microsoft yahei">
+								个人中心
+							</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
@@ -206,6 +253,14 @@
 								</span>
 
 					</li>
+					<li>
+								<span style="font-family: microsoft yahei">
+									<a href="#">
+										图说数据
+									</a>
+								</span>
+					</li>
+
 				</ul>
 			</div>
 
@@ -214,16 +269,61 @@
 
 
 			<div class="page-content">
-						<span style="font-family: microsoft yahei;font-size: 50px;">
-							<p>
-								维修人员
+				<div class="page-header">
+							<span style="font-family: microsoft yahei">
+								<h1>
+									图说数据
+									<small>
+										<i class="ace-icon fa fa-angle-double-right"></i>
+										显示综合数据详细
+									</small>
+								</h1>
+							</span>
+				</div><!-- /.page-header -->
 
-							</p>
-							<tr></tr>
-							<p>
-								欢迎进入Mind售货机管理系统！
-							</p>
-						</span>
+				<div class="row">
+
+					<div class="col-xs-12">
+
+						<div class="alert alert-block alert-success" id="alert1">
+
+							<button type="button" class="close" id="closealert" data-dismiss="alert">
+								<i class="ace-icon fa fa-times"></i>
+							</button>
+
+							<i class="ace-icon fa fa-check green"></i>
+
+							Welcome to
+							<strong class="green">
+								data-display
+								<small></small>
+							</strong>
+						</div>
+
+
+						<div class="space-6"></div>
+
+
+
+
+
+					</div>
+				</div>
+				<div class="row">
+					<div id="container" style="height: 600px ;">
+
+					</div>
+					<div class="space-6"></div>
+					<div id="containerzhu" style="height: 600px">
+
+					</div>
+					<div class="space-6"></div>
+					<div id="containerzhe" style="height: 600px">
+					</div>
+
+
+				</div><!-- page-content -->
+
 			</div>
 
 		</div>
@@ -265,19 +365,15 @@
 <!-- <![endif]-->
 
 <!--[if IE]>
-<script src="../ace-master/assets/js/jquery-1.11.3.min.js"></script>
+<script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
 	if ('ontouchstart' in document.documentElement) document.write(
-			"<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+			"<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
 <script src="../ace-master/assets/js/bootstrap.min.js"></script>
 
-<!-- page specific plugin scripts -->
-
-<!--[if lte IE 8]>
-<script src="../ace-master/assets/js/excanvas.min.js"></script>
-<![endif]-->
+<!-- page specific plugin scripts ../ace-master/-->
 <script src="../ace-master/assets/js/jquery-ui.custom.min.js"></script>
 <script src="../ace-master/assets/js/jquery.ui.touch-punch.min.js"></script>
 <script src="../ace-master/assets/js/jquery.easypiechart.min.js"></script>
@@ -287,16 +383,214 @@
 <script src="../ace-master/assets/js/jquery.flot.resize.min.js"></script>
 
 <!-- ace scripts -->
-<script src="../ace-master/assets/js/ace-elements.min.js"></script>
-<script src="../ace-master/assets/js/ace.min.js"></script>
+<script src="assets/js/ace-elements.min.js"></script>
+<script src="assets/js/ace.min.js"></script>
 
 <!-- inline scripts related to this page -->
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<script type="text/javascript">
+	//饼状图
+
+	var dom = document.getElementById("container");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+		backgroundColor: '#FFFFFF',
+
+		title: {
+			text: '商品热度',
+			left: 'center',
+			top: 20,
+			textStyle: {
+				color: '#171717'
+			}
+		},
+
+		tooltip: {
+			trigger: 'item',
+			formatter: "{a} <br/>{b} : {c} ({d}%)"
+		},
+
+		visualMap: {
+			show: false,
+			min: 80,
+			max: 1000,
+			inRange: {
+				colorLightness: [0, 1]
+			}
+		},
+		series: [{
+			name: '',
+			type: 'pie',
+			radius: '55%',
+			center: ['50%', '50%'],
+			data: [{
+				value: 335,
+				name: '商品名1'
+			},
+				{
+					value: 310,
+					name: '商品名2'
+				},
+				{
+					value: 274,
+					name: '商品名3'
+				},
+				{
+					value: 235,
+					name: '商品名4'
+				},
+				{
+					value: 400,
+					name: '商品名5'
+				}
+			].sort(function(a, b) {
+				return a.value - b.value;
+			}),
+			roseType: 'radius',
+			label: {
+				normal: {
+					textStyle: {
+						color: 'rgba(23, 23, 23, 0.5)'
+					}
+				}
+			},
+			labelLine: {
+				normal: {
+					lineStyle: {
+						color: 'rgba(23, 23, 23, 0.5)'
+					},
+					smooth: 0.2,
+					length: 10,
+					length2: 20
+				}
+			},
+			itemStyle: {
+				normal: {
+					color: '#c23531',
+					shadowBlur: 200,
+					shadowColor: 'rgba(0, 0, 0, 0.5)'
+				}
+			},
+
+			animationType: 'scale',
+			animationEasing: 'elasticOut',
+			animationDelay: function(idx) {
+				return Math.random() * 200;
+			}
+		}]
+	};;
+	if (option && typeof option === "object") {
+		myChart.setOption(option, true);
+	}
+</script>
+
+<script type="text/javascript">
+	// 点击消失
+	$(document).ready(function() {
+		$("#closealert").click(function() {
+			$("#alert1").hide();
+		});
+	});
+</script>
+
+<script type="text/javascript">
+	// 柱状图
+	var dom = document.getElementById("containerzhu");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	app.title = '坐标轴刻度与标签对齐';
+
+	option = {
+		title: {
+			text: '设备销售额',
+			left: 'center',
+			top: 20,
+			textStyle: {
+				color: '#171717'
+			}
+		},
+		color: ['#3398DB'],
+		tooltip: {
+			trigger: 'axis',
+			axisPointer: { // 坐标轴指示器，坐标轴触发有效
+				type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+			}
+		},
+		grid: {
+			left: '3%',
+			right: '4%',
+			bottom: '3%',
+			containLabel: true
+		},
+		xAxis: [{
+			type: 'category',
+			data: ['ID1', 'ID2', 'ID3', 'ID4', 'ID5', 'ID6', 'ID7'],
+			axisTick: {
+				alignWithLabel: true
+			}
+		}],
+		yAxis: [{
+			type: 'value'
+		}],
+		series: [{
+			name: '',
+			type: 'bar',
+			barWidth: '60%',
+			data: [10, 52, 200, 334, 390, 330, 220]
+		}]
+	};;
+	if (option && typeof option === "object") {
+		myChart.setOption(option, true);
+	}
+</script>
+<script type="text/javascript">
+	// 折线图
+	var dom = document.getElementById("containerzhe");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+		title: {
+			text: '日销售额',
+			left: 'center',
+			top: 20,
+			textStyle: {
+				color: '#171717'
+			}
+		},
+		xAxis: {
+			type: 'category',
+			data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+		},
+		yAxis: {
+			type: 'value'
+		},
+		series: [{
+			data: [820, 932, 901, 934, 1290, 1330, 1320],
+			type: 'line',
+			smooth: true
+		}]
+	};;
+	if (option && typeof option === "object") {
+		myChart.setOption(option, true);
+	}
+</script>
 <script type="text/javascript">
 	jQuery(function($) {
-		$('.easy-pie-chart.percentage').each(function() {
+		$('.easy-pie-chart.percentage').each(function(){
 			var $box = $(this).closest('.infobox');
-			var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') :
-					'rgba(255,255,255,0.95)');
+			var barColor = $(this).data('color') || (!$box.hasClass('infobox-dark') ? $box.css('color') : 'rgba(255,255,255,0.95)');
 			var trackColor = barColor == 'rgba(255,255,255,0.95)' ? 'rgba(255,255,255,0.25)' : '#E2E2E2';
 			var size = parseInt($(this).data('size')) || 50;
 			$(this).easyPieChart({
@@ -304,21 +598,22 @@
 				trackColor: trackColor,
 				scaleColor: false,
 				lineCap: 'butt',
-				lineWidth: parseInt(size / 10),
+				lineWidth: parseInt(size/10),
 				animate: ace.vars['old_ie'] ? false : 1000,
 				size: size
 			});
 		})
 
-		$('.sparkline').each(function() {
+		$('.sparkline').each(function(){
 			var $box = $(this).closest('.infobox');
 			var barColor = !$box.hasClass('infobox-dark') ? $box.css('color') : '#FFF';
-			$(this).sparkline('html', {
-				tagValuesAttribute: 'data-values',
-				type: 'bar',
-				barColor: barColor,
-				chartRangeMin: $(this).data('min') || 0
-			});
+			$(this).sparkline('html',
+					{
+						tagValuesAttribute:'data-values',
+						type: 'bar',
+						barColor: barColor ,
+						chartRangeMin:$(this).data('min') || 0
+					});
 		});
 
 
@@ -326,43 +621,20 @@
 		//but sometimes it brings up errors with normal resize event handlers
 		$.resize.throttleWindow = false;
 
-		var placeholder = $('#piechart-placeholder').css({
-			'width': '90%',
-			'min-height': '150px'
-		});
-		var data = [{
-			label: "social networks",
-			data: 38.7,
-			color: "#68BC31"
-		},
-			{
-				label: "search engines",
-				data: 24.5,
-				color: "#2091CF"
-			},
-			{
-				label: "ad campaigns",
-				data: 8.2,
-				color: "#AF4E96"
-			},
-			{
-				label: "direct traffic",
-				data: 18.6,
-				color: "#DA5430"
-			},
-			{
-				label: "other",
-				data: 10,
-				color: "#FEE074"
-			}
+		var placeholder = $('#piechart-placeholder').css({'width':'90%' , 'min-height':'150px'});
+		var data = [
+			{ label: "social networks",  data: 38.7, color: "#68BC31"},
+			{ label: "search engines",  data: 24.5, color: "#2091CF"},
+			{ label: "ad campaigns",  data: 8.2, color: "#AF4E96"},
+			{ label: "direct traffic",  data: 18.6, color: "#DA5430"},
+			{ label: "other",  data: 10, color: "#FEE074"}
 		]
-
 		function drawPieChart(placeholder, data, position) {
 			$.plot(placeholder, data, {
 				series: {
 					pie: {
 						show: true,
-						tilt: 0.8,
+						tilt:0.8,
 						highlight: {
 							opacity: 0.25
 						},
@@ -377,8 +649,9 @@
 					show: true,
 					position: position || "ne",
 					labelBoxBorderColor: null,
-					margin: [-30, 15]
-				},
+					margin:[-30,15]
+				}
+				,
 				grid: {
 					hoverable: true,
 					clickable: true
@@ -399,17 +672,14 @@
 		var $tooltip = $("<div class='tooltip top in'><div class='tooltip-inner'></div></div>").hide().appendTo('body');
 		var previousPoint = null;
 
-		placeholder.on('plothover', function(event, pos, item) {
-			if (item) {
+		placeholder.on('plothover', function (event, pos, item) {
+			if(item) {
 				if (previousPoint != item.seriesIndex) {
 					previousPoint = item.seriesIndex;
-					var tip = item.series['label'] + " : " + item.series['percent'] + '%';
+					var tip = item.series['label'] + " : " + item.series['percent']+'%';
 					$tooltip.show().children(0).text(tip);
 				}
-				$tooltip.css({
-					top: pos.pageY + 10,
-					left: pos.pageX + 10
-				});
+				$tooltip.css({top:pos.pageY + 10, left:pos.pageX + 10});
 			} else {
 				$tooltip.hide();
 				previousPoint = null;
@@ -441,32 +711,17 @@
 		}
 
 
-		var sales_charts = $('#sales-charts').css({
-			'width': '100%',
-			'height': '220px'
-		});
-		$.plot("#sales-charts", [{
-			label: "Domains",
-			data: d1
-		},
-			{
-				label: "Hosting",
-				data: d2
-			},
-			{
-				label: "Services",
-				data: d3
-			}
+		var sales_charts = $('#sales-charts').css({'width':'100%' , 'height':'220px'});
+		$.plot("#sales-charts", [
+			{ label: "Domains", data: d1 },
+			{ label: "Hosting", data: d2 },
+			{ label: "Services", data: d3 }
 		], {
 			hoverable: true,
 			shadowSize: 0,
 			series: {
-				lines: {
-					show: true
-				},
-				points: {
-					show: true
-				}
+				lines: { show: true },
+				points: { show: true }
 			},
 			xaxis: {
 				tickLength: 0
@@ -478,19 +733,14 @@
 				tickDecimals: 3
 			},
 			grid: {
-				backgroundColor: {
-					colors: ["#fff", "#fff"]
-				},
+				backgroundColor: { colors: [ "#fff", "#fff" ] },
 				borderWidth: 1,
-				borderColor: '#555'
+				borderColor:'#555'
 			}
 		});
 
 
-		$('#recent-box [data-rel="tooltip"]').tooltip({
-			placement: tooltip_placement
-		});
-
+		$('#recent-box [data-rel="tooltip"]').tooltip({placement: tooltip_placement});
 		function tooltip_placement(context, source) {
 			var $source = $(source);
 			var $parent = $source.closest('.tab-content')
@@ -500,7 +750,7 @@
 			var off2 = $source.offset();
 			//var w2 = $source.width();
 
-			if (parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2)) return 'right';
+			if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
 			return 'left';
 		}
 
@@ -513,30 +763,31 @@
 		//Android's default browser somehow is confused when tapping on label which will lead to dragging the task
 		//so disable dragging when clicking on label
 		var agent = navigator.userAgent.toLowerCase();
-		if (ace.vars['touch'] && ace.vars['android']) {
-			$('#tasks').on('touchstart', function(e) {
+		if(ace.vars['touch'] && ace.vars['android']) {
+			$('#tasks').on('touchstart', function(e){
 				var li = $(e.target).closest('#tasks li');
-				if (li.length == 0) return;
+				if(li.length == 0)return;
 				var label = li.find('label.inline').get(0);
-				if (label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation();
+				if(label == e.target || $.contains(label, e.target)) e.stopImmediatePropagation() ;
 			});
 		}
 
 		$('#tasks').sortable({
-			opacity: 0.8,
-			revert: true,
-			forceHelperSize: true,
-			placeholder: 'draggable-placeholder',
-			forcePlaceholderSize: true,
-			tolerance: 'pointer',
-			stop: function(event, ui) {
-				//just for Chrome!!!! so that dropdowns on items don't appear below other items after being moved
-				$(ui.item).css('z-index', 'auto');
-			}
-		});
+					opacity:0.8,
+					revert:true,
+					forceHelperSize:true,
+					placeholder: 'draggable-placeholder',
+					forcePlaceholderSize:true,
+					tolerance:'pointer',
+					stop: function( event, ui ) {
+						//just for Chrome!!!! so that dropdowns on items don't appear below other items after being moved
+						$(ui.item).css('z-index', 'auto');
+					}
+				}
+		);
 		$('#tasks').disableSelection();
-		$('#tasks input:checkbox').removeAttr('checked').on('click', function() {
-			if (this.checked) $(this).closest('li').addClass('selected');
+		$('#tasks input:checkbox').removeAttr('checked').on('click', function(){
+			if(this.checked) $(this).closest('li').addClass('selected');
 			else $(this).closest('li').removeClass('selected');
 		});
 
@@ -550,7 +801,11 @@
 				$(this).addClass('dropup');
 			else $(this).removeClass('dropup');
 		});
-
+		$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
+			e.stopImmediatePropagation();
+			e.stopPropagation();
+			e.preventDefault();
+		});
 	})
 </script>
 </body>
