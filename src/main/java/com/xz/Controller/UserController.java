@@ -19,25 +19,6 @@ public class UserController {
     @Autowired//自动注入&获取对象
     private UserService userService;
 
-//    @RequestMapping("/login")
-//    //@ResponseBody
-//    public String login(@ModelAttribute("user") User user, HttpSession session) {
-//
-//        //前置处理
-//        if (user.getPassword() == null || user.getPassword() == "") {
-//            return "redirect:/jsp/login.jsp";
-//        }
-//
-//        user = userService.get(user);
-//        if (user != null) {
-//            System.out.println("login  success");
-//            session.setAttribute("SESSION_USER", user);
-//            return "index-fix";
-//        } else {
-//            return "redirect:/jsp/login.jsp";
-//        }
-//    }
-
     @RequestMapping("/login")
     @ResponseBody
     public Map<String,String> login(@RequestBody User user,HttpSession session){
@@ -59,10 +40,38 @@ public class UserController {
         return map;
     }
 
-    @RequestMapping("/register")
-    public String register(@ModelAttribute("user") User user, HttpSession session) {
-        User u = new User();
+//    @RequestMapping("/register")
+//    public String register(@ModelAttribute("user") User user, HttpSession session) {
+//        User u = new User();
+//
+//        System.out.println(user.getPassword() + user.getAddr() + user.getTel());
+//
+//        u.setUsername(user.getUsername());
+//        u.setPassword(user.getPassword());
+//        u.setTel(user.getTel());
+//        u.setRole(user.getRole());
+//        u.setEmail(user.getEmail());
+//        u.setAddr(user.getAddr());
+//
+//        Date date = new Date();
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        u.setCreate_date(sdf.format(date));
+//
+//        Calendar cal = Calendar.getInstance();
+//        cal.setTime(date);
+//        cal.add(Calendar.YEAR, 1);
+//        date = cal.getTime();
+//        u.setEnd_date(sdf.format(date));
+//
+//        userService.insert_register(u);
+//        System.out.println("注册成功！！！");
+//        return "redirect:/jsp/login.jsp";
+//    }
 
+    @RequestMapping("/register")
+    @ResponseBody
+    public Map<String,String> register(@RequestBody User user){
+        User u = new User();
         System.out.println(user.getPassword() + user.getAddr() + user.getTel());
 
         u.setUsername(user.getUsername());
@@ -84,8 +93,9 @@ public class UserController {
 
         userService.insert_register(u);
         System.out.println("注册成功！！！");
-        return "redirect:/jsp/login.jsp";
-
+        Map<String, String > map = new HashMap<>();
+        map.put("register","success");
+        return map;
     }
 
 
@@ -94,7 +104,7 @@ public class UserController {
     @ResponseBody
     public Map<String, Integer> checkName(@RequestBody User user) {
         Map<String, Integer> map = new HashMap<>();
-        System.out.println("传入的 username"+user.getUsername());
+        System.out.println("传入的 username  "+user.getUsername());
         //表示不重名
         int code = 400;
         User u=new User();
