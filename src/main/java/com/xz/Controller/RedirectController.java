@@ -45,7 +45,8 @@ public class RedirectController {
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("SESSION_USER");
         if(user.getRole().equals("ACE")){
-            return "redirect:/jsp/user-manager.jsp";
+            //return "redirect:/jsp/user-manager.jsp";
+            return "redirect:/user/getUserList";
         }
         else if(user.getRole().equals("FIX")){
             return "redirect:/jsp/user-fix.jsp";

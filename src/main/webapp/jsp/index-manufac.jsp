@@ -142,7 +142,7 @@
 
 			<!-- 商品管理 -->
 			<li class="">
-				<a href="merchandise-manufac.html">
+				<a href="${ctx}/redirectTo/merchandise">
 					<i class="menu-icon fa fa-th-list">
 							<span class="menu-text" style="font-family: microsoft yahei">
 								商品管理
@@ -182,7 +182,7 @@
 			<!-- 个人中心 -->
 			<li class="">
 
-				<a href="user-manufac.html">
+				<a href="${ctx}/redirectTo/user">
 					<i class="menu-icon fa fa-user">
 							<span class="menu-text"style="font-family: microsoft yahei"> 
 								个人中心
