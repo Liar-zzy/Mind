@@ -66,7 +66,7 @@
 
 									<small>Welcome,</small>
                             <!-- 此处名字可以替换 -->
-									Jason
+									${SESSION_USER.username}
 								</span>
 
                         <i class="ace-icon fa fa-caret-down"></i>
@@ -76,7 +76,7 @@
 
                         <li>
                             <!-- 个人中心 -->
-                            <a href="user-fix.html">
+                            <a href="${ctx}/redirectTo/user">
                                 <i class="ace-icon fa fa-user" style="font-family: microsoft yahei"></i>
                                 个人中心
                             </a>
@@ -166,7 +166,7 @@
             <!-- 个人中心 -->
             <li class="active">
 
-                <a href="user-fix.html">
+                <a href="${ctx}/redirectTo/user">
                     <i class="menu-icon fa fa-user">
 								<span class="menu-text" style="font-family: microsoft yahei">
 									个人中心

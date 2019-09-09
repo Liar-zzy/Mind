@@ -4,8 +4,8 @@
 
     <select id="select" resultType="com.xz.pojo.User">
         select * from j2ee.user
-        where user.username = #{username}
-        and user.password = #{password}
+        where username = #{username}
+        and password = #{password}
     </select>
 
     <insert id="insert" parameterType="com.xz.pojo.User">
