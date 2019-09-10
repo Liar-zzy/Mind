@@ -27,4 +27,16 @@ public class M_merchandiseServiceImpl implements M_merchandiseService {
         List<M_merchandise> list = m_merchandiseMapper.select_allM_merchandise(machineId);
         return list;
     }
+
+    @Override
+    public boolean deleteAM_merchandise(int machineId) {
+        int row = m_merchandiseMapper.delete_AM_merchandise(machineId);
+        return row == 1 ? true:false;
+    }
+
+    @Override
+    public boolean updateAM_merchandise(M_merchandise m_merchandise) {
+        int row = m_merchandiseMapper.update_AM_merchandise(m_merchandise);
+        return row == 1 ? true:false;
+    }
 }

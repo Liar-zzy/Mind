@@ -60,4 +60,13 @@ public class OrderController {
             return "data-all-manufac";
         }
     }
+
+    @RequestMapping("/deleteAnOrder")
+    public String deleteAnOrder(){
+        boolean success;
+        success = orderService.deleteAnOrder(1);
+        if(success == true) System.out.println("delete order success");
+        else System.out.println("delete order fail");
+        return "xxx";
+    }
 }

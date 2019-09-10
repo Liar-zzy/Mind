@@ -15,4 +15,8 @@ public interface UserService {
     User selectExist(User u);
 
     List<User> selectAllUser();
+
+    boolean deleteAUser(String username);
+
+    boolean updateAUser(User user);
 }

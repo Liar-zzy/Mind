@@ -6,7 +6,9 @@ import com.xz.service.MachineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
@@ -52,4 +54,22 @@ public class MachineController {
         return "machine";
     }
 
+    @RequestMapping("/deleteAMachine")
+    public String deleteAMachine(){
+        boolean success;
+        success = machineService.deleteAMachine(1);
+        if(success == true) System.out.println("delete machine success");
+        else System.out.println("delete machine fail");
+        return "xxx";
+    }
+
+    @RequestMapping("/updateAMachine")
+    @ResponseBody
+    public String updateAMerchandise(@RequestBody Machine machine){
+        boolean success;
+        success = machineService.updateAMachine(machine);
+        if(success == true) System.out.println("update Machine success");
+        else System.out.println("update Machine fail");
+        return "xxx";
+    }
 }

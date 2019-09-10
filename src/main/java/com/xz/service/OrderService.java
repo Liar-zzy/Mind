@@ -9,4 +9,6 @@ public interface OrderService {
     boolean add_Order(Order order);
 
     List<Order> selectAllOrder();
+
+    boolean deleteAnOrder(int oId);
 }

@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -58,5 +60,24 @@ public class MerchandiseController {
             System.out.println("merchandise-manufac");
             return "merchandise-manufac";
         }
+    }
+
+    @RequestMapping("/deleteAMerchandise")
+    public String deleteAMerchandise(){
+        boolean success;
+        success = merchandiseService.deleteAMerchandise(1);
+        if(success == true) System.out.println("delete merchandise success");
+        else System.out.println("delete merchandise fail");
+        return "xxx";
+    }
+
+    @RequestMapping("/updateAMerchandise")
+    @ResponseBody
+    public String updateAMerchandise(@RequestBody Merchandise merchandise){
+        boolean success;
+        success = merchandiseService.updateAMerchandise(merchandise);
+        if(success == true) System.out.println("update Merchandise success");
+        else System.out.println("update Merchandise fail");
+        return "xxx";
     }
 }

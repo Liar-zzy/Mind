@@ -10,4 +10,8 @@ public interface MachineService {
     boolean add_machine(Machine machine);
 
     List<Machine> selectAllMachine();
+
+    boolean deleteAMachine(int machineId);
+
+    boolean updateAMachine(Machine machine);
 }

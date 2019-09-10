@@ -11,4 +11,9 @@
     <select id="select_allOrder" resultType="com.xz.pojo.Order">
         select  o_id, item_id, merchandise_id, machine_id, o_price, o_num, date as Date from j2ee.order;
     </select>
+
+    <delete id="delete_AnOrder" parameterType="int">
+        delete from j2ee.order where o_id = #{oId}
+    </delete>
+
 </mapper>
