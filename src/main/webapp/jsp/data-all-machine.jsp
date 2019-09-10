@@ -328,25 +328,24 @@
 
 							<!-- jsp 循环输入  改一下 各个变量名 然后循环 -->
 							<tbody>
-							<tr>
-								<td class="center">
-									<label class="pos-rel">
-										<input type="checkbox" class="ace" />
-										<span class="lbl"></span>
-									</label>
-								</td>
+							<c:forEach items="${ListAllOrder}" var="obj">
+								<tr>
+									<td class="center">
+										<label class="pos-rel">
+											<input type="checkbox" class="ace"/>
+											<span class="lbl"></span>
+										</label>
+									</td>
+									<td>${obj.o_id}</td>
+									<td>${obj.item_id}</td>
+									<td>${obj.merchandise_id}</td>
+									<td>${obj.machine_id}</td>
+									<td>${obj.o_price}</td>
+									<td>${obj.o_num}</td>
+									<td>${obj.date}</td>
+								</tr>
+							</c:forEach>
 
-								<td>
-									订单ID1
-								</td>
-								<td> 货道1</td>
-								<td>商品id1</td>
-								<td>设备id1</td>
-								<td class="hidden-480"> 价格1 id1</td>
-
-								<td> 数量1 </td>
-								<td class="hidden-480"> 日期1</td>
-							</tr>
 							</tbody>
 
 

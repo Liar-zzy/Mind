@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh">
@@ -368,7 +369,6 @@
                         </div>
                     </div><!-- modal-dialog -->
                 </div>
-
                 <!-- 表格的绘制 -->
                 <div class="row">
                     <div class="col">
@@ -411,6 +411,7 @@
                     </div><!-- 表格的头部  结束-->
 
 
+
                     <!-- 表格主体部分 -->
                     <div>
                         <table id="dynamic-table" class="table table-striped table-bordered table-hover">
@@ -433,46 +434,27 @@
 
 
                             </tr>
+
                             </thead>
 
                             <!-- jsp 循环输入  改一下 各个变量名 然后循环 -->
                             <tbody>
-                            <tr>
-                                <td class="center">
-                                    <label class="pos-rel">
-                                        <input type="checkbox" class="ace"/>
-                                        <span class="lbl"></span>
-                                    </label>
-                                </td>
-
-                                <td>
-                                    id 1
-                                </td>
-                                <td> 名1</td>
-
-                                <td>价格 1</td>
-
-
-                                <td> 生产商1</td>
-                                <td class="hidden-480"> 上货时间1</td>
-                                <td class="hidden-480"> 库存1</td>
-
-                            </tr>
-
-                            <tr>
-                                <td class="center">
-                                    <label class="pos-rel">
-                                        <input type="checkbox" class="ace"/>
-                                        <span class="lbl"></span>
-                                    </label>
-                                </td>
-                                <td>id 2</td>
-                                <td> 名2</td>
-                                <td>价格 2</td>
-                                <td> 生产商2</td>
-                                <td class="hidden-480"> 上货时间2</td>
-                                <td class="hidden-480"> 库存2</td>
-                            </tr>
+                            <c:forEach items="${ListAllMerchandise}" var="obj">
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace"/>
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>${obj.merchandiseId}</td>
+                                    <td>${obj.name}</td>
+                                    <td>${obj.price}</td>
+                                    <td>${obj.manufactureId}</td>
+                                    <td>${obj.date}</td>
+                                    <td>${obj.inventory}</td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>

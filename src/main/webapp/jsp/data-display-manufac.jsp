@@ -178,7 +178,7 @@
 			<!-- 个人中心 -->
 			<li class="">
 
-				<a href="user-manufac.html">
+				<a href="${ctx}/redirectTo/user">
 					<i class="menu-icon fa fa-user">
 							<span class="menu-text"style="font-family: microsoft yahei">
 								个人中心

@@ -66,17 +66,24 @@ public class RedirectController {
     public String merchandiseRedirect(HttpServletRequest request){
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("SESSION_USER");
+
         if(user.getRole().equals("ACE")){
-            return "redirect:/jsp/merchandise.jsp";
+            System.out.println("merchandise Redirect + ACE");
+            return "redirect:/Merchandise/getAllMerchandise";
         }
         else if(user.getRole().equals("FIX")){
+            System.out.println("merchandise Redirect + FIX");
             return "redirect:";
         }
         else if(user.getRole().equals("MAC")){
-            return "redirect:/jsp/merchandise-machine.jsp";
+            System.out.println("merchandise Redirect + MAC");
+
+            return "redirect:/Merchandise/getAllMerchandise";
         }
         else {
-            return "redirect:/jsp/merchandise-manufac.jsp";
+
+            System.out.println("merchandise Redirect + CH");
+            return "redirect:/Merchandise/getAllMerchandise";
         }
     }
 
@@ -88,7 +95,7 @@ public class RedirectController {
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("SESSION_USER");
         if(user.getRole().equals("ACE")){
-            return "redirect:/jsp/machine.jsp";
+            return "redirect:/machine/getMachineList";
         }
         else if(user.getRole().equals("FIX")){
             return "redirect:";
@@ -131,16 +138,16 @@ public class RedirectController {
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("SESSION_USER");
         if(user.getRole().equals("ACE")){
-            return "redirect:/jsp/data-all-admin.jsp";
+            return "redirect:/order/getOrderList";
         }
         else if(user.getRole().equals("FIX")){
             return "redirect:/.jsp";
         }
         else if(user.getRole().equals("MAC")){
-            return "redirect:/jsp/data-all-machine.jsp";
+            return "redirect:/order/getOrderList";
         }
         else {
-            return "redirect:/jsp/data-all-manufac.jsp";
+            return "redirect:/order/getOrderList";
         }
     }
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh">
@@ -479,7 +480,7 @@
 						<div class="modal-body">
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>商品ID</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span style="color: #FF0000;">*</span>商品ID</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
 									</div>
@@ -488,7 +489,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>名</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span style="color: #FF0000;">*</span>名</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
 									</div>
@@ -497,7 +498,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>类型</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-3"> <span style="color: #FF0000;">*</span>类型</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-3" class="col-xs-10 col-sm-5" placeholder=" "/>
 									</div>
@@ -506,7 +507,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-8"> <span style="color: #FF0000;">*</span>屏幕</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-8"> <span style="color: #FF0000;">*</span>屏幕</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-8" class="col-xs-10 col-sm-5" placeholder=" "/>
 									</div>
@@ -515,7 +516,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-4 "><span style="color: #FF0000;">*</span>持有人id</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-4"><span style="color: #FF0000;">*</span>持有人id</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-4" class="col-xs-10 col-sm-5" placeholder=" "/>
 									</div>
@@ -524,7 +525,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>货道数量</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span style="color: #FF0000;">*</span>货道数量</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
 									</div>
@@ -533,7 +534,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-6"> <span style="color: #FF0000;">*</span>货道容量</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-6"> <span style="color: #FF0000;">*</span>货道容量</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-6" class="col-xs-10 col-sm-5" />
 									</div>
@@ -542,7 +543,7 @@
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-7"> <span style="color: #FF0000;">*</span>gps</label>
+									<label class="col-sm-3 control-label no-padding-right" for="form-field-7"> <span style="color: #FF0000;">*</span>gps</label>
 									<div class="col-sm-9">
 										<input type="text" id="form-field-7" class="col-xs-10 col-sm-5" />
 									</div>
@@ -567,28 +568,6 @@
 
 							<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
 							<a href="" class=""> 请选择操作 </a>
-							<button class="btn btn-white btn-info btn-bold" data-toggle="modal" data-target="#add-modal">
-								<i class="ace-icon fa fa-plus bigger-120 blue"></i>
-								<span style="font-family: microsoft yahei">
-											添加商品
-										</span>
-
-							</button>
-
-							<button class="btn btn-white btn-info btn-bold" data-toggle="modal" data-target="#manage-modal">
-								<i class="ace-icon fa fa-cog bigger-120 blue"></i>
-								<span style="font-family: microsoft yahei">
-											管理商品
-										</span>
-
-							</button>
-
-							<button class="btn btn-white btn-default btn-round"data-toggle="modal" data-target="#alter-modal">
-								<i class="ace-icon fa fa-pencil-square-o red2"></i>
-								<span style="font-family: microsoft yahei">
-											修改商品
-										</span>
-							</button>
 
 							<button class="btn btn-white btn-warning btn-bold">
 								<i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
@@ -631,96 +610,23 @@
 
 							<!-- jsp 循环输入  改一下 各个变量名 然后循环 -->
 							<tbody>
-							<tr>
-								<td class="center">
-									<label class="pos-rel">
-										<input type="checkbox" class="ace" />
-										<span class="lbl"></span>
-									</label>
-								</td>
-
-								<td>
-									id 1
-								</td>
-								<td> 名1</td>
-
-								<td>价格 1</td>
-
-
-								<td> 生产商1 </td>
-								<td class="hidden-480"> 上货时间1 </td>
-								<td class="hidden-480"> 库存1</td>
-								<!-- <td>
-                                    <div class="hidden-sm hidden-xs action-buttons">
-                                        <a class="blue" href="#">
-                                            <i class="ace-icon fa fa-search-plus bigger-130"></i>
-                                            管理商品
-                                        </a>
-
-
-                                    </div>
-
-                                    <div class="hidden-md hidden-lg">
-                                        <div class="inline pos-rel">
-                                            <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                                                <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
-                                            </button>
-
-                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                                <li>
-                                                    <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-                                                        <span class="blue">
-                                                            <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                                                            管理商品
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td> -->
-
-								<!-- <td>
-                                    <div class="hidden-sm hidden-xs action-buttons">
-                                        <a class="blue" href="#">
-                                            <i class="ace-icon fa fa-search-plus bigger-130"></i>
-                                        </a>
-
-                                        <a class="green" href="#">
-                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                        </a>
-
-                                        <a class="red" href="#">
-                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                                        </a>
-                                    </div>
-                                </td> -->
-							</tr>
-
-							<tr>
-								<td class="center">
-									<label class="pos-rel">
-										<input type="checkbox" class="ace" />
-										<span class="lbl"></span>
-									</label>
-								</td>
-
-								<td>
-									id 2
-								</td>
-								<td> 名2</td>
-
-								<td>价格 2</td>
-
-
-								<td> 生产商2</td>
-								<td class="hidden-480"> 上货时间2 </td>
-								<td class="hidden-480"> 库存2</td>
-
-							</tr>
+							<c:forEach items="${ListAllMerchandise}" var="obj">
+								<tr>
+									<td class="center">
+										<label class="pos-rel">
+											<input type="checkbox" class="ace"/>
+											<span class="lbl"></span>
+										</label>
+									</td>
+									<td>${obj.merchandiseId}</td>
+									<td>${obj.name}</td>
+									<td>${obj.price}</td>
+									<td>${obj.manufactureId}</td>
+									<td>${obj.date}</td>
+									<td>${obj.inventory}</td>
+								</tr>
+							</c:forEach>
 							</tbody>
-
-
 						</table>
 					</div>
 

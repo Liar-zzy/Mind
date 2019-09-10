@@ -9,7 +9,7 @@
     </select>
 
     <insert id="insert" parameterType="com.xz.pojo.User">
-        insert into j2ee.user(username, password, role, tel, email, addr, create_date, end_date) values(
+        insert into j2ee.user(username, password, role, tel, email, addr, createdate, enddate) values(
         #{u.username},#{u.password},#{u.role},#{u.tel},#{u.email},#{u.addr},#{u.createDate},#{u.endDate}
         )
     </insert>

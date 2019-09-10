@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh">
@@ -327,115 +328,28 @@
 
                             <!-- jsp 循环输入  改一下 各个变量名 然后循环 -->
                             <tbody>
-                            <tr>
-                                <td class="center">
-                                    <label class="pos-rel">
-                                        <input type="checkbox" class="ace" />
-                                        <span class="lbl"></span>
-                                    </label>
-                                </td>
-
-                                <td>
-                                    id 1
-                                </td>
-                                <td> 名1</td>
-
-                                <td>价格 1</td>
-
-
-                                <td> 生产商1 </td>
-                                <td class="hidden-480"> 上货时间1 </td>
-                                <td class="hidden-480"> 库存1</td>
-                                <!-- <td>
-                                    <div class="hidden-sm hidden-xs action-buttons">
-                                        <a class="blue" href="#">
-                                            <i class="ace-icon fa fa-search-plus bigger-130"></i>
-                                            管理商品
-                                        </a>
-
-
-                                    </div>
-
-                                    <div class="hidden-md hidden-lg">
-                                        <div class="inline pos-rel">
-                                            <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
-                                                <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
-                                            </button>
-
-                                            <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
-                                                <li>
-                                                    <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-                                                        <span class="blue">
-                                                            <i class="ace-icon fa fa-search-plus bigger-120"></i>
-                                                            管理商品
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </td> -->
-
-                                <!-- <td>
-                                    <div class="hidden-sm hidden-xs action-buttons">
-                                        <a class="blue" href="#">
-                                            <i class="ace-icon fa fa-search-plus bigger-130"></i>
-                                        </a>
-
-                                        <a class="green" href="#">
-                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
-                                        </a>
-
-                                        <a class="red" href="#">
-                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
-                                        </a>
-                                    </div>
-                                </td> -->
-                            </tr>
-
-                            <tr>
-                                <td class="center">
-                                    <label class="pos-rel">
-                                        <input type="checkbox" class="ace" />
-                                        <span class="lbl"></span>
-                                    </label>
-                                </td>
-
-                                <td>
-                                    id 2
-                                </td>
-                                <td> 名2</td>
-
-                                <td>价格 2</td>
-
-
-                                <td> 生产商2</td>
-                                <td class="hidden-480"> 上货时间2 </td>
-                                <td class="hidden-480"> 库存2</td>
-
-                            </tr>
+                            <c:forEach items="${ListAllMerchandise}" var="obj">
+                                <tr>
+                                    <td class="center">
+                                        <label class="pos-rel">
+                                            <input type="checkbox" class="ace"/>
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </td>
+                                    <td>${obj.merchandiseId}</td>
+                                    <td>${obj.name}</td>
+                                    <td>${obj.price}</td>
+                                    <td>${obj.manufactureId}</td>
+                                    <td>${obj.date}</td>
+                                    <td>${obj.inventory}</td>
+                                </tr>
+                            </c:forEach>
                             </tbody>
-
-
                         </table>
                     </div>
-
-
-
-
-
-
                 </div>
             </div>
-
-
-
-
-
-
-
         </div><!-- page-content -->
-
     </div>
 </div>
 <!-- 页面脚底 -->
