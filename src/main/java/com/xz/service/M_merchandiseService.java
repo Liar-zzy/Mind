@@ -8,5 +8,5 @@ public interface M_merchandiseService {
 
     boolean add_M_merchandise(M_merchandise m_merchandise);
 
-    List<M_merchandise> selectAllM_merchandise();
+    List<M_merchandise> selectAllM_merchandise(int machineId);
 }

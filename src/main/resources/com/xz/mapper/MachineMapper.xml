@@ -3,12 +3,13 @@
 <mapper namespace="com.xz.mapper.MachineMapper">
 
     <insert id="addMachine" parameterType="com.xz.pojo.Machine">
-        insert into j2ee.machine values (#{m.machine_id},#{m.name},#{m.type},#{m.screen},#{m.possessor},#{m.item_num},
+        insert into j2ee.machine values (#{m.machineId},#{m.name},#{m.type},#{m.screen},#{m.possessor},#{m.itemNum},
         #{m.capacity},#{m.gps},#{m.addr},#{m.distriDate},#{m.endDate},#{m.state})
     </insert>
 
     <select id="select_allMachine" resultType="com.xz.pojo.Machine">
-        select machine_id, name, type, screen, possessor, item_num, capacity, gps, addr, distridate as distriDate, enddate as endDate, state from j2ee.machine;
+        select machine_id, name, type, screen, possessor, item_num, capacity, gps, addr, distridate as distriDate,
+         enddate as endDate, state from j2ee.machine;
     </select>
 
 

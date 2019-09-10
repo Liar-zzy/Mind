@@ -8,7 +8,7 @@ public class Merchandise {
 
     private double price;
 
-    private int manufactureId;
+    private String manufactureId;
 
     private String date;
 
@@ -27,11 +27,11 @@ public class Merchandise {
         this.merchandiseId = merchandiseId;
     }
 
-    public int getManufactureId() {
+    public String getManufactureId() {
         return manufactureId;
     }
 
-    public void setManufactureId(int manufactureId) {
+    public void setManufactureId(String manufactureId) {
         this.manufactureId = manufactureId;
     }
 

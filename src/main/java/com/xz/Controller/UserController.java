@@ -1,6 +1,5 @@
 package com.xz.Controller;
 
-
 import com.xz.pojo.User;
 import com.xz.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,5 +105,4 @@ public class UserController {
         System.out.println("list all user");
         return "user-manager";
     }
-
 }

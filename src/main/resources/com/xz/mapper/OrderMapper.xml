@@ -5,7 +5,7 @@
 
     <insert id="addOrder" parameterType="com.xz.pojo.Order">
         insert into j2ee.order(item_id, merchandise_id, machine_id, o_price, o_num, date) values
-        (#{o.item_id},#{o.merchandise_id},#{o.machine_id},#{o.o_price},#{o.o_num},#{o.date})
+        (#{o.oId},#{o.merchandiseId},#{o.machineId},#{o.oPrice},#{o.oNum},#{o.date})
     </insert>
 
     <select id="select_allOrder" resultType="com.xz.pojo.Order">

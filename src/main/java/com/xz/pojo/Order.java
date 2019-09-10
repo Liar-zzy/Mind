@@ -2,73 +2,73 @@ package com.xz.pojo;
 
 public class Order {
 
-    private int o_id;
+    private int oId;
 
-    private int item_id;
+    private int itemId;
 
-    private int merchandise_id;
+    private int merchandiseId;
 
-    private int machine_id;
+    private int machineId;
 
-    private double o_price;
+    private double oPrice;
 
-    private double o_num;
+    private double oNum;
 
-    private String Date;
+    private String date;
 
-    public int getO_id() {
-        return o_id;
+    public int getoId() {
+        return oId;
     }
 
-    public void setO_id(int o_id) {
-        this.o_id = o_id;
+    public void setoId(int oId) {
+        this.oId = oId;
     }
 
-    public int getItem_id() {
-        return item_id;
+    public int getItemId() {
+        return itemId;
     }
 
-    public void setItem_id(int item_id) {
-        this.item_id = item_id;
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
-    public int getMerchandise_id() {
-        return merchandise_id;
+    public int getMerchandiseId() {
+        return merchandiseId;
     }
 
-    public void setMerchandise_id(int merchandise_id) {
-        this.merchandise_id = merchandise_id;
+    public void setMerchandiseId(int merchandiseId) {
+        this.merchandiseId = merchandiseId;
     }
 
-    public int getMachine_id() {
-        return machine_id;
+    public int getMachineId() {
+        return machineId;
     }
 
-    public void setMachine_id(int machine_id) {
-        this.machine_id = machine_id;
+    public void setMachineId(int machineId) {
+        this.machineId = machineId;
     }
 
-    public double getO_price() {
-        return o_price;
+    public double getoPrice() {
+        return oPrice;
     }
 
-    public void setO_price(double o_price) {
-        this.o_price = o_price;
+    public void setoPrice(double oPrice) {
+        this.oPrice = oPrice;
     }
 
-    public double getO_num() {
-        return o_num;
+    public double getoNum() {
+        return oNum;
     }
 
-    public void setO_num(double o_num) {
-        this.o_num = o_num;
+    public void setoNum(double oNum) {
+        this.oNum = oNum;
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(String date) {
-        Date = date;
+        this.date = date;
     }
 }

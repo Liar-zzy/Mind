@@ -4,11 +4,12 @@
 
 
     <insert id="addMerchandise" parameterType="com.xz.pojo.Merchandise">
-        insert into j2ee.merchandise values (#{mer.merchandise_id},#{mer.name},#{mer.price},
-        #{mer.manufacture_id},#{mer.date},#{mer.inventory});
+        insert into j2ee.merchandise values (#{mer.merchandiseId},#{mer.name},#{mer.price},
+        #{mer.manufactureId},#{mer.date},#{mer.inventory});
     </insert>
 
     <select id="select_allMerchandise" resultType="com.xz.pojo.Merchandise">
-        select merchandise_id, name, price, manufacturer_id, date as Date, inventory from j2ee.merchandise;
+        select merchandise_id, name, price, manufacturer as manufactureID, date as Date, inventory from j2ee.merchandise;
     </select>
+    
 </mapper>

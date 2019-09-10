@@ -23,8 +23,8 @@ public class M_merchandiseServiceImpl implements M_merchandiseService {
     }
 
     @Override
-    public List<M_merchandise> selectAllM_merchandise() {
-        List<M_merchandise> list = m_merchandiseMapper.select_allM_merchandise();
+    public List<M_merchandise> selectAllM_merchandise(int machineId) {
+        List<M_merchandise> list = m_merchandiseMapper.select_allM_merchandise(machineId);
         return list;
     }
 }

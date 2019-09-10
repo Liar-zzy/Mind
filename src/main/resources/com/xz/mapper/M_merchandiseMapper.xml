@@ -3,11 +3,11 @@
 <mapper namespace="com.xz.mapper.M_merchandiseMapper">
 
     <insert id="addM_merchandise" parameterType="com.xz.mapper.M_merchandiseMapper">
-        insert into j2ee.m_merchandise values (#{M_mer.machine_id},#{M_mer.merchandise_id},#{M_mer.margin},
-        #{M_mer.item_id},#{M_mer.sold_num},#{M_mer.sold_sum})
+        insert into j2ee.m_merchandise values (#{M_mer.machineId},#{M_mer.merchandiseId},#{M_mer.margin},
+        #{M_mer.itemId},#{M_mer.soldNum},#{M_mer.soldSum})
     </insert>
 
-    <select id="select_allM_merchandise" resultType="com.xz.pojo.M_merchandise">
-        select * from  j2ee.m_merchandise;
+    <select id="select_allM_merchandise" parameterType="int" resultType="com.xz.pojo.M_merchandise">
+        select * from  j2ee.m_merchandise where m_merchandise.machine_id = #{machineId};
     </select>
 </mapper>
