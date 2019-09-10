@@ -40,6 +40,34 @@ public class UserController {
         return map;
     }
 
+//    @RequestMapping("/register")
+//    public String register(@ModelAttribute("user") User user, HttpSession session) {
+//        User u = new User();
+//
+//        System.out.println(user.getPassword() + user.getAddr() + user.getTel());
+//
+//        u.setUsername(user.getUsername());
+//        u.setPassword(user.getPassword());
+//        u.setTel(user.getTel());
+//        u.setRole(user.getRole());
+//        u.setEmail(user.getEmail());
+//        u.setAddr(user.getAddr());
+//
+//        Date date = new Date();
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        u.setCreate_date(sdf.format(date));
+//
+//        Calendar cal = Calendar.getInstance();
+//        cal.setTime(date);
+//        cal.add(Calendar.YEAR, 1);
+//        date = cal.getTime();
+//        u.setEnd_date(sdf.format(date));
+//
+//        userService.insert_register(u);
+//        System.out.println("注册成功！！！");
+//        return "redirect:/jsp/login.jsp";
+//    }
+
     @RequestMapping("/register")
     @ResponseBody
     public Map<String,String> register(@RequestBody User user){
@@ -55,13 +83,13 @@ public class UserController {
 
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        u.setCreate_date(sdf.format(date));
+        u.setCreateDate(sdf.format(date));
 
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         cal.add(Calendar.YEAR, 1);
         date = cal.getTime();
-        u.setEnd_date(sdf.format(date));
+        u.setEndDate(sdf.format(date));
 
         userService.insert_register(u);
         System.out.println("注册成功！！！");
@@ -69,6 +97,7 @@ public class UserController {
         map.put("register","success");
         return map;
     }
+
 
     //注册时检查是否出现用户名重复
     @RequestMapping("/checkname")
@@ -93,7 +122,6 @@ public class UserController {
         return map;
     }
 
-    //得到用户列表
     @RequestMapping("/getUserList")
     public String SelectAllUser(Model model){
         List<User> list;
@@ -101,7 +129,7 @@ public class UserController {
         model.addAttribute("ListAllUser",list);
         for (int i = 0; i < list.size(); i++)
         {
-            System.out.println(list.get(i).getUsername());
+            System.out.println(list.get(i).getCreateDate());
         }
         System.out.println("list all user");
         return "user-manager";

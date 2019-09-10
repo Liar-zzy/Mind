@@ -10,7 +10,7 @@
 
     <insert id="insert" parameterType="com.xz.pojo.User">
         insert into j2ee.user(username, password, role, tel, email, addr, create_date, end_date) values(
-        #{u.username},#{u.password},#{u.role},#{u.tel},#{u.email},#{u.addr},#{u.create_date},#{u.end_date}
+        #{u.username},#{u.password},#{u.role},#{u.tel},#{u.email},#{u.addr},#{u.createDate},#{u.endDate}
         )
     </insert>
 
@@ -20,7 +20,7 @@
     </select>
 
     <select id="select_allUser" resultType="com.xz.pojo.User">
-        select user_id, username, password, role, tel, email, addr, str_to_date(create_date,'%Y-%m-%d %H:%i:%s') as create_date,
-        str_to_date(end_date,'%Y-%m-%d %H:%i:%s') as end_date from j2ee.user
+        select user_id, username, password, role, tel, email, addr, createdate as createDate,
+        enddate as endDate from j2ee.user
     </select>
 </mapper>
