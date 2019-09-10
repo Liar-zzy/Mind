@@ -20,9 +20,9 @@ public class User {
 
     private String addr;
 
-    private String create_date;
+    private String createDate;
 
-    private String end_date;
+    private String endDate;
 
 
     public String getUsername() {
@@ -81,19 +81,19 @@ public class User {
         this.addr = addr;
     }
 
-    public String getCreate_date() {
-        return create_date;
+    public String getCreateDate() {
+        return createDate;
     }
 
-    public void setCreate_date(String create_date) {
-        this.create_date = create_date;
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
     }
 
-    public String getEnd_date() {
-        return end_date;
+    public String getEndDate() {
+        return endDate;
     }
 
-    public void setEnd_date(String end_date) {
-        this.end_date = end_date;
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 }
