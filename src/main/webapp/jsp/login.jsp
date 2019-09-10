@@ -114,39 +114,39 @@
                                     <div class="space-6"></div>
                                     <p> 请输入基本信息： </p>
 
-                                    <form action="/user/register" method="post" id="register_form">
+                                    <form   id="register_form">
                                         <fieldset>
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" name="username" id="login_username" placeholder="姓名" minlength="4"  maxlength="10" required />
+															<input type="text" class="form-control" name="username" id="register_name" placeholder="姓名" minlength="4"  maxlength="10" required />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
                                             </label>
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" name="password" id="login_pwd" placeholder="密码" minlength="6"  required />
+															<input type="password" class="form-control" name="password" id="register_pwd" placeholder="密码" minlength="6"  required />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
                                             </label>
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" id="login_checkpwd" placeholder="确认密码" equalTo="#login_pwd"  required />
+															<input type="password" class="form-control" id="register_checkpwd" placeholder="确认密码" equalTo="#register_pwd"  required />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
                                             </label>
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" name="tel" id="login_id" placeholder="联系方式"  />
+															<input type="text" class="form-control" name="tel" id="register_tel"  placeholder="联系方式"  />
 															<i class="ace-icon fa fa-mobile"></i>
 														</span>
                                             </label>
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-														<select style="width: 100%;font-size: 14px;font-weight: 400;" id="state" name="role" >
+														<select style="width: 100%;font-size: 14px;font-weight: 400;" id="register_state" name="role" >
 															<option value="ACE">平台管理员</option>
 															<option value="FIX">维修人员</option>
 															<option value="MAC">设备运营商</option>
@@ -181,7 +181,7 @@
                                                     <span class="bigger-110">Reset</span>
                                                 </button>
 
-                                                <button type="submit" class="width-65 pull-right btn btn-sm btn-success">
+                                                <button type="submit" id="register" class="width-65 pull-right btn btn-sm btn-success">
                                                     <span class="bigger-110">Register</span>
 
                                                     <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
@@ -281,10 +281,15 @@
         })
 
     });
+    
+    $('#register').click(function () {
+        var name=$('input[id=username]').val();
+        var password=$('input[id=password]').val();
+    });
 
-    $('input[id=login_checkpwd]').blur(function () {
-        var checkpwd=input[id=login_checkpwd].val();
-        var pwd=input[id=login_pwd].val();
+    $('input[id=register_checkpwd]').blur(function () {
+        var checkpwd=input[id=register_checkpwd].val();
+        var pwd=input[id=register_pwd].val();
 
         if(checkpwd!=pwd){
             lay.msg('密码不一致')
@@ -305,11 +310,7 @@
     });
 </script>
 <script>
-    $.validator.setDefaults({
-        submitHandler: function() {
-            <!--alert("提交事件!");-->
-        }
-    });
+
     $().ready(function() {
         $("#register_form").validate();
     });
@@ -367,9 +368,9 @@
         var layer=layui.layer;
     })
 
-    $('input[id=login_username]').blur(function () {
+    $('input[id=register_name]').blur(function () {
 
-        var name=$('input[id=login_username]').val();
+        var name=$('input[id=register_name]').val();
 
         var obj={
             username:name
@@ -393,9 +394,9 @@
 
     });
 
-    $('input[id=login_checkpwd]').blur(function () {
-        var checkpwd=input[id=login_checkpwd].val();
-        var pwd=input[id=login_pwd].val();
+    $('input[id=register_checkpwd]').blur(function () {
+        var checkpwd=input[id=register_checkpwd].val();
+        var pwd=input[id=register_pwd].val();
 
         if(checkpwd!=pwd){
             lay.msg('密码不一致')

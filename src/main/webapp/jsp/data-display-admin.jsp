@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta charset="utf-8" />
-	<title>Home-Mind</title>
+	<title>Data-display-Mind</title>
 
 	<meta name="description" content="overview &amp; stats" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="../ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 	<!-- font awesome -->
-	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 
 	<!-- text fonts -->
 	<link rel="stylesheet" href="../ace-master/assets/css/fonts.googleapis.com.css" />
@@ -57,12 +57,13 @@
 			<ul class="nav ace-nav">
 
 
+
 				<!-- 蓝色 方块 个人中心 必要 -->
 				<li class="light-blue dropdown-modal">
 					<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 						<img class="nav-user-photo" src="../ace-master/assets/images/avatars/user.jpg" alt="Jason's Photo" />
 						<span class="user-info">
-									
+
 									<small>Welcome,</small>
 							<!-- 此处名字可以替换 -->
 									${SESSION_USER.username}
@@ -72,18 +73,13 @@
 					</a>
 
 					<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-						<!-- <li>
-                            <a href="#">
-                                <i class="ace-icon fa fa-cog"></i>
-                                Settings
-                            </a>
-                        </li> -->
+
 
 						<li>
-							<!-- 个人中心 -->
+							<!-- 账号管理 -->
 							<a href="${ctx}/redirectTo/user">
-								<i class="ace-icon fa fa-user"style="font-family: microsoft yahei"></i>
-								个人中心
+								<i class="ace-icon fa fa-user" style="font-family: microsoft yahei"></i>
+								账号管理
 							</a>
 						</li>
 
@@ -108,8 +104,9 @@
 <div class="main-container ace-save-state" id="main-container">
 
 	<script type="text/javascript">
-		try{ace.settings.loadState('main-container')}
-		catch(e){
+		try {
+			ace.settings.loadState('main-container')
+		} catch (e) {
 			//TODO handle the exception
 		}
 	</script>
@@ -117,21 +114,19 @@
 	<!-- 侧边按钮菜单	-->
 	<div id="sidebar" class="sidebar responsive ace-save-state">
 		<script type="text/javascript">
-			try{
+			try {
 				ace.settings.loadState('sidebar')
-			}catch(e){
+			} catch (e) {
 				//TODO handle the exception
 			}
 		</script>
 
 
 
-
-
 		<!-- 侧边菜单选项 -->
 		<ul class="nav nav-list">
 			<!-- 当前活动窗口 -->
-			<li class="active">
+			<li class="">
 				<a href="${ctx}/redirectTo/index">
 					<i class="menu-icon fa fa-home"></i>
 					<span class="menu-text">
@@ -146,8 +141,8 @@
 				<a href="#" class="dropdown-toggle">
 					<i class="menu-icon fa fa-desktop"></i>
 					<span class="menu-text" style="font-family: microsoft yahei">
-							机器管理
-						</span>
+								机器管理
+							</span>
 					<!-- 展开箭头 -->
 					<b class="arrow fa fa-angle-down"></b>
 				</a>
@@ -159,8 +154,8 @@
 						<a href="${ctx}/redirectTo/machine">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
-									设备管理
-								</span>
+										设备列表
+									</span>
 
 							<!-- <b class="arrow fa fa-angle-down"></b> -->
 						</a>
@@ -173,8 +168,8 @@
 						<a href="${ctx}/redirectTo/machinefix">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
-									故障维修
-								</span>
+										故障维修
+									</span>
 							<!-- <b class="arrow fa fa-angle-down"></b> -->
 						</a>
 
@@ -184,12 +179,13 @@
 
 			</li>
 
+			<!-- 商品管理 -->
 			<li class="">
 				<a href="${ctx}/redirectTo/merchandise">
 					<i class="menu-icon fa fa-th-list">
-							<span class="menu-text" style="font-family: microsoft yahei">
-								商品列表
-							</span>
+								<span class="menu-text" style="font-family: microsoft yahei">
+									商品管理
+								</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
@@ -200,49 +196,49 @@
 
 				<a href="${ctx}/redirectTo/dataall">
 					<!-- <i class="menu-icon fa fa-picture-o"> -->
-					<i class="menu-icon fa fa-google-plus" >
-							<span class="menu-text"style="font-family: microsoft yahei">
-								数据统计
-							</span>
+					<i class="menu-icon fa fa-google-plus">
+								<span class="menu-text" style="font-family: microsoft yahei">
+									数据统计
+								</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
 			</li>
 
 			<!-- 图说数据 -->
-			<li class="">
+			<li class="active">
 
 				<a href="${ctx}/redirectTo/datadisplay">
 					<i class="menu-icon  fa fa-bar-chart">
-							<span class="menu-text" style="font-family: microsoft yahei">
-								图说数据
-							</span>
+								<span class="menu-text" style="font-family: microsoft yahei">
+									图说数据
+								</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
 			</li>
 
-			<!-- 个人中心 -->
+			<!-- 账号管理 -->
 			<li class="">
 
 				<a href="${ctx}/redirectTo/user">
 					<i class="menu-icon fa fa-user">
-							<span class="menu-text"style="font-family: microsoft yahei"> 
-								个人中心
-							</span>
+								<span class="menu-text" style="font-family: microsoft yahei">
+									账号管理
+								</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
 			</li>
 		</ul>
 		<!-- <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-            <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-        </div> -->
+        <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+    </div> -->
 	</div>
 	<!-- 结束侧边菜单 -->
 
 	<!-- 主体内容 -->
-	<div class="main-content" >
+	<div class="main-content">
 
 		<!-- 页面导航 -->
 		<div class="main-content-inner">
@@ -253,11 +249,19 @@
 
 						<span style="font-family: microsoft yahei">
 									<a href="#">
-									首页
+										首页
 									</a>
 								</span>
 
 					</li>
+					<li>
+								<span style="font-family: microsoft yahei">
+									<a href="#">
+										图说数据
+									</a>
+								</span>
+					</li>
+
 				</ul>
 			</div>
 
@@ -266,15 +270,61 @@
 
 
 			<div class="page-content">
-					<span style="font-family: microsoft yahei;font-size: 50px;">
-					<p>
-						设备运营商						
-					</p>
-					<tr></tr>
-					<p>
-						欢迎进入Mind售货机管理系统！
-					</p>
-					</span>
+				<div class="page-header">
+							<span style="font-family: microsoft yahei">
+								<h1>
+									图说数据
+									<small>
+										<i class="ace-icon fa fa-angle-double-right"></i>
+										显示综合数据详细
+									</small>
+								</h1>
+							</span>
+				</div><!-- /.page-header -->
+
+				<div class="row">
+
+					<div class="col-xs-12">
+
+						<div class="alert alert-block alert-success" id="alert1">
+
+							<button type="button" class="close" id="closealert" data-dismiss="alert">
+								<i class="ace-icon fa fa-times"></i>
+							</button>
+
+							<i class="ace-icon fa fa-check green"></i>
+
+							Welcome to
+							<strong class="green">
+								data-display
+								<small></small>
+							</strong>
+						</div>
+
+
+						<div class="space-6"></div>
+
+
+
+
+
+					</div>
+				</div>
+				<div class="row">
+					<div id="container" style="height: 600px ;">
+
+					</div>
+					<div class="space-6"></div>
+					<div id="containerzhu" style="height: 600px">
+
+					</div>
+					<div class="space-6"></div>
+					<div id="containerzhe" style="height: 600px">
+					</div>
+
+
+				</div><!-- page-content -->
+
 			</div>
 
 		</div>
@@ -283,24 +333,24 @@
 	<div class="footer">
 		<div class="footer-inner">
 			<div class="footer-content">
-					<span class="bigger-120">
-						<span class="blue bolder">Mind</span>
+						<span class="bigger-120">
+							<span class="blue bolder">Mind</span>
 							Application &copy; 2019-2020
-					</span>
+						</span>
 				&nbsp; &nbsp;
 				<span class="action-buttons">
-						<a href="#">
-							<i class="ace-icon fa fa-qq light-blue bigger-150"></i>
-						</a>
-		
-						<a href="#">
-							<i class="ace-icon fa fa-weibo text-primary bigger-150"></i>
-						</a>
-		
-						<a href="#">
-							<i class="ace-icon fa fa-weixin  bigger-150"></i>
-						</a>
-					</span>
+							<a href="#">
+								<i class="ace-icon fa fa-qq light-blue bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-weibo text-primary bigger-150"></i>
+							</a>
+
+							<a href="#">
+								<i class="ace-icon fa fa-weixin  bigger-150"></i>
+							</a>
+						</span>
 			</div>
 		</div>
 	</div>
@@ -319,15 +369,12 @@
 <script src="assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
-	if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+	if ('ontouchstart' in document.documentElement) document.write(
+			"<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
 <script src="../ace-master/assets/js/bootstrap.min.js"></script>
 
-<!-- page specific plugin scripts -->
-
-<!--[if lte IE 8]>
-<script src="assets/js/excanvas.min.js"></script>
-<![endif]-->
+<!-- page specific plugin scripts ../ace-master/-->
 <script src="../ace-master/assets/js/jquery-ui.custom.min.js"></script>
 <script src="../ace-master/assets/js/jquery.ui.touch-punch.min.js"></script>
 <script src="../ace-master/assets/js/jquery.easypiechart.min.js"></script>
@@ -337,10 +384,209 @@
 <script src="../ace-master/assets/js/jquery.flot.resize.min.js"></script>
 
 <!-- ace scripts -->
-<script src="../ace-master/assets/js/ace-elements.min.js"></script>
-<script src="../ace-master/assets/js/ace.min.js"></script>
+<script src="assets/js/ace-elements.min.js"></script>
+<script src="assets/js/ace.min.js"></script>
 
 <!-- inline scripts related to this page -->
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<script type="text/javascript">
+	//饼状图
+
+	var dom = document.getElementById("container");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+		backgroundColor: '#FFFFFF',
+
+		title: {
+			text: '商品热度',
+			left: 'center',
+			top: 20,
+			textStyle: {
+				color: '#171717'
+			}
+		},
+
+		tooltip: {
+			trigger: 'item',
+			formatter: "{a} <br/>{b} : {c} ({d}%)"
+		},
+
+		visualMap: {
+			show: false,
+			min: 80,
+			max: 1000,
+			inRange: {
+				colorLightness: [0, 1]
+			}
+		},
+		series: [{
+			name: '',
+			type: 'pie',
+			radius: '55%',
+			center: ['50%', '50%'],
+			data: [{
+				value: 335,
+				name: '商品名1'
+			},
+				{
+					value: 310,
+					name: '商品名2'
+				},
+				{
+					value: 274,
+					name: '商品名3'
+				},
+				{
+					value: 235,
+					name: '商品名4'
+				},
+				{
+					value: 400,
+					name: '商品名5'
+				}
+			].sort(function(a, b) {
+				return a.value - b.value;
+			}),
+			roseType: 'radius',
+			label: {
+				normal: {
+					textStyle: {
+						color: 'rgba(23, 23, 23, 0.5)'
+					}
+				}
+			},
+			labelLine: {
+				normal: {
+					lineStyle: {
+						color: 'rgba(23, 23, 23, 0.5)'
+					},
+					smooth: 0.2,
+					length: 10,
+					length2: 20
+				}
+			},
+			itemStyle: {
+				normal: {
+					color: '#c23531',
+					shadowBlur: 200,
+					shadowColor: 'rgba(0, 0, 0, 0.5)'
+				}
+			},
+
+			animationType: 'scale',
+			animationEasing: 'elasticOut',
+			animationDelay: function(idx) {
+				return Math.random() * 200;
+			}
+		}]
+	};;
+	if (option && typeof option === "object") {
+		myChart.setOption(option, true);
+	}
+</script>
+
+<script type="text/javascript">
+	// 点击消失
+	$(document).ready(function() {
+		$("#closealert").click(function() {
+			$("#alert1").hide();
+		});
+	});
+</script>
+
+<script type="text/javascript">
+	// 柱状图
+	var dom = document.getElementById("containerzhu");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	app.title = '坐标轴刻度与标签对齐';
+
+	option = {
+		title: {
+			text: '设备销售额',
+			left: 'center',
+			top: 20,
+			textStyle: {
+				color: '#171717'
+			}
+		},
+		color: ['#3398DB'],
+		tooltip: {
+			trigger: 'axis',
+			axisPointer: { // 坐标轴指示器，坐标轴触发有效
+				type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+			}
+		},
+		grid: {
+			left: '3%',
+			right: '4%',
+			bottom: '3%',
+			containLabel: true
+		},
+		xAxis: [{
+			type: 'category',
+			data: ['ID1', 'ID2', 'ID3', 'ID4', 'ID5', 'ID6', 'ID7'],
+			axisTick: {
+				alignWithLabel: true
+			}
+		}],
+		yAxis: [{
+			type: 'value'
+		}],
+		series: [{
+			name: '',
+			type: 'bar',
+			barWidth: '60%',
+			data: [10, 52, 200, 334, 390, 330, 220]
+		}]
+	};;
+	if (option && typeof option === "object") {
+		myChart.setOption(option, true);
+	}
+</script>
+<script type="text/javascript">
+	// 折线图
+	var dom = document.getElementById("containerzhe");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+		title: {
+			text: '日销售额',
+			left: 'center',
+			top: 20,
+			textStyle: {
+				color: '#171717'
+			}
+		},
+		xAxis: {
+			type: 'category',
+			data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+		},
+		yAxis: {
+			type: 'value'
+		},
+		series: [{
+			data: [820, 932, 901, 934, 1290, 1330, 1320],
+			type: 'line',
+			smooth: true
+		}]
+	};;
+	if (option && typeof option === "object") {
+		myChart.setOption(option, true);
+	}
+</script>
 <script type="text/javascript">
 	jQuery(function($) {
 		$('.easy-pie-chart.percentage').each(function(){
@@ -555,6 +801,12 @@
 			if (offset.top > $w.scrollTop() + $w.innerHeight() - 100)
 				$(this).addClass('dropup');
 			else $(this).removeClass('dropup');
+		});
+
+		$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
+			e.stopImmediatePropagation();
+			e.stopPropagation();
+			e.preventDefault();
 		});
 
 	})
