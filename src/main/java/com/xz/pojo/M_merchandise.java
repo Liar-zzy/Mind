@@ -2,32 +2,32 @@ package com.xz.pojo;
 
 public class M_merchandise {
 
-    private int machine_id;
+    private int machineId;
 
-    private int merchandise_id;
+    private int merchandiseId;
 
     private int margin;
 
-    private int item_id;
+    private int itemId;
 
-    private int sold_num;
+    private int soldNum;
 
-    private double sold_sum;
+    private double soldSum;
 
-    public int getMachine_id() {
-        return machine_id;
+    public int getMachineId() {
+        return machineId;
     }
 
-    public void setMachine_id(int machine_id) {
-        this.machine_id = machine_id;
+    public void setMachineId(int machineId) {
+        this.machineId = machineId;
     }
 
-    public int getMerchandise_id() {
-        return merchandise_id;
+    public int getMerchandiseId() {
+        return merchandiseId;
     }
 
-    public void setMerchandise_id(int merchandise_id) {
-        this.merchandise_id = merchandise_id;
+    public void setMerchandiseId(int merchandiseId) {
+        this.merchandiseId = merchandiseId;
     }
 
     public int getMargin() {
@@ -38,27 +38,27 @@ public class M_merchandise {
         this.margin = margin;
     }
 
-    public int getItem_id() {
-        return item_id;
+    public int getItemId() {
+        return itemId;
     }
 
-    public void setItem_id(int item_id) {
-        this.item_id = item_id;
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
     }
 
-    public int getSold_num() {
-        return sold_num;
+    public int getSoldNum() {
+        return soldNum;
     }
 
-    public void setSold_num(int sold_num) {
-        this.sold_num = sold_num;
+    public void setSoldNum(int soldNum) {
+        this.soldNum = soldNum;
     }
 
-    public double getSold_sum() {
-        return sold_sum;
+    public double getSoldSum() {
+        return soldSum;
     }
 
-    public void setSold_sum(double sold_sum) {
-        this.sold_sum = sold_sum;
+    public void setSoldSum(double soldSum) {
+        this.soldSum = soldSum;
     }
 }

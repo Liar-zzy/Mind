@@ -338,12 +338,12 @@
 											<span class="lbl"></span>
 										</label>
 									</td>
-									<td>${obj.o_id}</td>
-									<td>${obj.item_id}</td>
-									<td>${obj.merchandise_id}</td>
-									<td>${obj.machine_id}</td>
-									<td>${obj.o_price}</td>
-									<td>${obj.o_num}</td>
+									<td>${obj.oId}</td>
+									<td>${obj.itemId}</td>
+									<td>${obj.merchandiseId}</td>
+									<td>${obj.machineId}</td>
+									<td>${obj.oPrice}</td>
+									<td>${obj.oNum}</td>
 									<td>${obj.date}</td>
 								</tr>
 							</c:forEach>

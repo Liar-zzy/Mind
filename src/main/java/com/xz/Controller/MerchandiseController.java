@@ -40,7 +40,7 @@ public class MerchandiseController {
 
         for (int i = 0; i < list.size(); i++)
         {
-            System.out.println(list.get(i).getDate());
+            System.out.println(list.get(i).getManufactureId()+list.get(i).getDate());
         }
 
         if(user.getRole().equals("ACE")){

@@ -36,8 +36,8 @@ public class OrderController {
         model.addAttribute("ListAllOrder",list);
         for (int i = 0; i < list.size(); i++)
         {
-            System.out.println(list.get(i).getO_id());
-            System.out.println(list.get(i).getItem_id());
+            System.out.println(list.get(i).getoId());
+            System.out.println(list.get(i).getItemId());
             System.out.println(list.get(i).getDate());
         }
         System.out.println("list all user");

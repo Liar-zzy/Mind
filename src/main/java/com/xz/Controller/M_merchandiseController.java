@@ -28,11 +28,11 @@ public class M_merchandiseController {
     @RequestMapping("/getM_merchandiseList")
     public String SelectAllM_merchandise(Model model){
         List<M_merchandise> list;
-        list = m_merchandiseService.selectAllM_merchandise();
+        list = m_merchandiseService.selectAllM_merchandise(2);
         model.addAttribute("ListAllM_merchandise",list);
         for (int i = 0; i < list.size(); i++)
         {
-            System.out.println(list.get(i).getSold_num());
+            System.out.println(list.get(i).getSoldNum());
         }
         return "machine";
     }
