@@ -8,4 +8,7 @@
         #{mer.manufacture_id},#{mer.date},#{mer.inventory});
     </insert>
 
+    <select id="select_allMerchandise" resultType="com.xz.pojo.Merchandise">
+        select merchandise_id, name, price, manufacturer_id, date as Date, inventory from j2ee.merchandise;
+    </select>
 </mapper>

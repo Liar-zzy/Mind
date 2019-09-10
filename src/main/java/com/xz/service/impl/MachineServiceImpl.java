@@ -6,6 +6,8 @@ import com.xz.service.MachineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 @Service("machineService")
 public class MachineServiceImpl implements MachineService {
@@ -18,5 +20,11 @@ public class MachineServiceImpl implements MachineService {
 
         int suc = machineMapper.addMachine(machine);
         return suc == 1 ? true:false;
+    }
+
+    @Override
+    public List<Machine> selectAllMachine() {
+        List<Machine> list = machineMapper.select_allMachine();
+        return list;
     }
 }

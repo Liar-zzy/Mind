@@ -4,10 +4,12 @@ import com.xz.pojo.Order;
 import com.xz.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/order")
@@ -19,6 +21,19 @@ public class OrderController {
     @RequestMapping("/addOrder")
     public String add_Order(@ModelAttribute("order") Order order, HttpSession session ){
         orderService.add_Order(order);
+        return "xxx";
+    }
+
+    @RequestMapping("/getOrderList")
+    public String SelectAllOrder(Model model){
+        List<Order> list;
+        list = orderService.selectAllOrder();
+        model.addAttribute("ListAllOrder",list);
+        for (int i = 0; i < list.size(); i++)
+        {
+            System.out.println(list.get(i).getDate());
+        }
+        System.out.println("list all user");
         return "xxx";
     }
 }

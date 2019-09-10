@@ -98,7 +98,6 @@ public class UserController {
         return map;
     }
 
-
     //注册时检查是否出现用户名重复
     @RequestMapping("/checkname")
     @ResponseBody
@@ -134,4 +133,5 @@ public class UserController {
         System.out.println("list all user");
         return "user-manager";
     }
+
 }
