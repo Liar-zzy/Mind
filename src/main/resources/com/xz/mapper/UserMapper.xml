@@ -23,4 +23,32 @@
         select user_id, username, password, role, tel, email, addr, createdate as createDate,
         enddate as endDate from j2ee.user
     </select>
+
+    <delete id="delete_AUser" parameterType="java.lang.String">
+        delete from j2ee.user where username = #{username}
+    </delete>
+
+    <update id="update_AUser" parameterType="com.xz.pojo.User">
+        update j2ee.user
+        <set>
+            <if test="updateUser.password != null and updateUser.password != ''">
+                password = #{updateUser.password},
+            </if>
+
+            <if test="updateUser.tel != null and updateUser.tel != ''">
+                tel = #{updateUser.tel},
+            </if>
+
+            <if test="updateUser.email != null and updateUser.email != ''">
+                email = #{updateUser.email},
+            </if>
+
+            <if test="updateUser.addr != null and updateUser.addr != ''" >
+                addr = #{updateUser.addr}
+            </if>
+        </set>
+        <where>
+            username = #{updateUser.username}
+        </where>
+    </update>
 </mapper>

@@ -40,4 +40,16 @@ public class UserServiceImpl implements UserService {
         List<User> list = userMapper.select_allUser();
         return list;
     }
+
+    @Override
+    public boolean deleteAUser(String username) {
+        int row = userMapper.delete_AUser(username);
+        return row == 1 ? true:false;
+    }
+
+    @Override
+    public boolean updateAUser(User user) {
+        int row = userMapper.update_AUser(user);
+        return row == 1 ? true:false;
+    }
 }

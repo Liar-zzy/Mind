@@ -28,4 +28,16 @@ public class MerchandiseServiceImpl implements MerchandiseService {
         List<Merchandise> list = merchandiseMapper.select_allMerchandise();
         return list;
     }
+
+    @Override
+    public boolean deleteAMerchandise(int merchandiseId) {
+        int row = merchandiseMapper.delete_AMerchandise(merchandiseId);
+        return row == 1 ? true:false;
+    }
+
+    @Override
+    public boolean updateAMerchandise(Merchandise merchandise) {
+        int row = merchandiseMapper.update_AMerchandise(merchandise);
+        return row == 1 ? true:false;
+    }
 }

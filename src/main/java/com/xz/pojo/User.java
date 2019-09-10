@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class User {
 
-    private String userId;
+    private int userId;
 
     private String username;
 
@@ -24,7 +24,6 @@ public class User {
 
     private String endDate;
 
-
     public String getUsername() {
         return username;
     }
@@ -41,11 +40,11 @@ public class User {
         this.password = password;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 

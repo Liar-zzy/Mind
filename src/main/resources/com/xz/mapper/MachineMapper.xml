@@ -12,5 +12,27 @@
          enddate as endDate, state from j2ee.machine;
     </select>
 
+    <delete id="delete_AMachine" parameterType="int">
+        delete from j2ee.machine where machine_id = #{machineId}
+    </delete>
 
+    <update id="update_AMachine" parameterType="com.xz.pojo.Machine">
+        update j2ee.machine
+        <set>
+            <if test="updateMachine.possessor != null  and updateMachine.possessor != ''">
+                possessor = #{updateMachine.possessor},
+            </if>
+
+            <if test="updateMachine.gps != null and updateMachine.gps != ''">
+                gps = #{updateMachine.gps},
+            </if>
+
+            <if test="updateMachine.addr != null and updateMachine.addr != ''">
+                addr = #{updateMachine.addr}
+            </if>
+        </set>
+        <where>
+            machine_id = #{updateMachine.machineId}
+        </where>
+    </update>
 </mapper>

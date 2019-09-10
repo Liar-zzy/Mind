@@ -14,4 +14,8 @@ public interface UserMapper {
     User selectExist(User u);
 
     List<User> select_allUser();
+
+    int delete_AUser(@Param("username") String username);
+
+    int update_AUser(@Param("updateUser") User user);
 }

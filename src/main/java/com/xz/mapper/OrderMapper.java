@@ -10,4 +10,6 @@ public interface OrderMapper {
     int addOrder(@Param("o") Order order);
 
     List<Order> select_allOrder();
+
+    int delete_AnOrder(@Param("oId") int oId);
 }

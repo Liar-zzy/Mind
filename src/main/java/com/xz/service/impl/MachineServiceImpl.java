@@ -27,4 +27,16 @@ public class MachineServiceImpl implements MachineService {
         List<Machine> list = machineMapper.select_allMachine();
         return list;
     }
+
+    @Override
+    public boolean deleteAMachine(int machineId) {
+        int row = machineMapper.delete_AMachine(machineId);
+        return row == 1 ? true:false;
+    }
+
+    @Override
+    public boolean updateAMachine(Machine machine) {
+        int row = machineMapper.update_AMachine(machine);
+        return row == 1 ? true:false;
+    }
 }

@@ -105,4 +105,23 @@ public class UserController {
         System.out.println("list all user");
         return "user-manager";
     }
+
+    @RequestMapping("/deleteAUser")
+    public String deleteAUser(){
+        boolean success;
+        success = userService.deleteAUser("username");
+        if(success == true) System.out.println("delete user success");
+        else System.out.println("delete user fail");
+        return "xxx";
+    }
+
+    @RequestMapping("/updateAUser")
+    @ResponseBody
+    public String updateAUser(@RequestBody User user){
+        boolean success;
+        success = userService.updateAUser(user);
+        if(success == true) System.out.println("update user success");
+        else System.out.println("update user fail");
+        return "xxx";
+    }
 }

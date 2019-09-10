@@ -26,4 +26,10 @@ public class OrderServiceImpl  implements OrderService {
         List<Order> list = orderMapper.select_allOrder();
         return list;
     }
+
+    @Override
+    public boolean deleteAnOrder(int oId) {
+        int row = orderMapper.delete_AnOrder(oId);
+        return row == 1 ? true:false;
+    }
 }

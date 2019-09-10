@@ -11,5 +11,27 @@
     <select id="select_allMerchandise" resultType="com.xz.pojo.Merchandise">
         select merchandise_id, name, price, manufacturer as manufactureID, date as Date, inventory from j2ee.merchandise;
     </select>
-    
+
+    <delete id="delete_AMerchandise" parameterType="int">
+        delete from j2ee.merchandise where merchandise_id = #{merchandiseId}
+    </delete>
+    <update id="update_AMerchandise" parameterType="com.xz.pojo.Merchandise">
+        update j2ee.merchandise
+        <set>
+            <if test="updateMerchandise.price != null and updateMerchandise.price != ''">
+                price = #{updateMerchandise.price},
+            </if>
+
+            <if test="updateMerchandise.manufactureId != null  and updateMerchandise.manufactureId != ''">
+                manufacturer_id = #{updateMerchandise.manufactureId},
+            </if>
+
+            <if test="updateMerchandise.inventory != null  and updateMerchandise.inventory != ''">
+                inventory = #{updateMerchandise.inventory}
+            </if>
+        </set>
+        <where>
+            merchandise_id = #{updateMerchandise.merchandiseId}
+        </where>
+    </update>
 </mapper>

@@ -10,4 +10,29 @@
     <select id="select_allM_merchandise" parameterType="int" resultType="com.xz.pojo.M_merchandise">
         select * from  j2ee.m_merchandise where m_merchandise.machine_id = #{machineId};
     </select>
+
+    <delete id="delete_AM_merchandise" parameterType="int">
+        delete from j2ee.m_merchandise where machine_id = #{machineId}
+    </delete>
+
+    <update id="update_AM_merchandise" parameterType="com.xz.pojo.M_merchandise">
+        update j2ee.m_merchandise
+        <set>
+            <if test="updateM_merchandise.margin != null and updateM_merchandise.margin != ''">
+                margin = #{updateM_merchandise.margin},
+            </if>
+
+            <if test="updateM_merchandise.soldNum != null and updateM_merchandise.soldNum != ''">
+                sold_num = #{updateM_merchandise.soldNum},
+            </if>
+
+            <if test="updateM_merchandise.soldSum != null and updateM_merchandise.soldSum != ''">
+                sold_sum = #{updateM_merchandise.soldSum}
+            </if>
+        </set>
+        <where>
+            machine_id = #{updateM_merchandise.machineId}
+            and item_id = #{updateM_merchandise.itemId}
+        </where>
+    </update>
 </mapper>

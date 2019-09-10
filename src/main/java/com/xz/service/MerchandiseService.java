@@ -9,4 +9,8 @@ public interface MerchandiseService {
     boolean add_Merchandise(Merchandise merchandise);
 
     List<Merchandise> selectAllMerchandise();
+
+    boolean deleteAMerchandise(int merchandiseId);
+
+    boolean updateAMerchandise(Merchandise merchandise);
 }
