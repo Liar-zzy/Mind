@@ -20,9 +20,9 @@ public class Machine {
 
     private String addr;
 
-    private String distri_date;
+    private String distriDate;
 
-    private String end_date;
+    private String endDate;
 
     private int state;
 
@@ -98,20 +98,20 @@ public class Machine {
         this.addr = addr;
     }
 
-    public String getDistri_date() {
-        return distri_date;
+    public String getDistriDate() {
+        return distriDate;
     }
 
-    public void setDistri_date(String distri_date) {
-        this.distri_date = distri_date;
+    public void setDistriDate(String distriDate) {
+        this.distriDate = distriDate;
     }
 
-    public String getEnd_date() {
-        return end_date;
+    public String getEndDate() {
+        return endDate;
     }
 
-    public void setEnd_date(String end_date) {
-        this.end_date = end_date;
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
     public int getState() {

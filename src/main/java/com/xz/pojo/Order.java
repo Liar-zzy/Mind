@@ -12,7 +12,7 @@ public class Order {
 
     private double o_num;
 
-    private String date;
+    private String Date;
 
     public int getItem_id() {
         return item_id;
@@ -55,10 +55,10 @@ public class Order {
     }
 
     public String getDate() {
-        return date;
+        return Date;
     }
 
     public void setDate(String date) {
-        this.date = date;
+        Date = date;
     }
 }

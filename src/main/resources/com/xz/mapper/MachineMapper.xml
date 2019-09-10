@@ -8,6 +8,8 @@
     </insert>
 
     <select id="select_allMachine" resultType="com.xz.pojo.Machine">
-        select machine_id, name, type, screen, possessor, item_num, capacity, gps, addr, distridate as distriDate, , state from j2ee.machine;
+        select machine_id, name, type, screen, possessor, item_num, capacity, gps, addr, distridate as distriDate, enddate as endDate, state from j2ee.machine;
     </select>
+
+
 </mapper>

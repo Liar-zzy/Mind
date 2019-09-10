@@ -10,7 +10,7 @@ public class Merchandise {
 
     private int manufacture_id;
 
-    private String date;
+    private String Date;
 
     private int inventory;
 
@@ -47,11 +47,11 @@ public class Merchandise {
     }
 
     public String getDate() {
-        return date;
+        return Date;
     }
 
     public void setDate(String date) {
-        this.date = date;
+        Date = date;
     }
 
     public int getInventory() {

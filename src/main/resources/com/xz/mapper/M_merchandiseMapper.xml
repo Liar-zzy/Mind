@@ -6,4 +6,8 @@
         insert into j2ee.m_merchandise values (#{M_mer.machine_id},#{M_mer.merchandise_id},#{M_mer.margin},
         #{M_mer.item_id},#{M_mer.sold_num},#{M_mer.sold_sum})
     </insert>
+
+    <select id="select_allM_merchandise" resultType="com.xz.pojo.M_merchandise">
+        select * from  j2ee.m_merchandise;
+    </select>
 </mapper>

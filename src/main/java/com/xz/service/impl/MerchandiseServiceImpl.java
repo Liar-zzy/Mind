@@ -6,6 +6,8 @@ import com.xz.service.MerchandiseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("merchandise")
 public class MerchandiseServiceImpl implements MerchandiseService {
 
@@ -19,5 +21,11 @@ public class MerchandiseServiceImpl implements MerchandiseService {
 
         int row   = merchandiseMapper.addMerchandise(merchandise);
         return row == 1 ? true:false;
+    }
+
+    @Override
+    public List<Merchandise> selectAllMerchandise() {
+        List<Merchandise> list = merchandiseMapper.select_allMerchandise();
+        return list;
     }
 }
