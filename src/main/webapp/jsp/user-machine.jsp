@@ -165,7 +165,7 @@
                     <!-- 故障维修 -->
                     <li class="">
 
-                        <a href="fix.html">
+                        <a href="${ctx}/redirectTo/machinefix">
                             <i class="menu-icon fa fa-caret-right"></i>
                             <span style="font-family: microsoft yahei">
 										故障维修

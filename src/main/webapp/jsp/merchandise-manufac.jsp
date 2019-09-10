@@ -60,8 +60,7 @@
                 <!-- 蓝色 方块 个人中心 必要 -->
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <img class="nav-user-photo" src="../ace-master/assets/images/avatars/user.jpg"
-                             alt="Jason's Photo"/>
+                        <img class="nav-user-photo" src="../ace-master/assets/images/avatars/user.jpg"  alt="Jason's Photo"/>
                         <span class="user-info">
 
 									<small>Welcome,</small>

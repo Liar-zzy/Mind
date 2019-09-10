@@ -79,7 +79,7 @@
 							<!-- 个人中心 -->
 							<a href="${ctx}/redirectTo/user">
 								<i class="ace-icon fa fa-user" style="font-family: microsoft yahei"></i>
-								个人中心
+								账号管理
 							</a>
 						</li>
 
@@ -224,7 +224,7 @@
 				<a href="${ctx}/redirectTo/user">
 					<i class="menu-icon fa fa-user">
 								<span class="menu-text" style="font-family: microsoft yahei">
-									个人中心
+									账号管理
 								</span>
 					</i>
 				</a>

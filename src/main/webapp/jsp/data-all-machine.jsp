@@ -121,8 +121,6 @@
 			}
 		</script>
 
-
-
 		<!-- 侧边菜单选项 -->
 		<ul class="nav nav-list">
 			<!-- 当前活动窗口 -->
@@ -141,8 +139,8 @@
 				<a href="#" class="dropdown-toggle">
 					<i class="menu-icon fa fa-desktop"></i>
 					<span class="menu-text" style="font-family: microsoft yahei">
-								机器管理
-							</span>
+							机器管理
+						</span>
 					<!-- 展开箭头 -->
 					<b class="arrow fa fa-angle-down"></b>
 				</a>
@@ -154,8 +152,8 @@
 						<a href="${ctx}/redirectTo/machine">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
-										设备列表
-									</span>
+									设备管理
+								</span>
 
 							<!-- <b class="arrow fa fa-angle-down"></b> -->
 						</a>
@@ -168,8 +166,8 @@
 						<a href="${ctx}/redirectTo/machinefix">
 							<i class="menu-icon fa fa-caret-right"></i>
 							<span style="font-family: microsoft yahei">
-										故障维修
-									</span>
+									故障维修
+								</span>
 							<!-- <b class="arrow fa fa-angle-down"></b> -->
 						</a>
 
@@ -179,13 +177,12 @@
 
 			</li>
 
-			<!-- 商品管理 -->
 			<li class="">
 				<a href="${ctx}/redirectTo/merchandise">
 					<i class="menu-icon fa fa-th-list">
-								<span class="menu-text" style="font-family: microsoft yahei">
-									商品管理
-								</span>
+							<span class="menu-text" style="font-family: microsoft yahei">
+								商品列表
+							</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
@@ -196,10 +193,10 @@
 
 				<a href="${ctx}/redirectTo/dataall">
 					<!-- <i class="menu-icon fa fa-picture-o"> -->
-					<i class="menu-icon fa fa-google-plus">
-								<span class="menu-text" style="font-family: microsoft yahei">
-									数据统计
-								</span>
+					<i class="menu-icon fa fa-google-plus" >
+							<span class="menu-text"style="font-family: microsoft yahei">
+								数据统计
+							</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
@@ -210,9 +207,9 @@
 
 				<a href="${ctx}/redirectTo/datadisplay">
 					<i class="menu-icon  fa fa-bar-chart">
-								<span class="menu-text" style="font-family: microsoft yahei">
-									图说数据
-								</span>
+							<span class="menu-text" style="font-family: microsoft yahei">
+								图说数据
+							</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
@@ -223,9 +220,9 @@
 
 				<a href="${ctx}/redirectTo/user">
 					<i class="menu-icon fa fa-user">
-								<span class="menu-text" style="font-family: microsoft yahei">
-									个人中心
-								</span>
+							<span class="menu-text"style="font-family: microsoft yahei">
+								个人中心
+							</span>
 					</i>
 				</a>
 				<b class="arrow"></b>
