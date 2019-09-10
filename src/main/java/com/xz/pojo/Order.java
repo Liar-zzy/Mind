@@ -2,6 +2,8 @@ package com.xz.pojo;
 
 public class Order {
 
+    private int o_id;
+
     private int item_id;
 
     private int merchandise_id;
@@ -13,6 +15,14 @@ public class Order {
     private double o_num;
 
     private String Date;
+
+    public int getO_id() {
+        return o_id;
+    }
+
+    public void setO_id(int o_id) {
+        this.o_id = o_id;
+    }
 
     public int getItem_id() {
         return item_id;

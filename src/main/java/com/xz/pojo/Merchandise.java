@@ -2,15 +2,15 @@ package com.xz.pojo;
 
 public class Merchandise {
 
-    private int merchandise_id;
+    private int merchandiseId;
 
     private String name;
 
     private double price;
 
-    private int manufacture_id;
+    private int manufactureId;
 
-    private String Date;
+    private String date;
 
     private int inventory;
 
@@ -18,20 +18,21 @@ public class Merchandise {
         return name;
     }
 
-    public int getMerchandise_id() {
-        return merchandise_id;
+
+    public int getMerchandiseId() {
+        return merchandiseId;
     }
 
-    public void setMerchandise_id(int merchandise_id) {
-        this.merchandise_id = merchandise_id;
+    public void setMerchandiseId(int merchandiseId) {
+        this.merchandiseId = merchandiseId;
     }
 
-    public int getManufacture_id() {
-        return manufacture_id;
+    public int getManufactureId() {
+        return manufactureId;
     }
 
-    public void setManufacture_id(int manufacture_id) {
-        this.manufacture_id = manufacture_id;
+    public void setManufactureId(int manufactureId) {
+        this.manufactureId = manufactureId;
     }
 
     public void setName(String name) {
@@ -47,11 +48,11 @@ public class Merchandise {
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(String date) {
-        Date = date;
+        this.date = date;
     }
 
     public int getInventory() {

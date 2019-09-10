@@ -146,7 +146,7 @@
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-														<select style="width: 100%;font-size: 14px;font-weight: 400;" id="register_state" name="role" >
+														<select style="width: 100%;font-size: 14px;font-weight: 400;"  name="register_role" id="register_role" >
 															<option value="ACE">平台管理员</option>
 															<option value="FIX">维修人员</option>
 															<option value="MAC">设备运营商</option>
@@ -159,14 +159,14 @@
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" name="email" placeholder="邮箱" required  />
+															<input type="email" class="form-control" name="email" placeholder="邮箱" id="register_email" required  />
 															<i class="ace-icon fa fa-envelope"></i>
 														</span>
                                             </label>
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" name="addr" placeholder="地址" minlength="10" maxlength="20"  required />
+															<input type="text" class="form-control" name="addr" placeholder="地址" minlength="10" maxlength="20" id="register_addr"  required />
 															<i class="ace-icon fa fa-map-marker"></i>
 														</span>
                                             </label>
@@ -231,6 +231,66 @@
 <script src ="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"> </script>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
 
+
+<!-- 注册验证 -->
+<script>
+    layui.use(['element','jquery','layer'],function () {
+        var element=layui.element;
+        var jquery=layui.jquery;
+        var layer=layui.layer;
+    })
+    $('#register').click(function () {
+        var name=$('input[id=register_name]').val();
+        console.log(name);
+        var password=$('input[id=register_pwd]').val();
+        var tel=$('input[id=register_tel]').val();
+        var role=$("#register_role").find("option:selected").val();//选中的值
+        console.log(role);
+        var email=$('input[id=register_email]').val();
+        var addr=$('input[id=register_addr]').val();
+
+        if(name==""){
+            layer.msg('请输入正确信息');
+            return false;
+        }
+
+        var obj={
+            username:name,
+            password:password,
+            tel:tel,
+            role:role,
+            email:email,
+            addr:addr,
+        }
+        $.ajax({
+            url:'${ctx}/user/register',
+            type:'post',
+            contentType:'application/json',
+            data:JSON.stringify(obj),
+            success:function (data) {
+                if(data.registered=="success"){
+                    layer.msg('注册成功');
+                    window.setTimeout( function(){}, 5 * 1000 );
+                    if(data.role=="ACE"){
+                        window.location.href="index-admin.jsp";
+                    }
+                    else if(data.role=="FIX"){
+                        window.location.href="index-fix.jsp";
+                    }
+                    else if(data.role=="MAC"){
+                        window.location.href="index-machine.jsp";
+                    }
+                    else if(data.role=="CH"){
+                        window.location.href="index-manufac.jsp";
+                    }
+                }
+            }
+
+        })
+
+    });
+</script>
+
 <!-- 验证 登录是否成功 -->
 <script>
     layui.use(['element','jquery','layer'],function () {
@@ -281,18 +341,13 @@
         })
 
     });
-    
-    $('#register').click(function () {
-        var name=$('input[id=username]').val();
-        var password=$('input[id=password]').val();
-    });
 
     $('input[id=register_checkpwd]').blur(function () {
         var checkpwd=input[id=register_checkpwd].val();
         var pwd=input[id=register_pwd].val();
 
         if(checkpwd!=pwd){
-            lay.msg('密码不一致')
+            layer.msg('密码不一致')
         }
     })
 
@@ -300,17 +355,11 @@
 
 <!-- 验证代码 试验login_form  register_form -->
 <script>
-    $.validator.setDefaults({
-        submitHandler: function() {
-            <!--alert("提交事件!");-->
-        }
-    });
     $().ready(function() {
         $("#login_form").validate();
     });
 </script>
 <script>
-
     $().ready(function() {
         $("#register_form").validate();
     });
@@ -393,16 +442,6 @@
         })
 
     });
-
-    $('input[id=register_checkpwd]').blur(function () {
-        var checkpwd=input[id=register_checkpwd].val();
-        var pwd=input[id=register_pwd].val();
-
-        if(checkpwd!=pwd){
-            lay.msg('密码不一致')
-        }
-    })
-
 </script>
 </body>
 </html>

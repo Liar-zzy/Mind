@@ -2,7 +2,7 @@ package com.xz.pojo;
 
 public class Machine {
 
-    private String machine_id;
+    private String machineId;
 
     private String name;
 
@@ -12,7 +12,7 @@ public class Machine {
 
     private String possessor;
 
-    private int item_num;
+    private int itemNum;
 
     private int capacity;
 
@@ -26,12 +26,12 @@ public class Machine {
 
     private int state;
 
-    public String getMachine_id() {
-        return machine_id;
+    public String getMachineId() {
+        return machineId;
     }
 
-    public void setMachine_id(String machine_id) {
-        this.machine_id = machine_id;
+    public void setMachineId(String machineId) {
+        this.machineId = machineId;
     }
 
     public String getName() {
@@ -66,12 +66,12 @@ public class Machine {
         this.possessor = possessor;
     }
 
-    public int getItem_num() {
-        return item_num;
+    public int getItemNum() {
+        return itemNum;
     }
 
-    public void setItem_num(int item_num) {
-        this.item_num = item_num;
+    public void setItemNum(int itemNum) {
+        this.itemNum = itemNum;
     }
 
     public int getCapacity() {

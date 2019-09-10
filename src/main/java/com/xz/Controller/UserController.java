@@ -40,34 +40,6 @@ public class UserController {
         return map;
     }
 
-//    @RequestMapping("/register")
-//    public String register(@ModelAttribute("user") User user, HttpSession session) {
-//        User u = new User();
-//
-//        System.out.println(user.getPassword() + user.getAddr() + user.getTel());
-//
-//        u.setUsername(user.getUsername());
-//        u.setPassword(user.getPassword());
-//        u.setTel(user.getTel());
-//        u.setRole(user.getRole());
-//        u.setEmail(user.getEmail());
-//        u.setAddr(user.getAddr());
-//
-//        Date date = new Date();
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        u.setCreate_date(sdf.format(date));
-//
-//        Calendar cal = Calendar.getInstance();
-//        cal.setTime(date);
-//        cal.add(Calendar.YEAR, 1);
-//        date = cal.getTime();
-//        u.setEnd_date(sdf.format(date));
-//
-//        userService.insert_register(u);
-//        System.out.println("注册成功！！！");
-//        return "redirect:/jsp/login.jsp";
-//    }
-
     @RequestMapping("/register")
     @ResponseBody
     public Map<String,String> register(@RequestBody User user){
@@ -92,9 +64,10 @@ public class UserController {
         u.setEndDate(sdf.format(date));
 
         userService.insert_register(u);
-        System.out.println("注册成功！！！");
+        System.out.println("注册成功 +   "+u.getUsername());
         Map<String, String > map = new HashMap<>();
-        map.put("register","success");
+        map.put("registered","success");
+        map.put("role",u.getRole());
         return map;
     }
 

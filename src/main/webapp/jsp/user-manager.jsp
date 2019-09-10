@@ -222,7 +222,7 @@
             <!-- 个人中心 -->
             <li class="active">
 
-                <a href="user-manager.html">
+                <a href="${ctx}/redirectTo/user">
                     <i class="menu-icon fa fa-user">
 								<span class="menu-text" style="font-family: microsoft yahei">
 									账号管理
@@ -298,7 +298,7 @@
                         <div class="modal-body">
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" readonly=" for="form-field-1" >
+                                    <label class="col-sm-3 control-label no-padding-right" readonly=" for=" form-field-1">
                                     <span style="color: #FF0000;">*</span>用户名</label>
                                     <div class="col-sm-9">
                                         <input type="text" id="form-field-1" class="col-xs-10 col-sm-5"/>
@@ -318,8 +318,8 @@
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" readonly=" for=" form-field-3" >
-                                    <span style="color: #FF0000;">*</span>角色</label>
+                                    <label class="col-sm-3 control-label no-padding-right" readonly=" for=" form-field-3"
+                                    > <span style="color: #FF0000;">*</span>角色</label>
                                     <div class="col-sm-9">
                                         <input type="text" id="form-field-3" class="col-xs-10 col-sm-5"
                                                placeholder=" "/>
@@ -371,8 +371,8 @@
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" readonly="  for=" form-field-7">
-                                    <span style="color: #FF0000;">*</span>账号到期时间</label>
+                                    <label class="col-sm-3 control-label no-padding-right" readonly="  for="
+                                           form-field-7" > <span style="color: #FF0000;">*</span>账号到期时间</label>
                                     <div class="col-sm-9">
                                         <input type="text" id="form-field-7" class="col-xs-10 col-sm-5"/>
                                     </div>
@@ -446,14 +446,14 @@
 
                             <!-- jsp 循环输入  改一下 各个变量名 然后循环 -->
                             <tbody>
-                            <c:forEach items="${ListAllUser}" var="obj">
-                                <tr>
-                                    <td class="center">
-                                        <label class="pos-rel">
-                                            <input type="checkbox" class="ace"/>
-                                            <span class="lbl"></span>
-                                        </label>
-                                    </td>
+							<c:forEach items="${ListAllUser}" var="obj">
+								<tr>
+									<td class="center">
+										<label class="pos-rel">
+											<input type="checkbox" class="ace"/>
+											<span class="lbl"></span>
+										</label>
+									</td>
                                     <td>${obj.username}</td>
                                     <td>${obj.password}</td>
                                     <td>${obj.role}</td>
@@ -462,7 +462,7 @@
                                     <td>${obj.addr}</td>
                                     <td>${obj.createDate}</td>
                                     <td>${obj.endDate}</td>
-                                </tr>
+								</tr>
                             </c:forEach>
 
                             </tbody>
