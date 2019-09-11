@@ -117,4 +117,14 @@ public class MachineController {
         map.put("IsExist", code);
         return map;
     }
+
+    //查询所有损坏的机器(state = 0)
+    @RequestMapping("/selectDamageMachine")
+    public String SelectDamageMachine(Model model){
+
+        List<Machine> list = machineService.selectDamageMachine();
+        model.addAttribute("AllDamageMachine",list);
+
+        return "xxx";
+    }
 }

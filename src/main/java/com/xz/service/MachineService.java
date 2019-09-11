@@ -16,4 +16,6 @@ public interface MachineService {
     boolean updateAMachine(Machine machine);
 
     Machine checkMachine(Machine machine);
+
+    List<Machine> selectDamageMachine();
 }

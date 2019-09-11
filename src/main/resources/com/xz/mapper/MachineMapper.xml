@@ -47,4 +47,7 @@
     <select id="getAMachine" parameterType="com.xz.pojo.Machine" resultType="com.xz.pojo.Machine">
         select * from j2ee.machine where machine_id = #{getMachine.machineId}
     </select>
+    <select id="select_DamageMachine" resultType="com.xz.pojo.Machine">
+        select * from j2ee.machine where state = 0
+    </select>
 </mapper>
