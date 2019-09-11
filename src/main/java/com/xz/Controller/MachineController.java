@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/machine")
@@ -24,8 +22,8 @@ public class MachineController {
     public MachineService machineService;
 
     @RequestMapping("/addMachine")
-    public String addMachine(Machine machine, HttpSession session){
-
+    @ResponseBody
+    public Map<String,String> add_Machine(@RequestBody Machine machine){
         machine.setState(1);
 
         Date date = new Date();
@@ -38,8 +36,19 @@ public class MachineController {
         date = cal.getTime();
         machine.setEndDate(sdf.format(date));
 
-        machineService.add_machine(machine);
-        return "index-admin";
+        boolean success;
+        Map<String, String > map = new HashMap<>();
+        success = machineService.add_machine(machine);
+
+        if(success == true) {
+            map.put("add","success");
+            System.out.println("add machine success");
+        }
+        else {
+            map.put("add","fail");
+            System.out.println("add machine fail");
+        }
+        return map;
     }
 
     @RequestMapping("/getMachineList")
@@ -55,17 +64,33 @@ public class MachineController {
     }
 
     @RequestMapping("/deleteAMachine")
-    public String deleteAMachine(){
+    @ResponseBody
+    public Map<String,String> deleteAMachine(@RequestBody Machine machine){
         boolean success;
-        success = machineService.deleteAMachine(1);
-        if(success == true) System.out.println("delete machine success");
-        else System.out.println("delete machine fail");
-        return "xxx";
+        success = machineService.deleteAMachine(machine.getMachineId());
+        if(success) {
+            System.out.println("delete machine success");
+        } else {
+            System.out.println("delete machine fail");
+        }
+        Map<String, String > map = new HashMap<>();
+        if(success){
+            map.put("delete","success");
+            System.out.println("delete machine success");
+        }
+        else{
+            map.put("delete","fail");
+            System.out.println("delete machine fail");
+        }
+        return map;
     }
 
     @RequestMapping("/updateAMachine")
     @ResponseBody
-    public String updateAMerchandise(@RequestBody Machine machine){
+    public Map<String, String > updateAMachine(@RequestBody Machine machine){
+
+        System.out.println(machine.getMachineId());
+        System.out.println(machine.getState());
         boolean success;
         success = machineService.updateAMachine(machine);
         if(success) {

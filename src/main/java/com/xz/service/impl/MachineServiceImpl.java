@@ -30,13 +30,6 @@ public class MachineServiceImpl implements MachineService {
     }
 
     @Override
-    public Machine selectAMachine(User user) {
-        Machine machine=machineMapper.selectAMachine(user);
-        return machine;
-    }
-
-
-    @Override
     public boolean deleteAMachine(int machineId) {
         int row = machineMapper.delete_AMachine(machineId);
         return row == 1 ? true:false;
@@ -55,9 +48,9 @@ public class MachineServiceImpl implements MachineService {
     }
 
     @Override
-    public List<Machine> selectDamageMachine() {
-        List<Machine> list = machineMapper.select_DamageMachine();
-        return list;
+    public Machine selectAMachine(User user) {
+        Machine machine=machineMapper.selectAMachine(user);
+        return machine;
     }
 
     @Override
