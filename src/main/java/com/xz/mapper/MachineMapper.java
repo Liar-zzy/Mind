@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface MachineMapper {
 
-
     int addMachine(@Param("m")Machine machine);
 
     List<Machine> select_allMachine();
