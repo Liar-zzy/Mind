@@ -629,21 +629,8 @@
 							</tbody>
 						</table>
 					</div>
-
-
-
-
-
-
 				</div>
 			</div>
-
-
-
-
-
-
-
 		</div><!-- page-content -->
 
 	</div>
@@ -691,6 +678,8 @@
 	if('ontouchstart' in document.documentElement) document.write("<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 </script>
 <script src="../ace-master/assets/js/bootstrap.min.js"></script>
+<script src="../layui-v2.5.4/layui/layui.all.js"></script>
+<script src="../layui-v2.5.4/layui/layui.js"></script>
 
 <!-- page specific plugin scripts -->
 <script src="../ace-master/assets/js/jquery.dataTables.min.js"></script>
@@ -708,6 +697,11 @@
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
+	layui.use(['element','jquery','layer'],function () {
+		var element=layui.element;
+		var jquery=layui.jquery;
+		var layer=layui.layer;
+	})
 	jQuery(function($) {
 		//initiate dataTables plugin
 		var myTable =
@@ -859,7 +853,6 @@
 			if(this.checked) myTable.row(row).deselect();
 			else myTable.row(row).select();
 		});
-
 
 
 		$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {

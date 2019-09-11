@@ -22,8 +22,8 @@
                 price = #{updateMerchandise.price},
             </if>
 
-            <if test="updateMerchandise.manufactureId != null  and updateMerchandise.manufactureId != ''">
-                manufacturer_id = #{updateMerchandise.manufactureId},
+            <if test="updateMerchandise.merchandiseId != null and updateMerchandise.merchandiseId != ''">
+                manufacturer = #{updateMerchandise.merchandiseId},
             </if>
 
             <if test="updateMerchandise.inventory != null  and updateMerchandise.inventory != ''">
@@ -34,4 +34,8 @@
             merchandise_id = #{updateMerchandise.merchandiseId}
         </where>
     </update>
+
+    <select id="getAMerchandise" parameterType="com.xz.pojo.Merchandise" resultType="com.xz.pojo.Merchandise">
+        select * from merchandise where merchandise_id = #{getMerchandise.merchandiseId}
+    </select>
 </mapper>

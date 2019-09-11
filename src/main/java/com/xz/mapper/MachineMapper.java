@@ -1,7 +1,6 @@
 package com.xz.mapper;
 
 import com.xz.pojo.Machine;
-import com.xz.pojo.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -15,6 +14,4 @@ public interface MachineMapper {
     int delete_AMachine(@Param("machineId") int machineId);
 
     int update_AMachine(@Param("updateMachine") Machine machine);
-
-    Machine selectAMachine(@Param("user")User user);
 }
