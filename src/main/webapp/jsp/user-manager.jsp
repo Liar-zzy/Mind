@@ -734,8 +734,9 @@
                                             layer.msg("修改成功")
                                         }
                                         $('#alter-modal').modal('hide')
-                                       window.setTimeout( function(){}, 2 * 1000 );
-                                       location.reload()
+                                       setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+                                           window.location.reload();//页面刷新
+                                       },2000);
                                    }
                                })
 
