@@ -18,7 +18,7 @@ public interface MachineMapper {
 
     Machine getAMachine(@Param("getMachine") Machine machine);
 
-    List<Machine> select_DamageMachine();
-
     Machine selectAMachine(@Param("user") User user);
+
+    List<Machine> select_DamageMachine();
 }
