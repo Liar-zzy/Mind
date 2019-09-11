@@ -617,7 +617,6 @@
             $('.dt-button-info').addClass('gritter-item-wrapper gritter-info gritter-center white');
         });
 
-
         var defaultColvisAction = myTable.button(0).action();
         myTable.button(0).action(function (e, dt, button, config) {
 
@@ -694,11 +693,10 @@
 
                 console.log(data[1])
 
-
-
                 // 选定  修改 js 测试
                 $('#alteruser').click(function(){
                     var dusername=data[1];
+
                     console.log(dusername)
                     var alterobj={
                         username:dusername

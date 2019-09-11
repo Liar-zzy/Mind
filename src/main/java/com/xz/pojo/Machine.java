@@ -2,7 +2,7 @@ package com.xz.pojo;
 
 public class Machine {
 
-    private String machineId;
+    private int machineId;
 
     private String name;
 
@@ -26,11 +26,11 @@ public class Machine {
 
     private int state;
 
-    public String getMachineId() {
+    public int getMachineId() {
         return machineId;
     }
 
-    public void setMachineId(String machineId) {
+    public void setMachineId(int machineId) {
         this.machineId = machineId;
     }
 
