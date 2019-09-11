@@ -11,7 +11,7 @@ public interface M_merchandiseService {
 
     List<M_merchandise> selectAllM_merchandise(int machineId);
 
-    boolean deleteAM_merchandise(int machineId);
+    boolean deleteAM_merchandise(M_merchandise m_merchandise);
 
     boolean updateAM_merchandise(M_merchandise m_merchandise);
 }

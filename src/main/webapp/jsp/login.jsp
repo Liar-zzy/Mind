@@ -53,11 +53,11 @@
 
                                     <div class="space-6"></div>
 
-                                    <form   id="login_form">
+                                    <form  id="login_form">
                                         <fieldset>
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" name="username" id="username" placeholder="请输入用户名" minlength="4" maxlength="10" required />
+															<input type="text" class="form-control" name="username" id="login_username" placeholder="请输入用户名" minlength="4" maxlength="10" required />
 															<i class="ace-icon fa fa-user"></i>
 														</span>
                                             </label>
@@ -65,7 +65,7 @@
 
                                             <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control"  name="password" id="password" placeholder="请输入密码" minlength="6"  required />
+															<input type="password" class="form-control"  name="password" id="login_password" placeholder="请输入密码" minlength="6"  required />
 															<i class="ace-icon fa fa-lock"></i>
 														</span>
                                             </label>
@@ -262,6 +262,7 @@
             email:email,
             addr:addr,
         }
+
         $.ajax({
             url:'${ctx}/user/register',
             type:'post',
@@ -285,7 +286,6 @@
                     }
                 }
             }
-
         })
 
     });
@@ -301,8 +301,8 @@
 
     $('#login').click(function () {
 
-        var name=$('input[id=username]').val();
-        var password=$('input[id=password]').val();
+        var name=$('input[id=login_username]').val();
+        var password=$('input[id=login_password]').val();
 
         var obj={
             username:name,
@@ -330,7 +330,7 @@
                         window.location.href="index-manufac.jsp";
                     }
                 }
-                else if (data.logincheck=="failure"){
+                else{
 
                     layer.msg('账号密码错误');
                     $('input[id=username]').val("");

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -34,6 +35,7 @@ public class UserController {
             map.put("role",user.getRole());
         }
         else{
+            System.out.println("login failure");
             map.put("logincheck","failure");
         }
         return map;
@@ -63,6 +65,7 @@ public class UserController {
         u.setEndDate(sdf.format(date));
 
         userService.insert_register(u);
+
         System.out.println("注册成功 +   "+u.getUsername());
         Map<String, String > map = new HashMap<>();
         map.put("registered","success");
@@ -142,6 +145,68 @@ public class UserController {
 
         Map<String, String > map = new HashMap<>();
         map.put("update","success");
+        return map;
+    }
+
+    @RequestMapping("/updateMyUser")
+    @ResponseBody
+    public Map<String,String> updateMyUser(@RequestBody User user, HttpServletRequest request){
+        System.out.println("update My User ");
+
+        System.out.println(user.toString());
+
+        HttpSession session = request.getSession();
+        User u = (User)session.getAttribute("SESSION_USER");
+        user.setUsername(u.getUsername());
+        user.setPassword(u.getPassword());
+
+        System.out.println(u.toString());
+
+        boolean success;
+        //重新获取 user
+        success = userService.updateAUser(user);
+
+
+        user=userService.get(user);
+        System.out.println("修改后的user:   "+user.toString());
+
+        session.setAttribute("SESSION_USER", user);
+
+        if(success) {
+            System.out.println("update my user success");
+        } else {
+            System.out.println("update my user fail");
+        }
+
+        Map<String, String > map = new HashMap<>();
+        map.put("update","success");
+        return map;
+    }
+
+    @RequestMapping("/updateMyUserpwd")
+    @ResponseBody
+    public Map<String,String> updateMyUserpwd(@RequestBody User user, HttpServletRequest request){
+        System.out.println("update My User pwd ");
+
+        System.out.println(user.toString());
+
+        HttpSession session = request.getSession();
+        User u = (User)session.getAttribute("SESSION_USER");
+
+        user.setUsername(u.getUsername());
+
+        boolean success;
+        //重新获取 user
+        success = userService.updateAUser(user);
+
+        if(success){
+            System.out.println("update my user success");
+        } else {
+            System.out.println("update my user fail");
+        }
+
+        Map<String, String > map = new HashMap<>();
+        map.put("updatepwd","success");
         return map;
     }
 

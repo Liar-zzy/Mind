@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh">
@@ -15,7 +16,7 @@
 	<link rel="stylesheet" href="../ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 	<!-- font awesome -->
-	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 
 	<!-- text fonts -->
 	<link rel="stylesheet" href="../ace-master/assets/css/fonts.googleapis.com.css" />
@@ -287,10 +288,92 @@
 								</h1>
 							</span>
 				</div><!-- /.page-header -->
-				<!-- 需要一个提示 箭头 -->
 
+				<div class="row">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="machineid">设备ID</label>
+							<div class="col-sm-9">
+								<input type="text" id="machineid" readonly="" class="col-xs-10 col-sm-5" value="${SESSION_MACHINE.machineId}" />
+							</div>
+						</div>
+					</form>
 
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="machinename">设备名</label>
+							<div class="col-sm-9">
+								<input type="text" id="machinename" readonly="" class="col-xs-10 col-sm-5" value="${SESSION_MACHINE.name}" />
+							</div>
+						</div>
+					</form>
 
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="type"> 设备类型</label>
+							<div class="col-sm-9">
+								<input type="text" id="type" readonly="" class="col-xs-10 col-sm-5" value="${SESSION_MACHINE.type}"/>
+							</div>
+						</div>
+					</form>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="screen"> 屏幕</label>
+							<div class="col-sm-9">
+								<input type="text" id="screen" readonly="" class="col-xs-10 col-sm-5" value="${SESSION_MACHINE.screen}"/>
+							</div>
+						</div>
+					</form>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="possessor"> 持有人</label>
+							<div class="col-sm-9">
+								<input type="text" id="possessor" readonly="" class="col-xs-10 col-sm-5" value="${SESSION_MACHINE.possessor}" />
+							</div>
+						</div>
+					</form>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="item_num"> 货道数量</label>
+							<div class="col-sm-9">
+								<input type="text" id="item_num" readonly="" class="col-xs-10 col-sm-5" value="${SESSION_MACHINE.itemNum}" />
+							</div>
+						</div>
+					</form>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="capacity"> 货道容量</label>
+							<div class="col-sm-9">
+								<input type="text" id="capacity" readonly="" class="col-xs-10 col-sm-5" value="${SESSION_MACHINE.capacity}" />
+							</div>
+						</div>
+					</form>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="gps"> gps</label>
+							<div class="col-sm-9">
+								<input type="text" id="gps" readonly="" class="col-xs-10 col-sm-5" value="${SESSION_MACHINE.gps}" />
+							</div>
+						</div>
+					</form>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="addr"> 地址</label>
+							<div class="col-sm-9">
+								<input type="text" id="addr" readonly="" class="col-xs-10 col-sm-5" value="${SESSION_MACHINE.addr}" />
+							</div>
+						</div>
+					</form>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="col-sm-3 control-label no-padding-right" for="state"> 设备状态</label>
+							<div class="col-sm-9">
+								<input type="text" id="state" readonly="" class="col-xs-10 col-sm-5"  value="${SESSION_MACHINE.state}"/>
+							</div>
+						</div>
+					</form>
+
+				</div>
 
 				<!-- 添加设备弹出框 -->
 				<div class="modal" id="add-modal" backdrop="true" keyboard="false">
@@ -305,27 +388,27 @@
 						<div class="modal-body">
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>货道ID</label>
+									<label class="col-sm-3 control-label no-padding-right" for="add_item_id"> <span style="color: #FF0000;">*</span>货道ID</label>
 									<div class="col-sm-9">
-										<input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
+										<input type="text" id="add_item_id"  class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 							</form>
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>商品ID</label>
+									<label class="col-sm-3 control-label no-padding-right" for="add_merchandise_id"> <span style="color: #FF0000;">*</span>商品ID</label>
 									<div class="col-sm-9">
-										<input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
+										<input type="text" id="add_merchandise_id" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 							</form>
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>商品名</label>
+									<label class="col-sm-3 control-label no-padding-right" for="add_margin"> <span style="color: #FF0000;">*</span>余量</label>
 									<div class="col-sm-9">
-										<input type="text" id="form-field-3" class="col-xs-10 col-sm-5" placeholder=" " />
+										<input type="text" id="add_margin" class="col-xs-10 col-sm-5" placeholder=" " />
 									</div>
 								</div>
 							</form>
@@ -333,7 +416,7 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-							<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#alter-modal">确定</button>
+							<button type="submit" class="btn btn-primary" id="addsubmit" >确定</button>
 						</div>
 					</div><!-- modal-dialog -->
 				</div><!-- 结束/添加设备弹出框 -->
@@ -353,37 +436,36 @@
 						<div class="modal-body">
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>货道ID</label>
+									<label class="col-sm-3 control-label no-padding-right" for="alter_item_id"> <span style="color: #FF0000;">*</span>货道ID</label>
 									<div class="col-sm-9">
-										<input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
+										<input type="text" id="alter_item_id" readonly="" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 							</form>
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>商品ID</label>
+									<label class="col-sm-3 control-label no-padding-right" for="alter_merchandise_id"> <span style="color: #FF0000;">*</span>商品ID</label>
 									<div class="col-sm-9">
-										<input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
+										<input type="text" id="alter_merchandise_id" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 							</form>
 
 							<form class="form-horizontal" role="form">
 								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>商品名</label>
+									<label class="col-sm-3 control-label no-padding-right" for="alter_margin"> <span style="color: #FF0000;">*</span>设备余量</label>
 									<div class="col-sm-9">
-										<input type="text" id="form-field-3" class="col-xs-10 col-sm-5" placeholder=" " />
+										<input type="text" id="alter_margin" class="col-xs-10 col-sm-5" />
 									</div>
 								</div>
 							</form>
-
-
 
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">确定</button>
+							<button type="submit" id="altersubmit" class="btn btn-primary"
+									 >确定</button>
 						</div>
 					</div><!-- modal-dialog -->
 				</div>
@@ -406,8 +488,6 @@
 
 							</button>
 
-
-
 							<button class="btn btn-white btn-default btn-round" data-toggle="modal" data-target="#alter-modal">
 								<i class="ace-icon fa fa-pencil-square-o red2"></i>
 								<span style="font-family: microsoft yahei">
@@ -415,11 +495,11 @@
 										</span>
 							</button>
 
-							<button class="btn btn-white btn-warning btn-bold">
+							<button class="btn btn-white btn-warning btn-bold" id="delete">
 								<i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
 								<span style="font-family: microsoft yahei">
 											删除商品
-										</span>
+								</span>
 							</button>
 
 							<div class="hr hr-18 dotted hr-double"></div>
@@ -442,8 +522,7 @@
 								</th>
 								<th>货道ID</th>
 								<th>商品ID</th>
-								<th>商品名</th>
-								<th>商品余量</th>
+								<th>设备余量</th>
 								<th>已售数量</th>
 								<th>已售总价</th>
 							</tr>
@@ -451,26 +530,21 @@
 
 							<!-- jsp 循环输入  改一下 各个变量名 然后循环 -->
 							<tbody>
-							<tr>
-								<td class="center">
-									<label class="pos-rel">
-										<input type="checkbox" class="ace" />
-										<span class="lbl"></span>
-									</label>
-								</td>
-
-								<td>
-									<a href="#"> 货道ID1</a>
-								</td>
-								<td> 商品ID</td>
-								<td>商品名</td>
-								<td>商品余量</td>
-
-								<td> 已售数量 </td>
-
-								<td>g已售总价</td>
-
-							</tr>
+							<c:forEach items="${ListAllM_merchandise}" var="obj">
+								<tr>
+									<td class="center">
+										<label class="pos-rel">
+											<input type="checkbox" class="ace"/>
+											<span class="lbl"></span>
+										</label>
+									</td>
+									<td>${obj.itemId}</td>
+									<td>${obj.merchandiseId}</td>
+									<td>${obj.margin}</td>
+									<td>${obj.soldNum}</td>
+									<td>${obj.soldSum}</td>
+								</tr>
+							</c:forEach>
 							</tbody>
 
 
@@ -516,11 +590,12 @@
 </div>
 
 <script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
-
+<script src="../layui-v2.5.4/layui/layui.all.js"></script>
+<script src="../layui-v2.5.4/layui/layui.js"></script>
 <!-- <![endif]-->
 
 <!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="../ace-master/assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
 	if ('ontouchstart' in document.documentElement) document.write(
@@ -544,6 +619,11 @@
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
+	layui.use(['element','jquery','layer'],function () {
+		var element=layui.element;
+		var jquery=layui.jquery;
+		var layer=layui.layer;
+	})
 	jQuery(function($) {
 		//initiate dataTables plugin
 		var myTable =
@@ -554,29 +634,10 @@
 							"aoColumns": [{
 								"bSortable": false
 							},
-								null, null, null, null,null,null
+								null, null, null, null,null
 
 							],
 							"aaSorting": [],
-
-
-							//"bProcessing": true,
-							//"bServerSide": true,
-							//"sAjaxSource": "http://127.0.0.1/table.php"	,
-
-							//,
-							//"sScrollY": "200px",
-							//"bPaginate": false,
-
-							//"sScrollX": "100%",
-							//"sScrollXInner": "120%",
-							//"bScrollCollapse": true,
-							//Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
-							//you may want to wrap the table inside a "div.dataTables_borderWrap" element
-
-							//"iDisplayLength": 50
-
-
 							select: {
 								style: 'multi'
 							}
@@ -700,8 +761,108 @@
 		//select/deselect a row when the checkbox is checked/unchecked
 		$('#dynamic-table').on('click', 'td input[type=checkbox]', function() {
 			var row = $(this).closest('tr').get(0);
-			if (this.checked) myTable.row(row).deselect();
-			else myTable.row(row).select();
+			if (this.checked) {
+				myTable.row(row).deselect();
+			}
+			else {
+				myTable.row(row).select();
+
+				var data=myTable.row(row).data()
+
+				console.log(data)
+
+				$('#alter_item_id').val(data[1])
+				$('#alter_merchandise_id').val(data[2])
+				$('#alter_margin').val(data[3])
+
+				// 商品修改 js
+				$('#altersubmit').click(function () {
+					var itemid=$('#alter_item_id').val();
+					var merchandiseid=$('#alter_merchandise_id').val();
+					var margin=$('#alter_margin').val();
+
+					var alteredobj={
+						itemId:itemid,
+						merchandiseId:merchandiseid,
+						margin:margin,
+					}
+
+					$.ajax({
+						url:'${ctx}/M_merchandise/updateAM_merchandise',
+						type:'post',
+						contentType:'application/json',
+						data:JSON.stringify(alteredobj),
+						success:function (data) {
+							if(data.update=="success"){
+								layer.msg("修改成功")
+							}
+							$('#alter-modal').modal('hide')
+
+							setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+								window.location.reload();//页面刷新
+							},2000);
+						}
+					})
+
+				});
+
+				// 商品删除 js
+				$('#delete').click(function () {
+					var item_id=data[1];
+
+					var deleteobj={
+						itemId:item_id
+					}
+					$.ajax({
+						url:'${ctx}/M_merchandise/deleteAM_merchandise',
+						type:'post',
+						contentType:'application/json',
+						data:JSON.stringify(deleteobj),
+						success:function (data) {
+							if(data.delete=="success"){
+								layer.msg("删除成功")
+							}
+							setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+								window.location.reload();//页面刷新
+							},2000);
+						}
+					})
+				})
+
+				// 商品添加 js
+				$('#addsubmit').click(function () {
+					//add_item_id add_merchandise_id add_margin
+					var addItemId=$('#add_item_id').val()
+					var addMerchandiseId=$('#add_merchandise_id').val()
+					var addMargin=$('#add_margin').val()
+
+					var alteredobj={
+						itemId:addItemId,
+						merchandiseId:addMerchandiseId,
+						margin:addMargin,
+					}
+					$.ajax({
+						url:'${ctx}/M_merchandise/addM_merchandise',
+						type:'post',
+						contentType:'application/json',
+						data:JSON.stringify(alteredobj),
+						success:function (data) {
+							if(data.add=="success"){
+								layer.msg("添加成功")
+							}
+							else{
+								layer.msg("添加失败")
+							}
+							$('#add-modal').modal('hide')
+							setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+								window.location.reload();//页面刷新
+							},2000);
+						}
+					})
+
+				})
+
+			}
 		});
 
 

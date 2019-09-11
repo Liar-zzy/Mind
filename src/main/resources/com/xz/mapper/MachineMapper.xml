@@ -12,6 +12,11 @@
          enddate as endDate, state from j2ee.machine;
     </select>
 
+    <select id="selectAMachine" parameterType="com.xz.pojo.User" resultType="com.xz.pojo.Machine">
+        select machine_id, name, type, screen, possessor, item_num, capacity, gps, addr, distridate as distriDate,
+         enddate as endDate, state from j2ee.machine where possessor=#{user.username};
+    </select>
+
     <delete id="delete_AMachine" parameterType="int">
         delete from j2ee.machine where machine_id = #{machineId}
     </delete>

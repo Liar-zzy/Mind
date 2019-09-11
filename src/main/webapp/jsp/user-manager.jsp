@@ -398,14 +398,6 @@
                             <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
                             <a href="" class=""> 请选择操作 </a>
 
-<%--                            <button class="btn btn-white btn-default btn-round" data-toggle="modal"--%>
-<%--                                    data-target="#alter-modal" id="adduser">--%>
-<%--                                <i class="ace-icon fa fa-plus red2"></i>--%>
-<%--                                <span style="font-family: microsoft yahei">--%>
-<%--											添加账号--%>
-<%--										</span>--%>
-<%--                            </button>--%>
-
                             <button class="btn btn-white btn-default btn-round" id="alteruser" data-toggle="modal"
                                     data-target="#alter-modal">
                                 <i class="ace-icon fa fa-pencil-square-o red2"></i>
@@ -709,9 +701,7 @@
                         contentType:'application/json',
                         data:JSON.stringify(alterobj),
                         success:function (data) {
-                            // alert(data.username)
-                            // alert(data.password)
-                            // alert(data.role)
+
                             $('#alter_name').val(data.username)
                             $('#alter_pwd').val(data.password)
                             $('#alter_role').val(data.role)
@@ -746,6 +736,8 @@
                                             layer.msg("修改成功")
                                         }
                                         $('#alter-modal').modal('hide')
+                                       window.setTimeout( function(){}, 2 * 1000 );
+                                       location.reload()
                                    }
                                })
 
@@ -771,6 +763,8 @@
                             if(data.delete=="success"){
                                 layer.msg("删除成功")
                             }
+                            window.setTimeout( function(){}, 2 * 1000 );
+                            location.reload()
                         }
                     })
                 })

@@ -29,8 +29,8 @@ public class M_merchandiseServiceImpl implements M_merchandiseService {
     }
 
     @Override
-    public boolean deleteAM_merchandise(int machineId) {
-        int row = m_merchandiseMapper.delete_AM_merchandise(machineId);
+    public boolean deleteAM_merchandise(M_merchandise m_merchandise) {
+        int row = m_merchandiseMapper.delete_AM_merchandise(m_merchandise);
         return row == 1 ? true:false;
     }
 

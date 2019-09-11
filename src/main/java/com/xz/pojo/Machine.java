@@ -121,4 +121,22 @@ public class Machine {
     public void setState(int state) {
         this.state = state;
     }
+
+    @Override
+    public String toString() {
+        return "Machine{" +
+                "machineId='" + machineId + '\'' +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", screen='" + screen + '\'' +
+                ", possessor='" + possessor + '\'' +
+                ", itemNum=" + itemNum +
+                ", capacity=" + capacity +
+                ", gps='" + gps + '\'' +
+                ", addr='" + addr + '\'' +
+                ", distriDate='" + distriDate + '\'' +
+                ", endDate='" + endDate + '\'' +
+                ", state=" + state +
+                '}';
+    }
 }

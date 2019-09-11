@@ -99,7 +99,7 @@ public class RedirectController {
             return "redirect:";
         }
         else if(user.getRole().equals("MAC")){
-            return "redirect:/jsp/machine-manage.jsp";
+            return "redirect:/M_merchandise/getM_merchandiseList";
         }
         else {
             return "redirect:/jsp/.jsp";
