@@ -12,7 +12,7 @@ public interface M_merchandiseMapper {
 
     List<M_merchandise> select_allM_merchandise(@Param("machineId") int machineId);
 
-    int delete_AM_merchandise(@Param("machineId") int machineId);
+    int delete_AM_merchandise(@Param("m_merchandise") M_merchandise m_merchandise);
 
     int update_AM_merchandise(@Param("updateM_merchandise") M_merchandise m_merchandise);
 }

@@ -61,4 +61,16 @@ public class M_merchandise {
     public void setSoldSum(double soldSum) {
         this.soldSum = soldSum;
     }
+
+    @Override
+    public String toString() {
+        return "M_merchandise{" +
+                "machineId=" + machineId +
+                ", merchandiseId=" + merchandiseId +
+                ", margin=" + margin +
+                ", itemId=" + itemId +
+                ", soldNum=" + soldNum +
+                ", soldSum=" + soldSum +
+                '}';
+    }
 }

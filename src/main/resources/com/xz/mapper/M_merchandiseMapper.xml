@@ -11,22 +11,25 @@
         select * from  j2ee.m_merchandise where m_merchandise.machine_id = #{machineId};
     </select>
 
-    <delete id="delete_AM_merchandise" parameterType="int">
-        delete from j2ee.m_merchandise where machine_id = #{machineId}
+    <delete id="delete_AM_merchandise" parameterType="com.xz.pojo.M_merchandise">
+        delete from j2ee.m_merchandise where machine_id = #{m_merchandise.machineId} and item_id=#{m_merchandise.itemId}
     </delete>
 
     <update id="update_AM_merchandise" parameterType="com.xz.pojo.M_merchandise">
         update j2ee.m_merchandise
         <set>
+            <if test="updateM_merchandise.merchandiseId != null and updateM_merchandise.merchandiseId != ''">
+                merchandise_id = #{updateM_merchandise.merchandiseId},
+            </if>
             <if test="updateM_merchandise.margin != null and updateM_merchandise.margin != ''">
                 margin = #{updateM_merchandise.margin},
             </if>
 
-            <if test="updateM_merchandise.soldNum != null and updateM_merchandise.soldNum != ''">
+            <if test="updateM_merchandise.soldNum != null ">
                 sold_num = #{updateM_merchandise.soldNum},
             </if>
 
-            <if test="updateM_merchandise.soldSum != null and updateM_merchandise.soldSum != ''">
+            <if test="updateM_merchandise.soldSum != null ">
                 sold_sum = #{updateM_merchandise.soldSum}
             </if>
         </set>

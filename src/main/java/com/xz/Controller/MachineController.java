@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping("/machine")
@@ -22,8 +24,8 @@ public class MachineController {
     public MachineService machineService;
 
     @RequestMapping("/addMachine")
-    @ResponseBody
-    public Map<String,String> add_Machine(@RequestBody Machine machine){
+    public String addMachine(Machine machine, HttpSession session){
+
         machine.setState(1);
 
         Date date = new Date();
@@ -36,19 +38,8 @@ public class MachineController {
         date = cal.getTime();
         machine.setEndDate(sdf.format(date));
 
-        boolean success;
-        Map<String, String > map = new HashMap<>();
-        success = machineService.add_machine(machine);
-
-        if(success == true) {
-            map.put("add","success");
-            System.out.println("add machine success");
-        }
-        else {
-            map.put("add","fail");
-            System.out.println("add machine fail");
-        }
-        return map;
+        machineService.add_machine(machine);
+        return "index-admin";
     }
 
     @RequestMapping("/getMachineList")
@@ -64,67 +55,21 @@ public class MachineController {
     }
 
     @RequestMapping("/deleteAMachine")
-    @ResponseBody
-    public Map<String,String> deleteAMachine(@RequestBody Machine machine){
+    public String deleteAMachine(){
         boolean success;
-        success = machineService.deleteAMachine(machine.getMachineId());
+        success = machineService.deleteAMachine(1);
         if(success == true) System.out.println("delete machine success");
         else System.out.println("delete machine fail");
-        Map<String, String > map = new HashMap<>();
-        if(success){
-            map.put("delete","success");
-            System.out.println("delete machine success");
-        }
-        else{
-            map.put("delete","fail");
-            System.out.println("delete machine fail");
-        }
-        return map;
+        return "xxx";
     }
 
     @RequestMapping("/updateAMachine")
     @ResponseBody
-    public Map<String, String > updateAMachine(@RequestBody Machine machine){
-
-        System.out.println(machine.getMachineId());
+    public String updateAMerchandise(@RequestBody Machine machine){
         boolean success;
         success = machineService.updateAMachine(machine);
         if(success == true) System.out.println("update Machine success");
         else System.out.println("update Machine fail");
-        Map<String, String > map = new HashMap<>();
-        map.put("update","success");
-        return map;
-    }
-
-    //注册时检查machineId是否存在
-    @RequestMapping("/checkMachineId")
-    @ResponseBody
-    public Map<String, Integer> checkMerchandiseId(@RequestBody Machine machine) {
-        Map<String, Integer> map = new HashMap<>();
-        Machine m ;
-        m = machineService.checkMachine(machine);
-
-        Integer code = 0;
-        //如果 MachineId 为空 则 机器id可用
-        if (m == null) {
-            //可用
-            code = 1;
-        } else {
-            //不可用
-            code = 0;
-            System.out.println("已存在的id以及名称"+m.getMachineId()+" "+m.getName());
-        }
-        map.put("IsExist", code);
-        return map;
-    }
-
-    //查询所有损坏的机器(state = 0)
-    @RequestMapping("/selectDamageMachine")
-    public String SelectDamageMachine(Model model){
-
-        List<Machine> list = machineService.selectDamageMachine();
-        model.addAttribute("AllDamageMachine",list);
-
         return "xxx";
     }
 }

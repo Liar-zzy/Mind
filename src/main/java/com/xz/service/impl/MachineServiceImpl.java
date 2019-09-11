@@ -2,6 +2,7 @@ package com.xz.service.impl;
 
 import com.xz.mapper.MachineMapper;
 import com.xz.pojo.Machine;
+import com.xz.pojo.User;
 import com.xz.service.MachineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,13 @@ public class MachineServiceImpl implements MachineService {
         List<Machine> list = machineMapper.select_allMachine();
         return list;
     }
+
+    @Override
+    public Machine selectAMachine(User user) {
+        Machine machine=machineMapper.selectAMachine(user);
+        return machine;
+    }
+
 
     @Override
     public boolean deleteAMachine(int machineId) {

@@ -95,4 +95,19 @@ public class User {
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", tel='" + tel + '\'' +
+                ", email='" + email + '\'' +
+                ", addr='" + addr + '\'' +
+                ", createDate='" + createDate + '\'' +
+                ", endDate='" + endDate + '\'' +
+                '}';
+    }
 }

@@ -129,8 +129,8 @@
                 <a href="${ctx}/redirectTo/index">
                     <i class="menu-icon fa fa-home"></i>
                     <span class="menu-text">
-									首页
-								</span>
+								首页
+							</span>
                 </a>
                 <b class="arrow"></b>
             </li>
@@ -179,7 +179,7 @@
 
                 <a href="${ctx}/redirectTo/user">
                     <i class="menu-icon fa fa-user">
-								<span class="menu-text"style="font-family: microsoft yahei">
+								<span class="menu-text" style="font-family: microsoft yahei">
 									个人中心
 								</span>
                     </i>
@@ -255,23 +255,23 @@
                         <div class="modal-body">
                             <form class="form-horizontal" id="validation-form" method="get">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>联系方式</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_tel"> <span style="color: #FF0000;">*</span>联系方式</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
+                                        <input type="text" id="alter_tel" class="col-xs-10 col-sm-5" />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>邮箱</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_email"> <span style="color: #FF0000;">*</span>邮箱</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
+                                        <input type="text" id="alter_email" class="col-xs-10 col-sm-5" />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>地址</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_addr"> <span style="color: #FF0000;">*</span>地址</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-3" class="col-xs-10 col-sm-5" placeholder=" " />
+                                        <input type="text" id="alter_addr" class="col-xs-10 col-sm-5" placeholder=" " />
                                     </div>
                                 </div>
                             </form>
@@ -279,7 +279,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">确定</button>
+                            <button type="button" id="altersubmit" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">确定</button>
                         </div>
                     </div><!-- modal-dialog -->
                 </div>
@@ -297,18 +297,18 @@
                         <div class="modal-body">
 
 
-                            <form class="form-horizontal" id="myform">
+                            <form class="form-horizontal" id="pwdform">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="password">Password</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="pwd">Password</label>
                                     <div class="col-sm-9">
-                                        <input id="password" name="password" class="col-xs-10 col-sm-5" placeholder="请设置新密码"/>
+                                        <input id="pwd" name="password" class="col-xs-10 col-sm-5" placeholder="请设置新密码"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
 
-                                    <label class="col-sm-3 control-label no-padding-right" for="password_again">Again</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="checkpwd">Again</label>
                                     <div class="col-sm-9">
-                                        <input  id="password_again" name="password_again" class="col-xs-10 col-sm-5" placeholder="请再次填写新密码"/>
+                                        <input  id="checkpwd" name="password_again" class="col-xs-10 col-sm-5" placeholder="请再次填写新密码"/>
                                     </div>
                                 </div>
                                 <!-- <div class="form-group">
@@ -325,7 +325,7 @@
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">确定</button>
+                            <button type="submit" id="submitpwd"  class="btn btn-primary">确定</button>
                         </div>
                     </div><!-- modal-dialog -->
                 </div>
@@ -339,14 +339,16 @@
                         <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
                         <a href="" class=""> 请选择操作 </a>
 
-                        <button class="btn btn-white btn-default btn-round" data-toggle="modal" data-target="#alter-modal">
+                        <button class="btn btn-white btn-default btn-round"
+                               id="alteruser" data-toggle="modal" data-target="#alter-modal">
                             <i class="ace-icon fa fa-pencil-square-o red2"></i>
                             <span style="font-family: microsoft yahei">
 										修改信息
 									</span>
                         </button>
 
-                        <button class="btn btn-white btn-default btn-round" data-toggle="modal" data-target="#alter-mima">
+                        <button class="btn btn-white btn-default btn-round"
+                               id="alterpwd" data-toggle="modal" data-target="#alter-mima">
                             <i class="ace-icon fa fa-pencil-square-o red2"></i>
                             <span style="font-family: microsoft yahei">
 										修改密码
@@ -360,7 +362,7 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label no-padding-right" for="form-input-readonly"> <span style="color: #FF0000;">*</span>用户ID</label>
                                 <div class="col-sm-8">
-                                    <input readonly="" type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="1234567890" />
+                                    <input readonly="" type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="${SESSION_USER.userId}" />
 
                                 </div>
                             </div>
@@ -371,28 +373,18 @@
 
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>用户名</label>
+                                <label class="col-sm-4 control-label no-padding-right" for="username"> <span style="color: #FF0000;">*</span>用户名</label>
                                 <div class="col-sm-8">
-                                    <input readonly="" type="text" id="form-field-2" class="col-xs-10 col-sm-5" value="张三" />
+                                    <input readonly="" type="text" id="username" class="col-xs-10 col-sm-5" value="${SESSION_USER.username}" />
                                 </div>
                             </div>
                         </form>
                         <div class="space-4"></div>
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>角色</label>
+                                <label class="col-sm-4 control-label no-padding-right" for="role"> <span style="color: #FF0000;">*</span>角色</label>
                                 <div class="col-sm-8">
-                                    <input readonly="" type="text" id="form-field-3" class="col-xs-10 col-sm-5" value="平台管理员" />
-                                </div>
-                            </div>
-
-                        </form>
-                        <div class="space-4"></div>
-                        <form class="form-horizontal" role="form">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label no-padding-right" for="form-fiedl-8"> <span style="color: #FF0000;">*</span>联系方式</label>
-                                <div class="col-sm-8">
-                                    <input readonly="" type="text" id="form-field-8" class="col-xs-10 col-sm-5" value="13111113221" />
+                                    <input readonly="" type="text" id="role" class="col-xs-10 col-sm-5" value="${SESSION_USER.role}" />
                                 </div>
                             </div>
 
@@ -400,9 +392,9 @@
                         <div class="space-4"></div>
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label no-padding-right" for="form-fiedl-4"> <span style="color: #FF0000;">*</span>邮箱</label>
+                                <label class="col-sm-4 control-label no-padding-right" for="tel"> <span style="color: #FF0000;">*</span>联系方式</label>
                                 <div class="col-sm-8">
-                                    <input readonly="" type="text" id="form-field-4" class="col-xs-10 col-sm-5" value="12312412@qq.com" />
+                                    <input readonly="" type="text" id="tel" class="col-xs-10 col-sm-5" value="${SESSION_USER.tel}" />
                                 </div>
                             </div>
 
@@ -410,9 +402,9 @@
                         <div class="space-4"></div>
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>地址</label>
+                                <label class="col-sm-4 control-label no-padding-right" for="email"> <span style="color: #FF0000;">*</span>邮箱</label>
                                 <div class="col-sm-8">
-                                    <input readonly="" type="text" id="form-field-5" class="col-xs-10 col-sm-5" value="山东省..." />
+                                    <input readonly="" type="text" id="email" class="col-xs-10 col-sm-5" value="${SESSION_USER.email}" />
                                 </div>
                             </div>
 
@@ -420,9 +412,9 @@
                         <div class="space-4"></div>
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label no-padding-right" for="form-fiedl-6"> <span style="color: #FF0000;">*</span>创建时间</label>
+                                <label class="col-sm-4 control-label no-padding-right" for="addr"> <span style="color: #FF0000;">*</span>地址</label>
                                 <div class="col-sm-8">
-                                    <input readonly="" type="text" id="form-field-6" class="col-xs-10 col-sm-5" value="2019/09/01" />
+                                    <input readonly="" type="text" id="addr" class="col-xs-10 col-sm-5" value="${SESSION_USER.addr}" />
                                 </div>
                             </div>
 
@@ -430,9 +422,19 @@
                         <div class="space-4"></div>
                         <form class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label no-padding-right" for="form-fiedl-7"> <span style="color: #FF0000;">*</span>到期时间</label>
+                                <label class="col-sm-4 control-label no-padding-right" for="createDate"> <span style="color: #FF0000;">*</span>创建时间</label>
                                 <div class="col-sm-8">
-                                    <input readonly="" type="text" id="form-field-7" class="col-xs-10 col-sm-5" value="2020/09/01" />
+                                    <input readonly="" type="text" id="createDate" class="col-xs-10 col-sm-5" value="${SESSION_USER.createDate}" />
+                                </div>
+                            </div>
+
+                        </form>
+                        <div class="space-4"></div>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label no-padding-right" for="endDate"> <span style="color: #FF0000;">*</span>到期时间</label>
+                                <div class="col-sm-8">
+                                    <input readonly="" type="text" id="endDate" class="col-xs-10 col-sm-5" value="${SESSION_USER.endDate}" />
                                 </div>
                             </div>
 
@@ -478,6 +480,9 @@
 </div>
 
 <script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
+<script src="../ace-master/assets/js/bootstrap.min.js"></script>
+<script src="../layui-v2.5.4/layui/layui.all.js"></script>
+<script src="../layui-v2.5.4/layui/layui.js"></script>
 
 <!-- <![endif]-->
 
@@ -488,7 +493,7 @@
     if ('ontouchstart' in document.documentElement) document.write(
         "<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
-<script src="../ace-master/assets/js/bootstrap.min.js"></script>
+
 
 <!-- page specific plugin scripts -->
 
@@ -516,6 +521,75 @@
 <script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
 <script src="https://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
 <script src="https://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+<script>
+    layui.use(['element','jquery','layer'],function () {
+        var element=layui.element;
+        var jquery=layui.jquery;
+        var layer=layui.layer;
+    });
+
+    var altertel=$('#tel').val();
+    var alteremail=$('#email').val()
+    var alteraddr=$('#addr').val()
+
+    $('#alter_tel').val(altertel);
+    $('#alter_email').val(alteremail)
+    $('#alter_addr').val(alteraddr)
+
+    $('#altersubmit').click(function () {
+        var alteredtel=$('#alter_tel').val()
+        var alteredemail=$('#alter_email').val()
+        var alteredaddr=$('#alter_addr').val()
+        console.log(alteredtel)
+
+        var obj={
+            tel:alteredtel,
+            addr:alteredaddr,
+            email:alteredemail,
+        }
+        $.ajax({
+            url:'${ctx}/user/updateMyUser',
+            type:'post',
+            contentType:'application/json',
+            data:JSON.stringify(obj),
+            success:function (data) {
+                if(data.update=="success"){
+                    layer.msg('修改成功');
+                    setTimeout(function(){
+                        window.location.reload();
+                    },2000);
+                }
+            }
+
+        })
+    });
+
+    $('#submitpwd').click(function () {
+        var alteredpwd=$('#checkpwd').val();
+
+        var obj={
+            password:alteredpwd,
+        }
+        $.ajax({
+            url:'${ctx}/user/updateMyUserpwd',
+            type:'post',
+            contentType:'application/json',
+            data:JSON.stringify(obj),
+            success:function (data) {
+                if(data.updatepwd=="success"){
+                    layer.msg('修改密码成功,请重新登录');
+                    setTimeout(function(){
+                        window.location.href="login.jsp";
+                    },2000);
+                }
+            }
+
+        })
+
+    })
+
+
+</script>
 
 <script>
     // just for the demos, avoids form submit
@@ -523,11 +597,11 @@
         debug: true,
         success: "valid"
     });
-    $("#myform").validate({
+    $("#pwdform").validate({
         rules: {
-            password: "required",
-            password_again: {
-                equalTo: "#password"
+            pwd: "required",
+            checkpwd: {
+                equalTo: "#pwd"
             }
         }
     });
