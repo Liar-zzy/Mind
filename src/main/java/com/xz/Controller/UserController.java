@@ -107,21 +107,51 @@ public class UserController {
     }
 
     @RequestMapping("/deleteAUser")
-    public String deleteAUser(){
+    @ResponseBody
+    public Map<String,String> deleteAUser(@RequestBody User user){
+        System.out.println("delete A User ");
+        System.out.println(user.getUsername());
+
         boolean success;
-        success = userService.deleteAUser("username");
-        if(success == true) System.out.println("delete user success");
-        else System.out.println("delete user fail");
-        return "xxx";
+        success = userService.deleteAUser(user.getUsername());
+
+        Map<String, String > map = new HashMap<>();
+        if(success){
+            map.put("delete","success");
+        }
+        else{
+            map.put("delete","success");
+        }
+        return map;
     }
 
     @RequestMapping("/updateAUser")
     @ResponseBody
-    public String updateAUser(@RequestBody User user){
+    public Map<String,String> updateAUser(@RequestBody User user){
+        System.out.println("update A User ");
+        System.out.println(user.getUsername()+"   "+user.getPassword()
+                +"   "+user.getAddr()+"   "+user.getTel()+"  "+user.getEmail());
+
         boolean success;
         success = userService.updateAUser(user);
-        if(success == true) System.out.println("update user success");
-        else System.out.println("update user fail");
-        return "xxx";
+        if(success == true) {
+            System.out.println("update user success");
+        } else {
+            System.out.println("update user fail");
+        }
+
+        Map<String, String > map = new HashMap<>();
+        map.put("update","success");
+        return map;
     }
+
+    @RequestMapping("/getAUser")
+    @ResponseBody
+    public User getAuser(@RequestBody User user){
+        System.out.println("getAUser");
+        System.out.println(user.getUsername());
+        user=userService.selectAUser(user);
+        return user;
+    }
+
 }

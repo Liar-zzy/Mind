@@ -23,6 +23,10 @@
         select user_id, username, password, role, tel, email, addr, createdate as createDate,
         enddate as endDate from j2ee.user
     </select>
+    <select id="select_AUser" resultType="com.xz.pojo.User">
+        select * from j2ee.user
+        where username = #{username}
+    </select>
 
     <delete id="delete_AUser" parameterType="java.lang.String">
         delete from j2ee.user where username = #{username}

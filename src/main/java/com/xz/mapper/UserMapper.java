@@ -18,4 +18,6 @@ public interface UserMapper {
     int delete_AUser(@Param("username") String username);
 
     int update_AUser(@Param("updateUser") User user);
+
+    User select_AUser(User user);
 }

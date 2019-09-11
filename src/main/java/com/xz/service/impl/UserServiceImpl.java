@@ -52,4 +52,10 @@ public class UserServiceImpl implements UserService {
         int row = userMapper.update_AUser(user);
         return row == 1 ? true:false;
     }
+
+    @Override
+    public User selectAUser(User user) {
+        User u = userMapper.select_AUser(user);
+        return u;
+    }
 }
