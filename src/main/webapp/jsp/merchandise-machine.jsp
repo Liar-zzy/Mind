@@ -90,7 +90,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
+                            <a href="${ctx}/user/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 退出登录
                             </a>

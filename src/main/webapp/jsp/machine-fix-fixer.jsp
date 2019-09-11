@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh">
@@ -90,10 +91,10 @@
 						<li class="divider"></li>
 
 						<li>
-							<a href="#">
-								<i class="ace-icon fa fa-power-off"></i>
-								退出登录
-							</a>
+							<a href="${ctx}/user/logout">
+                                <i class="ace-icon fa fa-power-off"></i>
+                                退出登录
+                            </a>
 						</li>
 					</ul>
 				</li>
@@ -124,38 +125,6 @@
 				//TODO handle the exception
 			}
 		</script>
-
-
-		<!-- <div class="sidebar-shortcuts" id="sidebar-shortcuts">
-            <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-                <button class="btn btn-success">
-                    <i class="ace-icon fa fa-signal"></i>
-                </button>
-
-                <button class="btn btn-info">
-                    <i class="ace-icon fa fa-pencil"></i>
-                </button>
-
-                <button class="btn btn-warning">
-                    <i class="ace-icon fa fa-users"></i>
-                </button>
-
-                <button class="btn btn-danger">
-                    <i class="ace-icon fa fa-cogs"></i>
-                </button>
-            </div>
-
-            <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-                <span class="btn btn-success"></span>
-
-                <span class="btn btn-info"></span>
-
-                <span class="btn btn-warning"></span>
-
-                <span class="btn btn-danger"></span>
-            </div>
-        </div> /.sidebar-shortcuts -->
-
 
 		<!-- 侧边菜单选项 -->
 		<ul class="nav nav-list">
@@ -212,9 +181,7 @@
 				<b class="arrow"></b>
 			</li>
 		</ul>
-		<!-- <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-        <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-    </div> -->
+
 	</div>
 	<!-- 结束侧边菜单 -->
 
@@ -255,7 +222,6 @@
 
 			<!-- 页面内容 -->
 
-
 			<div class="page-content">
 				<div class="page-header">
 							<span style="font-family: microsoft yahei">
@@ -270,151 +236,6 @@
 				</div><!-- /.page-header -->
 
 
-				<!-- 添加设备弹出框 -->
-				<div class="modal" id="add-modal" backdrop="true" keyboard="false">
-					<div class="modal-dialog" style="background-color: #FFFFFF">
-						<div class="modal-header">
-							<i class="ace-icon fa fa-pencil-square-o red2"></i>
-							<span style="font-family: microsoft yahei">
-										修改设备
-									</span>
-						</div>
-						<!-- 记得修改 class中的 placeholder -->
-						<div class="modal-body">
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span style="color: #FF0000;">*</span>设备ID</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span style="color: #FF0000;">*</span>名</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-3"> <span style="color: #FF0000;">*</span>持有人id</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-3" class="col-xs-10 col-sm-5" placeholder=" " />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-4"> <span style="color: #FF0000;">*</span>货道数量</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-4" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span style="color: #FF0000;">*</span>货道容量</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span style="color: #FF0000;">*</span>gps</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alter-modal">修改</button>
-						</div>
-					</div><!-- modal-dialog -->
-				</div><!-- 结束/添加设备弹出框 -->
-
-
-				<!-- 修改设备弹出框 -->
-				<div class="modal" id="alter-modal" backdrop="true" keyboard="false">
-					<div class="modal-dialog" style="background-color: #FFFFFF">
-						<div class="modal-header">
-							<i class="ace-icon fa fa-plus bigger-120 blue"></i>
-							<span style="font-family: microsoft yahei">
-										添加设备
-									</span>
-						</div>
-
-						<div class="modal-body">
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span style="color: #FF0000;">*</span>设备ID</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-1" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-2"> <span style="color: #FF0000;">*</span>名</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-2" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-3"> <span style="color: #FF0000;">*</span>持有人id</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-3" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-4"> <span style="color: #FF0000;">*</span>货道数量</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-4" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>货道容量</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-
-							<form class="form-horizontal" role="form">
-								<div class="form-group">
-									<label class="col-sm-3 control-label no-padding-right" for="form-fiedl-5"> <span style="color: #FF0000;">*</span>gps</label>
-									<div class="col-sm-9">
-										<input type="text" id="form-field-5" class="col-xs-10 col-sm-5" />
-									</div>
-								</div>
-							</form>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">确定</button>
-						</div>
-					</div><!-- modal-dialog -->
-				</div>
-
 				<!-- 表格的绘制 -->
 				<div class="row">
 					<div class="col">
@@ -425,22 +246,9 @@
 
 							<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
 							<a href="" class=""> 请选择操作 </a>
-							<!-- <button class="btn btn-white btn-info btn-bold" data-toggle="modal" data-target="#add-modal">
-                                <i class="ace-icon fa fa-plus bigger-120 blue"></i>
-                                <span style="font-family: microsoft yahei">
-                                    添加设备
-                                </span>
 
-                            </button>
 
-                            <button class="btn btn-white btn-default btn-round"data-toggle="modal" data-target="#alter-modal">
-                                <i class="ace-icon fa fa-pencil-square-o red2"></i>
-                                <span style="font-family: microsoft yahei">
-                                    修改设备
-                                </span>
-                            </button> -->
-
-							<button class="btn btn-white btn-warning btn-bold">
+							<button class="btn btn-white btn-warning btn-bold" id="deletefix">
 								<i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
 								<span style="font-family: microsoft yahei">
 											删除设备
@@ -476,42 +284,24 @@
 
 							<!-- jsp 循环输入  改一下 各个变量名 然后循环 -->
 							<tbody>
-							<tr>
-								<td class="center">
-									<label class="pos-rel">
-										<input type="checkbox" class="ace" />
-										<span class="lbl"></span>
-									</label>
-								</td>
-
-								<td>
-									<a href="#"> id 1</a>
-								</td>
-
-								<td class="hidden-480"> 持有人 id1</td>
-							</tr>
+							<c:forEach items="${AllDamageMachine}" var="obj">
+								<tr>
+									<td class="center">
+										<label class="pos-rel">
+											<input type="checkbox" class="ace"/>
+											<span class="lbl"></span>
+										</label>
+									</td>
+									<td>${obj.machineId}</td>
+									<td>${obj.possessor}</td>
+								</tr>
+							</c:forEach>
 							</tbody>
-
-
 						</table>
 					</div>
-
-
-
-
-
-
 				</div>
 			</div>
-
-
-
-
-
-
-
 		</div><!-- page-content -->
-
 	</div>
 </div>
 <!-- 页面脚底 -->
@@ -551,7 +341,7 @@
 <!-- <![endif]-->
 
 <!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="../ace-master/assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
 	if ('ontouchstart' in document.documentElement) document.write(
@@ -588,24 +378,6 @@
 								null, null
 							],
 							"aaSorting": [],
-
-
-							//"bProcessing": true,
-							//"bServerSide": true,
-							//"sAjaxSource": "http://127.0.0.1/table.php"	,
-
-							//,
-							//"sScrollY": "200px",
-							//"bPaginate": false,
-
-							//"sScrollX": "100%",
-							//"sScrollXInner": "120%",
-							//"bScrollCollapse": true,
-							//Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
-							//you may want to wrap the table inside a "div.dataTables_borderWrap" element
-
-							//"iDisplayLength": 50
-
 
 							select: {
 								style: 'multi'
@@ -731,7 +503,36 @@
 		$('#dynamic-table').on('click', 'td input[type=checkbox]', function() {
 			var row = $(this).closest('tr').get(0);
 			if (this.checked) myTable.row(row).deselect();
-			else myTable.row(row).select();
+			else {
+				myTable.row(row).select();
+				var data=myTable.row(row).data();
+				console.log(data)
+
+				$('#deletefix').click(function () {
+					var machineid=data[1];
+					console.log(machineid)
+					var deleteobj={
+						machineId:machineid,
+						state:1,
+					}
+					$.ajax({
+						url:'${ctx}/machine/updateAMachine',
+						type:'post',
+						contentType:'application/json',
+						data:JSON.stringify(deleteobj),
+						success:function (data) {
+							if(data.delete=="success"){
+								layer.msg("删除成功")
+							}
+							window.setTimeout( function(){}, 2 * 1000 );
+							location.reload()
+						}
+					})
+				})
+
+
+
+			}
 		});
 
 

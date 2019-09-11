@@ -88,7 +88,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
+                            <a href="${ctx}/user/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 退出登录
                             </a>
@@ -841,7 +841,10 @@
                     else{
                         layer.msg("添加失败")
                     }
-                    $('#alter-modal').modal('hide')
+                    $('#add-modal').modal('hide')
+                    setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+                        window.location.reload();//页面刷新
+                    },2000);
                 }
             })
 
@@ -896,6 +899,9 @@
                                     layer.msg("修改成功")
                                 }
                                 $('#alter-modal').modal('hide')
+                                setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+                                    window.location.reload();//页面刷新
+                                },2000);
                             }
                         })
                     });
@@ -916,6 +922,9 @@
                         success:function (data) {
                             if(data.delete=="success"){
                                 layer.msg("删除成功")
+                                setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+                                    window.location.reload();//页面刷新
+                                },2000);
                             }
                         }
                     })
@@ -980,18 +989,6 @@
         });
         /***************/
 
-
-        /**
-         //add horizontal scrollbars to a simple table
-         $('#simple-table').css({'width':'2000px', 'max-width': 'none'}).wrap('<div style="width: 1000px;" />').parent().ace_scroll(
-         {
-					horizontal: true,
-					styleClass: 'scroll-top scroll-dark scroll-visible',//show the scrollbars on top(default is bottom)
-					size: 2000,
-					mouseWheelLock: true
-				  }
-         ).css('padding-top', '12px');
-         */
 
 
     })

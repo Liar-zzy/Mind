@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -219,4 +220,11 @@ public class UserController {
         return user;
     }
 
+    @RequestMapping("logout")
+    public String logout(@ModelAttribute("User") User user, SessionStatus sessionStatus){
+        //@ModelAttribute("User")相当于将session中名为"User"的对象注入user对象中
+        //sessionStatus中的setComplete方法可以将session中的内容全部清空
+        sessionStatus.setComplete();
+        return "login";
+    }
 }

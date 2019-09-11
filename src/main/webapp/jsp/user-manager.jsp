@@ -88,7 +88,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
+                            <a href="${ctx}/user/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 退出登录
                             </a>
@@ -761,8 +761,9 @@
                             if(data.delete=="success"){
                                 layer.msg("删除成功")
                             }
-                            window.setTimeout( function(){}, 2 * 1000 );
-                            location.reload()
+                            setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+                                window.location.reload();//页面刷新
+                            },2000);
                         }
                     })
                 })

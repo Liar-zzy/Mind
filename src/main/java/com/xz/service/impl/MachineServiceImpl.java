@@ -59,4 +59,10 @@ public class MachineServiceImpl implements MachineService {
         List<Machine> list = machineMapper.select_DamageMachine();
         return list;
     }
+
+    @Override
+    public List<Machine> selectDamageMachine() {
+        List<Machine> list = machineMapper.select_DamageMachine();
+        return list;
+    }
 }

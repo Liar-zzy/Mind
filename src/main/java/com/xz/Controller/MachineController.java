@@ -68,8 +68,45 @@ public class MachineController {
     public String updateAMerchandise(@RequestBody Machine machine){
         boolean success;
         success = machineService.updateAMachine(machine);
-        if(success == true) System.out.println("update Machine success");
-        else System.out.println("update Machine fail");
-        return "xxx";
+        if(success) {
+            System.out.println("update Machine success");
+        } else {
+            System.out.println("update Machine fail");
+        }
+        Map<String, String > map = new HashMap<>();
+        map.put("update","success");
+        return map;
+    }
+
+    //注册时检查machineId是否存在
+    @RequestMapping("/checkMachineId")
+    @ResponseBody
+    public Map<String, Integer> checkMerchandiseId(@RequestBody Machine machine) {
+        Map<String, Integer> map = new HashMap<>();
+        Machine m ;
+        m = machineService.checkMachine(machine);
+
+        Integer code = 0;
+        //如果 MachineId 为空 则 机器id可用
+        if (m == null) {
+            //可用
+            code = 1;
+        } else {
+            //不可用
+            code = 0;
+            System.out.println("已存在的id以及名称"+m.getMachineId()+" "+m.getName());
+        }
+        map.put("IsExist", code);
+        return map;
+    }
+
+    @RequestMapping("/getFixList")
+    public String SelectAllFix(Model model){
+
+        List<Machine> list = machineService.selectDamageMachine();
+        model.addAttribute("AllDamageMachine",list);
+
+
+        return "machine-fix-fixer";
     }
 }

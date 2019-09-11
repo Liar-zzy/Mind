@@ -15,19 +15,19 @@
     <link rel="stylesheet" href="../ace-master/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-    <!-- font awesome -->
-    <link rel="stylesheet" href="../ace-master/assets/font-awesome/css/font-awesome.min.css">
+	<!-- font awesome -->
+	<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
 
-    <!-- text fonts -->
-    <link rel="stylesheet" href="../ace-master/assets/css/fonts.googleapis.com.css" />
+	<!-- text fonts -->
+	<link rel="stylesheet" href="../ace-master/assets/css/fonts.googleapis.com.css" />
 
-    <!-- ace styles -->
-    <link rel="stylesheet" href="../ace-master/assets/css/ace.min.css" class="../ace-master/ace-main-stylesheet" id="main-ace-style" />
+	<!-- ace styles -->
+	<link rel="stylesheet" href="../ace-master/assets/css/ace.min.css" class="../ace-master/ace-main-stylesheet" id="main-ace-style" />
 
-    <link rel="stylesheet" href="../ace-master/assets/css/ace-skins.min.css" />
-    <link rel="stylesheet" href="../ace-master/assets/css/ace-rtl.min.css" />
+	<link rel="stylesheet" href="../ace-master/assets/css/ace-skins.min.css" />
+	<link rel="stylesheet" href="../ace-master/assets/css/ace-rtl.min.css" />
 
-    <script src="../ace-master/assets/js/ace-extra.min.js"></script>
+	<script src="../ace-master/assets/js/ace-extra.min.js"></script>
 </head>
 <body class="no-skin">
 
@@ -85,7 +85,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
+                            <a href="${ctx}/user/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 退出登录
                             </a>
@@ -135,7 +135,7 @@
                 <b class="arrow"></b>
             </li>
 
-            <!-- 商品管理 -->
+            <!-- 机器管理 -->
             <li class="">
                 <a href="${ctx}/redirectTo/merchandise">
                     <i class="menu-icon fa fa-th-list">
@@ -311,11 +311,6 @@
                                         <input  id="checkpwd" name="password_again" class="col-xs-10 col-sm-5" placeholder="请再次填写新密码"/>
                                     </div>
                                 </div>
-                                <!-- <div class="form-group">
-                                    <div class="col-sm-3 control-label no-padding-right">
-                                    <input type="submit" value="Validate!">
-                                    </div>
-                                </div> -->
 
                             </form>
 
@@ -480,18 +475,17 @@
 </div>
 
 <script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
-<script src="../ace-master/assets/js/bootstrap.min.js"></script>
 <script src="../layui-v2.5.4/layui/layui.all.js"></script>
 <script src="../layui-v2.5.4/layui/layui.js"></script>
-
+<script src="../ace-master/assets/js/bootstrap.min.js"></script>
 <!-- <![endif]-->
 
 <!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="../ace-master/assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
-    if ('ontouchstart' in document.documentElement) document.write(
-        "<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+	if ('ontouchstart' in document.documentElement) document.write(
+			"<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
 
 
@@ -518,7 +512,8 @@
 <script src="../ace-master/assets/js/bootbox.js"></script>
 <script src="../ace-master/assets/js/jquery.maskedinput.min.js"></script>
 <script src="../ace-master/assets/js/select2.min.js"></script>
-<script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
+
+
 <script src="https://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
 <script src="https://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 <script>
@@ -527,67 +522,73 @@
         var jquery=layui.jquery;
         var layer=layui.layer;
     });
+    jQuery(function($) {
 
-    var altertel=$('#tel').val();
-    var alteremail=$('#email').val()
-    var alteraddr=$('#addr').val()
+        var altertel=$('#tel').val();
+        var alteremail=$('#email').val()
+        var alteraddr=$('#addr').val()
 
-    $('#alter_tel').val(altertel);
-    $('#alter_email').val(alteremail)
-    $('#alter_addr').val(alteraddr)
+        $('#alter_tel').val(altertel);
+        $('#alter_email').val(alteremail)
+        $('#alter_addr').val(alteraddr)
 
-    $('#altersubmit').click(function () {
-        var alteredtel=$('#alter_tel').val()
-        var alteredemail=$('#alter_email').val()
-        var alteredaddr=$('#alter_addr').val()
-        console.log(alteredtel)
+        $('#altersubmit').click(function () {
+            var alteredtel=$('#alter_tel').val()
+            var alteredemail=$('#alter_email').val()
+            var alteredaddr=$('#alter_addr').val()
+            console.log(alteredtel)
 
-        var obj={
-            tel:alteredtel,
-            addr:alteredaddr,
-            email:alteredemail,
-        }
-        $.ajax({
-            url:'${ctx}/user/updateMyUser',
-            type:'post',
-            contentType:'application/json',
-            data:JSON.stringify(obj),
-            success:function (data) {
-                if(data.update=="success"){
-                    layer.msg('修改成功');
-                    setTimeout(function(){
-                        window.location.reload();
-                    },2000);
-                }
+            var obj={
+                tel:alteredtel,
+                addr:alteredaddr,
+                email:alteredemail,
             }
+            $.ajax({
+                url:'${ctx}/user/updateMyUser',
+                type:'post',
+                contentType:'application/json',
+                data:JSON.stringify(obj),
+                success:function (data) {
+                    if(data.update=="success"){
+                        layer.msg('修改成功');
+                        $('#alter-modal').modal('hide')
 
-        })
-    });
-
-    $('#submitpwd').click(function () {
-        var alteredpwd=$('#checkpwd').val();
-
-        var obj={
-            password:alteredpwd,
-        }
-        $.ajax({
-            url:'${ctx}/user/updateMyUserpwd',
-            type:'post',
-            contentType:'application/json',
-            data:JSON.stringify(obj),
-            success:function (data) {
-                if(data.updatepwd=="success"){
-                    layer.msg('修改密码成功,请重新登录');
-                    setTimeout(function(){
-                        window.location.href="login.jsp";
-                    },2000);
+                        setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+                            window.location.reload();//页面刷新
+                        },2000);
+                    }
                 }
+
+            })
+        });
+
+        $('#submitpwd').click(function () {
+            var alteredpwd=$('#pwd').val();
+            var alteredcheckpwd=$('#checkpwd').val();
+            if(alteredpwd==alteredcheckpwd){
+                var obj={
+                    password:alteredpwd,
+                }
+                $.ajax({
+                    url:'${ctx}/user/updateMyUserpwd',
+                    type:'post',
+                    contentType:'application/json',
+                    data:JSON.stringify(obj),
+                    success:function (data) {
+                        if(data.updatepwd=="success"){
+                            layer.msg('修改密码成功,请重新登录');
+                            setTimeout(function(){
+                                window.location.href="login.jsp";
+                            },2000);
+                        }
+                    }
+
+                })
+            }else{
+                layer.msg('密码不一致');
             }
-
-        })
-
+        });
     })
-
 
 </script>
 
@@ -599,7 +600,10 @@
     });
     $("#pwdform").validate({
         rules: {
-            pwd: "required",
+            pwd: {
+                required:true,
+                minlength:6
+            },
             checkpwd: {
                 equalTo: "#pwd"
             }
