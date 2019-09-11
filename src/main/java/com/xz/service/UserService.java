@@ -19,4 +19,6 @@ public interface UserService {
     boolean deleteAUser(String username);
 
     boolean updateAUser(User user);
+
+    User selectAUser(User user);
 }

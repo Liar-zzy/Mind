@@ -316,7 +316,7 @@
             success:function (data) {
                 if(data.logincheck=="success"){
                     layer.msg('登录成功');
-                    window.setTimeout( function(){}, 5 * 1000 );
+                    window.setTimeout( function(){}, 2 * 1000 );
                     if(data.role=="ACE"){
                         window.location.href="index-admin.jsp";
                     }

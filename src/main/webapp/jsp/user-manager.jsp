@@ -298,30 +298,30 @@
                         <div class="modal-body">
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" readonly=" for=" form-field-1">
+                                    <label class="col-sm-3 control-label no-padding-right" readonly=" for="alter_name" >
                                     <span style="color: #FF0000;">*</span>用户名</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-1" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="alter_name" readonly="" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_pwd"> <span
                                             style="color: #FF0000;">*</span>密码</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-2" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="alter_pwd" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" readonly=" for=" form-field-3"
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_role"
                                     > <span style="color: #FF0000;">*</span>角色</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-3" class="col-xs-10 col-sm-5"
+                                        <input type="text" id="alter_role" readonly=""  class="col-xs-10 col-sm-5"
                                                placeholder=" "/>
                                     </div>
                                 </div>
@@ -329,21 +329,20 @@
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-8"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_tel"> <span
                                             style="color: #FF0000;">*</span>联系方式</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-8" class="col-xs-10 col-sm-5"
-                                               placeholder=" "/>
+                                        <input type="text" id="alter_tel" class="col-xs-10 col-sm-5" placeholder=" "/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-4"><span
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_email"><span
                                             style="color: #FF0000;">*</span>邮箱</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-4" class="col-xs-10 col-sm-5"
+                                        <input type="text" id="alter_email" class="col-xs-10 col-sm-5"
                                                placeholder=" "/>
                                     </div>
                                 </div>
@@ -351,10 +350,10 @@
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_addr"> <span
                                             style="color: #FF0000;">*</span>地址</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-5" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="alter_addr" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
@@ -362,27 +361,26 @@
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label no-padding-right" readonly=""
-                                           for="form-field-6"> <span style="color: #FF0000;">*</span>创建时间</label>
+                                           for="alter_createdate"> <span style="color: #FF0000;">*</span>创建时间</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-6" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="alter_createdate" readonly="" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" readonly="  for="
-                                           form-field-7" > <span style="color: #FF0000;">*</span>账号到期时间</label>
+                                    <label class="col-sm-3 control-label no-padding-right"   for="alter_enddate" > <span style="color: #FF0000;">*</span>账号到期时间</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-7" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="alter_enddate" readonly="" class="col-xs-10 col-sm-5" />
                                     </div>
                                 </div>
                             </form>
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">
+                            <button type="button" onclick="" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="submit" id="altersubmit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#alter-modal">
                                 确定
                             </button>
                         </div>
@@ -400,8 +398,15 @@
                             <i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
                             <a href="" class=""> 请选择操作 </a>
 
+<%--                            <button class="btn btn-white btn-default btn-round" data-toggle="modal"--%>
+<%--                                    data-target="#alter-modal" id="adduser">--%>
+<%--                                <i class="ace-icon fa fa-plus red2"></i>--%>
+<%--                                <span style="font-family: microsoft yahei">--%>
+<%--											添加账号--%>
+<%--										</span>--%>
+<%--                            </button>--%>
 
-                            <button class="btn btn-white btn-default btn-round" data-toggle="modal"
+                            <button class="btn btn-white btn-default btn-round" id="alteruser" data-toggle="modal"
                                     data-target="#alter-modal">
                                 <i class="ace-icon fa fa-pencil-square-o red2"></i>
                                 <span style="font-family: microsoft yahei">
@@ -409,7 +414,7 @@
 										</span>
                             </button>
 
-                            <button class="btn btn-white btn-warning btn-bold">
+                            <button class="btn btn-white btn-warning btn-bold" id="deleteuser" >
                                 <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
                                 <span style="font-family: microsoft yahei">
 											删除账号
@@ -508,7 +513,8 @@
 </div>
 
 <script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
-
+<script src="../layui-v2.5.4/layui/layui.all.js"></script>
+<script src="../layui-v2.5.4/layui/layui.js"></script>
 
 <script type="text/javascript">
     if ('ontouchstart' in document.documentElement) document.write(
@@ -536,6 +542,11 @@
 </script>
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
+    layui.use(['element','jquery','layer'],function () {
+        var element=layui.element;
+        var jquery=layui.jquery;
+        var layer=layui.layer;
+    })
     jQuery(function ($) {
         //initiate dataTables plugin
         var myTable =
@@ -670,8 +681,100 @@
         //select/deselect a row when the checkbox is checked/unchecked
         $('#dynamic-table').on('click', 'td input[type=checkbox]', function () {
             var row = $(this).closest('tr').get(0);
-            if (this.checked) myTable.row(row).deselect();
-            else myTable.row(row).select();
+            if (this.checked) {
+                myTable.row(row).deselect();
+            }
+            else {
+                myTable.row(row).select();
+                var test=myTable.row(row)
+
+                console.log(myTable.row(row).data())
+
+                var data=myTable.row(row).data()
+
+                console.log(data[1])
+
+
+
+                // 选定  修改 js 测试
+                $('#alteruser').click(function(){
+                    var dusername=data[1];
+                    console.log(dusername)
+                    var alterobj={
+                        username:dusername
+                    }
+                    $.ajax({
+                        url:'${ctx}/user/getAUser',
+                        type:'post',
+                        contentType:'application/json',
+                        data:JSON.stringify(alterobj),
+                        success:function (data) {
+                            // alert(data.username)
+                            // alert(data.password)
+                            // alert(data.role)
+                            $('#alter_name').val(data.username)
+                            $('#alter_pwd').val(data.password)
+                            $('#alter_role').val(data.role)
+                            $('#alter_tel').val(data.tel)
+                            $('#alter_email').val(data.email)
+                            $('#alter_addr').val(data.addr)
+                            $('#alter_createdate').val(data.createDate)
+                            $('#alter_enddate').val(data.endDate)
+
+                            $('#altersubmit').click(function () {
+                               var alteredname=$('#alter_name').val();
+                               var alteredpwd=$('#alter_pwd').val();
+                               var alteredtel=$('#alter_tel').val();
+                               var alteredemail= $('#alter_email').val();
+                               var alteredaddr=$('#alter_addr').val();
+
+                               var alteredobj={
+
+                                   username:alteredname,
+                                   password:alteredpwd,
+                                   tel:alteredtel,
+                                   email:alteredemail,
+                                   addr:alteredaddr,
+                               }
+                               $.ajax({
+                                   url:'${ctx}/user/updateAUser',
+                                   type:'post',
+                                   contentType:'application/json',
+                                   data:JSON.stringify(alteredobj),
+                                   success:function (data) {
+                                        if(data.update=="success"){
+                                            layer.msg("修改成功")
+                                        }
+                                        $('#alter-modal').modal('hide')
+                                   }
+                               })
+
+                            });
+                        }
+                    })
+                });
+
+
+                // 选定 删除 js test
+                $('#deleteuser').click(function () {
+                    var dusername=data[1];
+                    console.log(dusername)
+                    var deleteobj={
+                        username:dusername
+                    }
+                    $.ajax({
+                        url:'${ctx}/user/deleteAUser',
+                        type:'post',
+                        contentType:'application/json',
+                        data:JSON.stringify(deleteobj),
+                        success:function (data) {
+                            if(data.delete=="success"){
+                                layer.msg("删除成功")
+                            }
+                        }
+                    })
+                })
+            }
         });
 
 
