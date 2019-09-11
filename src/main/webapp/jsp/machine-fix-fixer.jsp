@@ -337,7 +337,8 @@
 </div>
 
 <script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
-
+<script src="../layui-v2.5.4/layui/layui.all.js"></script>
+<script src="../layui-v2.5.4/layui/layui.js"></script>
 <!-- <![endif]-->
 
 <!--[if IE]>
@@ -365,6 +366,11 @@
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
+	layui.use(['element','jquery','layer'],function () {
+		var element=layui.element;
+		var jquery=layui.jquery;
+		var layer=layui.layer;
+	})
 	jQuery(function($) {
 		//initiate dataTables plugin
 		var myTable =
@@ -521,11 +527,13 @@
 						contentType:'application/json',
 						data:JSON.stringify(deleteobj),
 						success:function (data) {
-							if(data.delete=="success"){
-								layer.msg("删除成功")
+							if(data.update=="success"){
+								layer.msg("删除成功");
+								setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+									window.location.reload();//页面刷新
+								},2000);
 							}
-							window.setTimeout( function(){}, 2 * 1000 );
-							location.reload()
+
 						}
 					})
 				})
