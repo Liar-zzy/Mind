@@ -13,8 +13,6 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/redirectTo")
 public class RedirectController {
-
-
     /**
      * 用于主页的跳转
      */
