@@ -590,8 +590,10 @@
 </div>
 
 <script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
+<script src="../ace-master/assets/js/bootstrap.min.js"></script>
 <script src="../layui-v2.5.4/layui/layui.all.js"></script>
 <script src="../layui-v2.5.4/layui/layui.js"></script>
+
 <!-- <![endif]-->
 
 <!--[if IE]>
@@ -795,12 +797,12 @@
 						success:function (data) {
 							if(data.update=="success"){
 								layer.msg("修改成功")
-							}
-							$('#alter-modal').modal('hide')
+								$('#alter-modal').modal('hide')
 
-							setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
-								window.location.reload();//页面刷新
-							},2000);
+								setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+									window.location.reload();//页面刷新
+								},2000);
+							}
 						}
 					})
 
