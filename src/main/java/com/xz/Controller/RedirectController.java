@@ -118,7 +118,7 @@ public class RedirectController {
             return "redirect:/jsp/machine-fix.jsp";
         }
         else if(user.getRole().equals("FIX")){
-            return "redirect:/jsp/machine-fix-fixer.jsp";
+            return "redirect:/machine/getFixList";
         }
         else if(user.getRole().equals("MAC")){
             return "redirect:/jsp/machine-fix-machine.jsp";

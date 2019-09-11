@@ -86,7 +86,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
+                            <a href="${ctx}/user/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 退出登录
                             </a>
@@ -344,14 +344,14 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label no-padding-right" for="pwd">Password</label>
                                     <div class="col-sm-9">
-                                        <input id="pwd" name="password" class="col-xs-10 col-sm-5" placeholder="请设置新密码"/>
+                                        <input id="pwd" name="pwd" class="col-xs-10 col-sm-5" placeholder="请设置新密码"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
 
                                     <label class="col-sm-3 control-label no-padding-right" for="checkpwd">Again</label>
                                     <div class="col-sm-9">
-                                        <input  id="checkpwd" name="password_again" class="col-xs-10 col-sm-5" placeholder="请再次填写新密码"/>
+                                        <input  id="checkpwd" name="checkpwd" class="col-xs-10 col-sm-5" placeholder="请再次填写新密码"/>
                                     </div>
                                 </div>
 
@@ -518,18 +518,17 @@
 </div>
 
 <script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
-<script src="../ace-master/assets/js/bootstrap.min.js"></script>
 <script src="../layui-v2.5.4/layui/layui.all.js"></script>
 <script src="../layui-v2.5.4/layui/layui.js"></script>
-
+<script src="../ace-master/assets/js/bootstrap.min.js"></script>
 <!-- <![endif]-->
 
 <!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="../ace-master/assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
-    if ('ontouchstart' in document.documentElement) document.write(
-        "<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+	if ('ontouchstart' in document.documentElement) document.write(
+			"<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
 
 
@@ -556,7 +555,8 @@
 <script src="../ace-master/assets/js/bootbox.js"></script>
 <script src="../ace-master/assets/js/jquery.maskedinput.min.js"></script>
 <script src="../ace-master/assets/js/select2.min.js"></script>
-<script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
+
+
 <script src="https://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
 <script src="https://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 <script>
@@ -565,65 +565,72 @@
         var jquery=layui.jquery;
         var layer=layui.layer;
     });
+    jQuery(function($) {
 
-    var altertel=$('#tel').val();
-    var alteremail=$('#email').val()
-    var alteraddr=$('#addr').val()
+        var altertel=$('#tel').val();
+        var alteremail=$('#email').val()
+        var alteraddr=$('#addr').val()
 
-    $('#alter_tel').val(altertel);
-    $('#alter_email').val(alteremail)
-    $('#alter_addr').val(alteraddr)
+        $('#alter_tel').val(altertel);
+        $('#alter_email').val(alteremail)
+        $('#alter_addr').val(alteraddr)
 
-    $('#altersubmit').click(function () {
-        var alteredtel=$('#alter_tel').val()
-        var alteredemail=$('#alter_email').val()
-        var alteredaddr=$('#alter_addr').val()
-        console.log(alteredtel)
+        $('#altersubmit').click(function () {
+            var alteredtel=$('#alter_tel').val()
+            var alteredemail=$('#alter_email').val()
+            var alteredaddr=$('#alter_addr').val()
+            console.log(alteredtel)
 
-        var obj={
-            tel:alteredtel,
-            addr:alteredaddr,
-            email:alteredemail,
-        }
-        $.ajax({
-            url:'${ctx}/user/updateMyUser',
-            type:'post',
-            contentType:'application/json',
-            data:JSON.stringify(obj),
-            success:function (data) {
-                if(data.update=="success"){
-                    layer.msg('修改成功');
-                    setTimeout(function(){
-                        window.location.reload();
-                    },2000);
-                }
+            var obj={
+                tel:alteredtel,
+                addr:alteredaddr,
+                email:alteredemail,
             }
+            $.ajax({
+                url:'${ctx}/user/updateMyUser',
+                type:'post',
+                contentType:'application/json',
+                data:JSON.stringify(obj),
+                success:function (data) {
+                    if(data.update=="success"){
+                        layer.msg('修改成功');
+                        $('#alter-modal').modal('hide')
 
-        })
-    });
-
-    $('#submitpwd').click(function () {
-        var alteredpwd=$('#checkpwd').val();
-
-        var obj={
-            password:alteredpwd,
-        }
-        $.ajax({
-            url:'${ctx}/user/updateMyUserpwd',
-            type:'post',
-            contentType:'application/json',
-            data:JSON.stringify(obj),
-            success:function (data) {
-                if(data.updatepwd=="success"){
-                    layer.msg('修改密码成功,请重新登录');
-                    setTimeout(function(){
-                        window.location.href="login.jsp";
-                    },2000);
+                        setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+                            window.location.reload();//页面刷新
+                        },2000);
+                    }
                 }
+
+            })
+        });
+
+        $('#submitpwd').click(function () {
+            var alteredpwd=$('#pwd').val();
+            var alteredcheckpwd=$('#checkpwd').val();
+            if(alteredpwd==alteredcheckpwd){
+                var obj={
+                    password:alteredpwd,
+                }
+                $.ajax({
+                    url:'${ctx}/user/updateMyUserpwd',
+                    type:'post',
+                    contentType:'application/json',
+                    data:JSON.stringify(obj),
+                    success:function (data) {
+                        if(data.updatepwd=="success"){
+                            layer.msg('修改密码成功,请重新登录');
+                            setTimeout(function(){
+                                window.location.href="login.jsp";
+                            },2000);
+                        }
+                    }
+
+                })
+            }else{
+                layer.msg('密码不一致');
             }
-
-        })
-
+        });
     })
 
 
@@ -637,7 +644,10 @@
     });
     $("#pwdform").validate({
         rules: {
-            pwd: "required",
+            pwd: {
+                required:true,
+                minlength:6
+            },
             checkpwd: {
                 equalTo: "#pwd"
             }

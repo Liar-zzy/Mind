@@ -87,10 +87,10 @@
 						<li class="divider"></li>
 
 						<li>
-							<a href="#">
-								<i class="ace-icon fa fa-power-off"></i>
-								退出登录
-							</a>
+							<a href="${ctx}/user/logout">
+                                <i class="ace-icon fa fa-power-off"></i>
+                                退出登录
+                            </a>
 						</li>
 					</ul>
 				</li>
@@ -590,20 +590,18 @@
 </div>
 
 <script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
-<script src="../ace-master/assets/js/bootstrap.min.js"></script>
+
+
 <script src="../layui-v2.5.4/layui/layui.all.js"></script>
 <script src="../layui-v2.5.4/layui/layui.js"></script>
 
 <!-- <![endif]-->
 
-<!--[if IE]>
-<script src="../ace-master/assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
+<script src="../ace-master/assets/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	if ('ontouchstart' in document.documentElement) document.write(
 			"<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
-<script src="../ace-master/assets/js/bootstrap.min.js"></script>
 
 <!-- page specific plugin scripts -->
 <script src="../ace-master/assets/js/jquery.dataTables.min.js"></script>
@@ -625,12 +623,11 @@
 		var element=layui.element;
 		var jquery=layui.jquery;
 		var layer=layui.layer;
-	})
+	});
 	jQuery(function($) {
 		//initiate dataTables plugin
 		var myTable =
 				$('#dynamic-table')
-				//.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
 						.DataTable({
 							bAutoWidth: false,
 							"aoColumns": [{
@@ -831,41 +828,45 @@
 					})
 				})
 
-				// 商品添加 js
-				$('#addsubmit').click(function () {
-					//add_item_id add_merchandise_id add_margin
-					var addItemId=$('#add_item_id').val()
-					var addMerchandiseId=$('#add_merchandise_id').val()
-					var addMargin=$('#add_margin').val()
-
-					var alteredobj={
-						itemId:addItemId,
-						merchandiseId:addMerchandiseId,
-						margin:addMargin,
-					}
-					$.ajax({
-						url:'${ctx}/M_merchandise/addM_merchandise',
-						type:'post',
-						contentType:'application/json',
-						data:JSON.stringify(alteredobj),
-						success:function (data) {
-							if(data.add=="success"){
-								layer.msg("添加成功")
-							}
-							else{
-								layer.msg("添加失败")
-							}
-							$('#add-modal').modal('hide')
-							setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
-								window.location.reload();//页面刷新
-							},2000);
-						}
-					})
-
-				})
 
 			}
+
 		});
+
+		// 商品添加 js
+		$('#addsubmit').click(function () {
+			console.log("添加")
+			//add_item_id add_merchandise_id add_margin
+			var addItemId=$('#add_item_id').val()
+			var addMerchandiseId=$('#add_merchandise_id').val()
+			var addMargin=$('#add_margin').val()
+
+			var alteredobj={
+				itemId:addItemId,
+				merchandiseId:addMerchandiseId,
+				margin:addMargin,
+			}
+			$.ajax({
+				url:'${ctx}/M_merchandise/addM_merchandise',
+				type:'post',
+				contentType:'application/json',
+				data:JSON.stringify(alteredobj),
+				success:function (data) {
+					if(data.add=="success"){
+						layer.msg("添加成功")
+					}
+					else{
+						layer.msg("添加失败")
+					}
+					$('#add-modal').modal('hide')
+					setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+						window.location.reload();//页面刷新
+					},2000);
+				}
+			})
+
+		})
+
 
 
 

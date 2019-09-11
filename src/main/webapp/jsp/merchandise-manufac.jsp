@@ -91,7 +91,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
+                            <a href="${ctx}/user/logout">
                                 <i class="ace-icon fa fa-power-off"></i>
                                 退出登录
                             </a>
@@ -565,21 +565,7 @@
                     "aaSorting": [],
 
 
-                    //"bProcessing": true,
-                    //"bServerSide": true,
-                    //"sAjaxSource": "http://127.0.0.1/table.php"	,
 
-                    //,
-                    //"sScrollY": "200px",
-                    //"bPaginate": false,
-
-                    //"sScrollX": "100%",
-                    //"sScrollXInner": "120%",
-                    //"bScrollCollapse": true,
-                    //Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
-                    //you may want to wrap the table inside a "div.dataTables_borderWrap" element
-
-                    //"iDisplayLength": 50
 
 
                     select: {
@@ -744,6 +730,9 @@
                         layer.msg("添加失败")
                     }
                     $('#alter-modal').modal('hide')
+                    setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+                        window.location.reload();//页面刷新
+                    },2000);
                 }
             })
 
@@ -797,6 +786,9 @@
                                             layer.msg("修改成功")
                                         }
                                         $('#alter-modal').modal('hide')
+                                        setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+                                            window.location.reload();//页面刷新
+                                        },2000);
                                     }
                                 })
 
@@ -820,6 +812,9 @@
                         success:function (data) {
                             if(data.delete=="success"){
                                 layer.msg("删除成功")
+                                setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+                                    window.location.reload();//页面刷新
+                                },2000);
                             }
                         }
                     })

@@ -32,9 +32,12 @@ public class M_merchandiseController {
     @RequestMapping("/addM_merchandise")
     @ResponseBody
     public Map<String,String> add_M_merchandise(@RequestBody M_merchandise m_merchandise, HttpServletRequest request){
+        System.out.println("add m_merchandise");
+
         HttpSession session = request.getSession();
+
         Machine machine=(Machine) session.getAttribute("SESSION_MACHINE");
-        m_merchandise.setMachineId(Integer.parseInt(machine.getMachineId()));
+        m_merchandise.setMachineId(machine.getMachineId());
 
         System.out.println(m_merchandise.toString());
 
@@ -65,11 +68,12 @@ public class M_merchandiseController {
 
         Machine machine=machineService.selectAMachine(user);
 
+        System.out.println("get machine"+machine.toString());
 
         session.setAttribute("SESSION_MACHINE",machine);
 
         List<M_merchandise> list;
-        list = m_merchandiseService.selectAllM_merchandise(Integer.parseInt(machine.getMachineId()));
+        list = m_merchandiseService.selectAllM_merchandise(machine.getMachineId());
         model.addAttribute("ListAllM_merchandise",list);
 
         return "machine-manage";
@@ -84,7 +88,7 @@ public class M_merchandiseController {
 
         HttpSession session = request.getSession();
         Machine machine=(Machine) session.getAttribute("SESSION_MACHINE");
-        m_merchandise.setMachineId(Integer.parseInt(machine.getMachineId()));
+        m_merchandise.setMachineId(machine.getMachineId());
 
         boolean success;
         success = m_merchandiseService.deleteAM_merchandise(m_merchandise);
@@ -109,7 +113,7 @@ public class M_merchandiseController {
     public Map<String,String> updateAMerchandise(@RequestBody M_merchandise m_merchandise ,HttpServletRequest request){
         HttpSession session = request.getSession();
         Machine machine=(Machine) session.getAttribute("SESSION_MACHINE");
-        m_merchandise.setMachineId(Integer.parseInt(machine.getMachineId()));
+        m_merchandise.setMachineId(machine.getMachineId());
         m_merchandise.setSoldNum(0);
         m_merchandise.setSoldSum(0);
         boolean success;
