@@ -304,30 +304,30 @@
                         <div class="modal-body">
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_machineid"> <span
                                             style="color: #FF0000;">*</span>设备ID</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-1" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="add_machineid" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_name"> <span
                                             style="color: #FF0000;">*</span>名</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-2" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="add_name" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-3"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_type"> <span
                                             style="color: #FF0000;">*</span>类型</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-3" class="col-xs-10 col-sm-5"
+                                        <input type="text" id="add_type" class="col-xs-10 col-sm-5"
                                                placeholder=" "/>
                                     </div>
                                 </div>
@@ -335,10 +335,10 @@
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-8"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_screen"> <span
                                             style="color: #FF0000;">*</span>屏幕</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-8" class="col-xs-10 col-sm-5"
+                                        <input type="text" id="add_screen" class="col-xs-10 col-sm-5"
                                                placeholder=" "/>
                                     </div>
                                 </div>
@@ -346,10 +346,10 @@
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-4"><span
-                                            style="color: #FF0000;">*</span>持有人id</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_possessor"><span
+                                            style="color: #FF0000;">*</span>持有人</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-4" class="col-xs-10 col-sm-5"
+                                        <input type="text" id="add_possessor" class="col-xs-10 col-sm-5"
                                                placeholder=" "/>
                                     </div>
                                 </div>
@@ -357,38 +357,47 @@
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_itemNum"> <span
                                             style="color: #FF0000;">*</span>货道数量</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-5" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="add_itemNum" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-6"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_capacity"> <span
                                             style="color: #FF0000;">*</span>货道容量</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-6" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="add_capacity" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-7"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_gps"> <span
                                             style="color: #FF0000;">*</span>gps</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-7" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="add_gps" class="col-xs-10 col-sm-5"/>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_addr"> <span
+                                            style="color: #FF0000;">*</span>地址</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="add_addr" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target="#alter-modal">修改
+                            <button type="button" id="add_machine" class="btn btn-primary" >确定
                             </button>
                         </div>
                     </div><!-- modal-dialog -->
@@ -406,32 +415,33 @@
                         </div>
 
                         <div class="modal-body">
+
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_machineId"> <span
                                             style="color: #FF0000;">*</span>设备ID</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-1" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" readonly=""  id="alter_machineId" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_name"> <span
                                             style="color: #FF0000;">*</span>名</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-2" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="alter_name" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-3"> <span
-                                            style="color: #FF0000;">*</span>类型</label>
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_possessor"><span
+                                            style="color: #FF0000;">*</span>持有人</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-3" class="col-xs-10 col-sm-5"
+                                        <input type="text" id="alter_possessor" class="col-xs-10 col-sm-5"
                                                placeholder=" "/>
                                     </div>
                                 </div>
@@ -439,52 +449,30 @@
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-8"> <span
-                                            style="color: #FF0000;">*</span>屏幕</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-8" class="col-xs-10 col-sm-5"
-                                               placeholder=" "/>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-4"><span
-                                            style="color: #FF0000;">*</span>持有人id</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-4" class="col-xs-10 col-sm-5"
-                                               placeholder=" "/>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-5"> <span
-                                            style="color: #FF0000;">*</span>货道数量</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-5" class="col-xs-10 col-sm-5"/>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-6"> <span
-                                            style="color: #FF0000;">*</span>货道容量</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" id="form-field-6" class="col-xs-10 col-sm-5"/>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-7"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_gps"> <span
                                             style="color: #FF0000;">*</span>gps</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-7" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="alter_gps" class="col-xs-10 col-sm-5"/>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_addr"> <span
+                                            style="color: #FF0000;">*</span>地址</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="alter_addr" class="col-xs-10 col-sm-5"/>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_state"> <span
+                                            style="color: #FF0000;">*</span>设备状态</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="alter_state" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
@@ -492,7 +480,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">
+                            <button type="button" id="alter_machine" class="btn btn-primary" >
                                 确定
                             </button>
                         </div>
@@ -526,7 +514,7 @@
 										</span>
                             </button>
 
-                            <button class="btn btn-white btn-warning btn-bold">
+                            <button id="deleteMachine" class="btn btn-white btn-warning btn-bold">
                                 <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
                                 <span style="font-family: microsoft yahei">
 											删除设备
@@ -649,6 +637,8 @@
     if ('ontouchstart' in document.documentElement) document.write("<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
 <script src="../ace-master/assets/js/bootstrap.min.js"></script>
+<script src="../layui-v2.5.4/layui/layui.all.js"></script>
+<script src="../layui-v2.5.4/layui/layui.js"></script>
 
 <!-- page specific plugin scripts -->
 <script src="../ace-master/assets/js/jquery.dataTables.min.js"></script>
@@ -666,6 +656,11 @@
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
+    layui.use(['element','jquery','layer'],function () {
+        var element=layui.element;
+        var jquery=layui.jquery;
+        var layer=layui.layer;
+    });
     jQuery(function ($) {
         //initiate dataTables plugin
         var myTable =
@@ -675,29 +670,10 @@
                     bAutoWidth: false,
                     "aoColumns": [
                         {"bSortable": false},
-                        null, null, null, null, null, null, null,
+                        null, null, null, null, null, null, null,null,null,null,null,
                         {"bSortable": false}
                     ],
                     "aaSorting": [],
-
-
-                    //"bProcessing": true,
-                    //"bServerSide": true,
-                    //"sAjaxSource": "http://127.0.0.1/table.php"	,
-
-                    //,
-                    //"sScrollY": "200px",
-                    //"bPaginate": false,
-
-                    //"sScrollX": "100%",
-                    //"sScrollXInner": "120%",
-                    //"bScrollCollapse": true,
-                    //Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
-                    //you may want to wrap the table inside a "div.dataTables_borderWrap" element
-
-                    //"iDisplayLength": 50
-
-
                     select: {
                         style: 'multi'
                     }
@@ -805,11 +781,146 @@
             });
         });
 
+        //check if add_id is exists;
+        $('input[id = add_machineid]').blur(function () {
+
+            var machineId=$('input[id=add_machineid]').val();
+
+            var obj={
+                machineId:machineId
+            }
+            $.ajax({
+                url:'${ctx}/machine/checkMachineId',
+                type:'post',
+                contentType:'application/json',
+                data:JSON.stringify(obj),
+                success:function (data) {
+                    if(data.IsExist==1){
+                        layer.msg('机器id可使用')
+
+                    }
+                    else{
+                        layer.msg('机器id不可使用')
+                    }
+                }
+
+            })
+        })
+        //add a machine
+        $('#add_machine').click(function () {
+            var addmachineid = $('#add_machineid').val();
+            var addname = $('#add_name').val();
+            var addtype = $('#add_type').val();
+            var addscreen= $('#add_screen').val();
+            var addpossessor=$('#add_possessor').val();
+            var additemNum=$('#add_itemNum').val();
+            var addcapacity=$('#add_capacity').val();
+            var addgps=$('#add_gps').val();
+            var addaddr=$('#add_addr').val();
+
+            var alteredobj={
+                machineId:addmachineid,
+                name:addname,
+                type:addtype,
+                screen:addscreen,
+                possessor:addpossessor,
+                itemNum:additemNum,
+                capacity:addcapacity,
+                gps:addgps,
+                addr:addaddr,
+            }
+            $.ajax({
+                url:'${ctx}/machine/addMachine',
+                type:'post',
+                contentType:'application/json',
+                data:JSON.stringify(alteredobj),
+                success:function (data) {
+                    if(data.add=="success"){
+                        layer.msg("添加成功")
+                    }
+                    else{
+                        layer.msg("添加失败")
+                    }
+                    $('#alter-modal').modal('hide')
+                }
+            })
+
+        });
         //select/deselect a row when the checkbox is checked/unchecked
         $('#dynamic-table').on('click', 'td input[type=checkbox]', function () {
             var row = $(this).closest('tr').get(0);
             if (this.checked) myTable.row(row).deselect();
-            else myTable.row(row).select();
+            else {
+                myTable.row(row).select();
+
+                var test=myTable.row(row)
+
+                console.log(myTable.row(row).data())
+
+                var data=myTable.row(row).data()
+
+                console.log(data[1])
+                $('#alter_machineId').val(data[1])
+                $('#alter_name').val(data[2])
+                $('#alter_possessor').val(data[5])
+                $('#alter_gps').val(data[8])
+                $('#alter_addr').val(data[9])
+                $('#alter_state').val(data[12])
+                // 选定  修改 js 测试
+
+                $('#alter-modal').click(function(){
+                    $('#alter_machine').click(function () {
+                        var alteredmachineId=$('#alter_machineId').val();
+                        var alteredname=$('#alter_name').val();
+                        var alteredpossessor=$('#alter_possessor').val();
+                        var alteredgps= $('#alter_gps').val();
+                        var alteredaddr=$('#alter_addr').val();
+                        var alteredatate=$('#alter_state').val();
+
+                        var alteredobj={
+                            machineId:alteredmachineId,
+                            merchandiseId:alteredmachineId,
+                            name:alteredname,
+                            possessor:alteredpossessor,
+                            gps:alteredgps,
+                            addr:alteredaddr,
+                            state:alteredatate,
+                        }
+                        $.ajax({
+                            url:'${ctx}/machine/updateAMachine',
+                            type:'post',
+                            contentType:'application/json',
+                            data:JSON.stringify(alteredobj),
+                            success:function (data) {
+                                if(data.update=="success"){
+                                    layer.msg("修改成功")
+                                }
+                                $('#alter-modal').modal('hide')
+                            }
+                        })
+                    });
+                });
+
+                // 选定 删除 js test
+                $('#deleteMachine').click(function () {
+                    var dmachineId=data[1];
+                    console.log(dmachineId)
+                    var deleteobj={
+                        machineId:dmachineId
+                    }
+                    $.ajax({
+                        url:'${ctx}/machine/deleteAMachine',
+                        type:'post',
+                        contentType:'application/json',
+                        data:JSON.stringify(deleteobj),
+                        success:function (data) {
+                            if(data.delete=="success"){
+                                layer.msg("删除成功")
+                            }
+                        }
+                    })
+                })
+            }
         });
 
 

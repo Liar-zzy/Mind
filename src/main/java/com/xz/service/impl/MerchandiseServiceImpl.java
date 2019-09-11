@@ -18,7 +18,6 @@ public class MerchandiseServiceImpl implements MerchandiseService {
 
     @Override
     public boolean add_Merchandise(Merchandise merchandise) {
-
         int row   = merchandiseMapper.addMerchandise(merchandise);
         return row == 1 ? true:false;
     }
@@ -39,5 +38,11 @@ public class MerchandiseServiceImpl implements MerchandiseService {
     public boolean updateAMerchandise(Merchandise merchandise) {
         int row = merchandiseMapper.update_AMerchandise(merchandise);
         return row == 1 ? true:false;
+    }
+
+    @Override
+    public Merchandise checkMerchandise(Merchandise merchandise) {
+        Merchandise m = merchandiseMapper.getAMerchandise(merchandise);
+        return m;
     }
 }

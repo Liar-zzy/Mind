@@ -13,4 +13,6 @@ public interface MerchandiseService {
     boolean deleteAMerchandise(int merchandiseId);
 
     boolean updateAMerchandise(Merchandise merchandise);
+
+    Merchandise checkMerchandise(Merchandise merchandise);
 }

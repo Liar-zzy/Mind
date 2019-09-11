@@ -14,4 +14,6 @@ public interface MachineMapper {
     int delete_AMachine(@Param("machineId") int machineId);
 
     int update_AMachine(@Param("updateMachine") Machine machine);
+
+    Machine getAMachine(@Param("getMachine") Machine machine);
 }

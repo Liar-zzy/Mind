@@ -39,4 +39,10 @@ public class MachineServiceImpl implements MachineService {
         int row = machineMapper.update_AMachine(machine);
         return row == 1 ? true:false;
     }
+
+    @Override
+    public Machine checkMachine(Machine machine) {
+        Machine m = machineMapper.getAMachine(machine);
+        return m;
+    }
 }

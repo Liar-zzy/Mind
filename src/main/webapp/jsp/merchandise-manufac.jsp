@@ -256,41 +256,50 @@
                         <div class="modal-body">
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_id"> <span
                                             style="color: #FF0000;">*</span>商品ID</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-1" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="add_id" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_name"> <span
                                             style="color: #FF0000;">*</span>商品名</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-2" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="add_name" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-3"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_price"> <span
                                             style="color: #FF0000;">*</span>价格</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-3" class="col-xs-10 col-sm-5"
+                                        <input type="text" id="add_price" class="col-xs-10 col-sm-5"
                                                placeholder=" "/>
                                     </div>
                                 </div>
                             </form>
-
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-8"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_manufacture"> <span
+                                            style="color: #FF0000;">*</span>生产商</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="add_manufacture" class="col-xs-10 col-sm-5"
+                                               placeholder=" "/>
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="add_inventory"> <span
                                             style="color: #FF0000;">*</span>库存</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-8" class="col-xs-10 col-sm-5"
+                                        <input type="text" id="add_inventory" class="col-xs-10 col-sm-5"
                                                placeholder=" "/>
                                     </div>
                                 </div>
@@ -299,7 +308,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                            <button type="button" id="addmerchandise" class="btn btn-primary" data-toggle="modal"
                                     data-target="#alter-modal">确定
                             </button>
                         </div>
@@ -320,30 +329,30 @@
                         <div class="modal-body">
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-fiedl-1"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_merchandiseid"> <span
                                             style="color: #FF0000;">*</span>商品ID</label>
                                     <div class="col-sm-9">
-                                        <input type="text" readonly="" id="form-field-1" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" readonly="" id="alter_merchandiseid" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-2"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_name"> <span
                                             style="color: #FF0000;">*</span>商品名</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-2" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="alter_name" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-3"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_price"> <span
                                             style="color: #FF0000;">*</span>价格</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="form-field-3" class="col-xs-10 col-sm-5"
+                                        <input type="text" id="alter_price" class="col-xs-10 col-sm-5"
                                                placeholder=" "/>
                                     </div>
                                 </div>
@@ -351,10 +360,21 @@
 
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label class="col-sm-3 control-label no-padding-right" for="form-field-8"> <span
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_manufacture"> <span
+                                            style="color: #FF0000;">*</span>生产商</label>
+                                    <div class="col-sm-9">
+                                        <input type="text"  id="alter_manufacture" class="col-xs-10 col-sm-5"
+                                               placeholder=" "/>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label no-padding-right" for="alter_inventory"> <span
                                             style="color: #FF0000;">*</span>余量</label>
                                     <div class="col-sm-9">
-                                        <input type="text" readonly="" id="form-field-8" class="col-xs-10 col-sm-5"
+                                        <input type="text"  id="alter_inventory" class="col-xs-10 col-sm-5"
                                                placeholder=" "/>
                                     </div>
                                 </div>
@@ -363,7 +383,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">
+                            <button type="button" id="alter_merchandise" class="btn btn-primary"  >
                                 确定
                             </button>
                         </div>
@@ -397,7 +417,7 @@
 										</span>
                             </button>
 
-                            <button class="btn btn-white btn-warning btn-bold">
+                            <button class="btn btn-white btn-warning btn-bold" id="deleteMerchandise">
                                 <i class="ace-icon fa fa-trash-o bigger-120 orange"></i>
                                 <span style="font-family: microsoft yahei">
 											删除商品
@@ -506,6 +526,8 @@
     if ('ontouchstart' in document.documentElement) document.write("<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
 <script src="../ace-master/assets/js/bootstrap.min.js"></script>
+<script src="../layui-v2.5.4/layui/layui.all.js"></script>
+<script src="../layui-v2.5.4/layui/layui.js"></script>
 
 <!-- page specific plugin scripts -->
 <script src="../ace-master/assets/js/jquery.dataTables.min.js"></script>
@@ -523,6 +545,11 @@
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
+    layui.use(['element','jquery','layer'],function () {
+        var element=layui.element;
+        var jquery=layui.jquery;
+        var layer=layui.layer;
+    })
     jQuery(function ($) {
         //initiate dataTables plugin
         var myTable =
@@ -658,15 +685,146 @@
             $('#dynamic-table').find('tbody > tr').each(function () {
                 var row = this;
                 if (th_checked) myTable.row(row).select();
-                else myTable.row(row).deselect();
+                else {
+                    myTable.row(row).deselect();
+                }
             });
+        });
+
+        //check if add_id is exists;
+        $('input[id = add_id]').blur(function () {
+
+            var merchandiseId=$('input[id=add_id]').val();
+
+            var obj={
+                merchandiseId:merchandiseId
+            }
+            $.ajax({
+                url:'${ctx}/Merchandise/checkMerchandiseId',
+                type:'post',
+                contentType:'application/json',
+                data:JSON.stringify(obj),
+                success:function (data) {
+                    if(data.IsExist==1){
+                        layer.msg('商品id可使用')
+
+                    }
+                    else{
+                        layer.msg('商品id不可使用')
+                    }
+                }
+
+            })
+        })
+        //add a merchandise
+        $('#addmerchandise').click(function () {
+            var addmerchandiseid = $('#add_id').val();
+            var addname = $('#add_name').val();
+            var addprice = $('#add_price').val();
+            var addmanufacture= $('#add_manufacture').val();
+            var addinventory=$('#add_inventory').val();
+
+            var alteredobj={
+                merchandiseId:addmerchandiseid,
+                name:addname,
+                price:addprice,
+                manufactureId:addmanufacture,
+                inventory:addinventory,
+            }
+            $.ajax({
+                url:'${ctx}/Merchandise/addMerchandise',
+                type:'post',
+                contentType:'application/json',
+                data:JSON.stringify(alteredobj),
+                success:function (data) {
+                    if(data.add=="success"){
+                        layer.msg("添加成功")
+                    }
+                    else{
+                        layer.msg("添加失败")
+                    }
+                    $('#alter-modal').modal('hide')
+                }
+            })
+
         });
 
         //select/deselect a row when the checkbox is checked/unchecked
         $('#dynamic-table').on('click', 'td input[type=checkbox]', function () {
             var row = $(this).closest('tr').get(0);
             if (this.checked) myTable.row(row).deselect();
-            else myTable.row(row).select();
+            else {
+                myTable.row(row).select();
+                var test=myTable.row(row)
+
+                console.log(myTable.row(row).data())
+
+                var data=myTable.row(row).data()
+
+                console.log(data[1])
+
+                // 选定  修改 js 测试
+                $('#alter-modal').click(function(){
+                    console.log(data[1])
+                    console.log(data[2])
+                            $('#alter_merchandiseid').val(data[1])
+                            $('#alter_name').val(data[2])
+                            $('#alter_price').val(data[3])
+                            $('#alter_manufacture').val(data[4])
+                            $('#alter_inventory').val(data[6])
+
+                            $('#alter_merchandise').click(function () {
+                                var alteredmerchandiseid=$('#alter_merchandiseid').val();
+                                var alteredname=$('#alter_name').val();
+                                var alteredprice=$('#alter_price').val();
+                                var alteredmanufacture= $('#alter_manufacture').val();
+                                var alteredinventory=$('#alter_inventory').val();
+
+                                var alteredobj={
+                                    merchandiseId:alteredmerchandiseid,
+                                    name:alteredname,
+                                    price:alteredprice,
+                                    manufactureId:alteredmanufacture,
+                                    inventory:alteredinventory,
+                                }
+                                $.ajax({
+                                    url:'${ctx}/Merchandise/updateAMerchandise',
+                                    type:'post',
+                                    contentType:'application/json',
+                                    data:JSON.stringify(alteredobj),
+                                    success:function (data) {
+                                        if(data.update=="success"){
+                                            layer.msg("修改成功")
+                                        }
+                                        $('#alter-modal').modal('hide')
+                                    }
+                                })
+
+                            });
+
+                });
+
+
+                // 选定 删除 js test
+                $('#deleteMerchandise').click(function () {
+                    var dMerchandiseId=data[1];
+                    console.log(dMerchandiseId)
+                    var deleteobj={
+                        merchandiseId:dMerchandiseId
+                    }
+                    $.ajax({
+                        url:'${ctx}/Merchandise/deleteAMerchandise',
+                        type:'post',
+                        contentType:'application/json',
+                        data:JSON.stringify(deleteobj),
+                        success:function (data) {
+                            if(data.delete=="success"){
+                                layer.msg("删除成功")
+                            }
+                        }
+                    })
+                })
+            }
         });
 
 

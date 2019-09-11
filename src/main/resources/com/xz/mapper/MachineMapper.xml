@@ -19,6 +19,10 @@
     <update id="update_AMachine" parameterType="com.xz.pojo.Machine">
         update j2ee.machine
         <set>
+            <if test="updateMachine.name != null and updateMachine.name != ''">
+                name = #{updateMachine.name},
+            </if>
+
             <if test="updateMachine.possessor != null  and updateMachine.possessor != ''">
                 possessor = #{updateMachine.possessor},
             </if>
@@ -28,11 +32,19 @@
             </if>
 
             <if test="updateMachine.addr != null and updateMachine.addr != ''">
-                addr = #{updateMachine.addr}
+                addr = #{updateMachine.addr},
+            </if>
+
+            <if test="updateMachine.state != null and updateMachine.state != ''">
+                state = #{updateMachine.state}
             </if>
         </set>
         <where>
             machine_id = #{updateMachine.machineId}
         </where>
     </update>
+
+    <select id="getAMachine" parameterType="com.xz.pojo.Machine" resultType="com.xz.pojo.Machine">
+        select * from j2ee.machine where machine_id = #{getMachine.machineId}
+    </select>
 </mapper>
