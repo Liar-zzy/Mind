@@ -135,6 +135,4 @@ public class MerchandiseController {
         map.put("IsExist", code);
         return map;
     }
-
-
 }

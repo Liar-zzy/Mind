@@ -1,5 +1,6 @@
 package com.xz.Controller;
 
+import com.xz.pojo.MerchandiseTop3;
 import com.xz.pojo.Order;
 import com.xz.pojo.User;
 import com.xz.service.OrderService;
@@ -7,11 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/order")
@@ -42,6 +47,8 @@ public class OrderController {
         }
         System.out.println("list all user");
 
+        List<MerchandiseTop3> listTop3 = orderService.get_Top3();
+        model.addAttribute("ListOrderTop3",listTop3);
 
         if(user.getRole().equals("ACE")){
             System.out.println("data-all-admin");
@@ -69,4 +76,5 @@ public class OrderController {
         else System.out.println("delete order fail");
         return "xxx";
     }
+
 }
