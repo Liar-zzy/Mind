@@ -11,9 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.lang.reflect.Array;
 import java.util.List;
 
 @Controller
@@ -77,22 +79,32 @@ public class OrderController {
     public String deleteAnOrder(){
         boolean success;
         success = orderService.deleteAnOrder(1);
-        if(success == true) System.out.println("delete order success");
-        else System.out.println("delete order fail");
+        if(success == true) {
+            System.out.println("delete order success");
+        } else {
+            System.out.println("delete order fail");
+        }
         return "xxx";
     }
 
     @RequestMapping("/getMerchandiseSoldNumTop")
-    public String GetMerchandiseSoldNumTop(Model model){
+    @ResponseBody
+    public List<MerchandiseSoldNumTop> GetMerchandiseSoldNumTop(){
         List<MerchandiseSoldNumTop> list = orderService.get_MerchandiseSoldNumTop();
-        model.addAttribute("ListMerchandiseSoldNumTop",list);
-        return "xxx";
+        return list;
     }
 
     @RequestMapping("/getDaySoldSumTop")
-    public String GetDaySoldSumTop(Model model){
+    @ResponseBody
+    public List<DaySoldSumTop> GetDaySoldSumTop(){
         List<DaySoldSumTop> list = orderService.get_DaySoldSumTop();
-        model.addAttribute("ListDaySoldSumTop",list);
-        return "xxx";
+
+        for (int i = 0; i < list.size(); i++)
+        {
+            System.out.println(list.get(i).getDate());
+            System.out.println(list.get(i).getSumPrice());
+        }
+
+        return list;
     }
 }

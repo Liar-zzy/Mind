@@ -2,19 +2,13 @@ package com.xz.pojo.Top;
 
 public class MerchandiseSoldNumTop {
 
-    private int merchandiseId;
+
 
     private String name;
 
-    private double sumNum;
+    private double value;
 
-    public int getMerchandiseId() {
-        return merchandiseId;
-    }
 
-    public void setMerchandiseId(int merchandiseId) {
-        this.merchandiseId = merchandiseId;
-    }
 
     public String getName() {
         return name;
@@ -24,11 +18,11 @@ public class MerchandiseSoldNumTop {
         this.name = name;
     }
 
-    public double getSumNum() {
-        return sumNum;
+    public double getValue() {
+        return value;
     }
 
-    public void setSumNum(double sumNum) {
-        this.sumNum = sumNum;
+    public void setValue(double value) {
+        this.value = value;
     }
 }
