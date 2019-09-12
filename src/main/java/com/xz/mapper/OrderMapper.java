@@ -1,6 +1,8 @@
 package com.xz.mapper;
 
-import com.xz.pojo.MerchandiseTop3;
+import com.xz.pojo.Top.DaySoldSumTop;
+import com.xz.pojo.Top.MerchandiseSoldNumTop;
+import com.xz.pojo.Top.MerchandiseTop3;
 import com.xz.pojo.Order;
 import org.apache.ibatis.annotations.Param;
 
@@ -16,5 +18,8 @@ public interface OrderMapper {
 
     List<MerchandiseTop3> getTop3();
 
+    List<MerchandiseSoldNumTop> getMerchandiseHeat();
+
+    List<DaySoldSumTop> getDaySoldSumTop();
 }
 

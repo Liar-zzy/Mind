@@ -1,6 +1,7 @@
 package com.xz.mapper;
 
 import com.xz.pojo.Machine;
+import com.xz.pojo.Top.MachineTop;
 import com.xz.pojo.User;
 import org.apache.ibatis.annotations.Param;
 
@@ -21,4 +22,6 @@ public interface MachineMapper {
     Machine selectAMachine(@Param("user") User user);
 
     List<Machine> select_DamageMachine();
+
+    List<MachineTop> select_MachineTop();
 }

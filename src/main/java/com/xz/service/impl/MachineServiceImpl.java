@@ -2,6 +2,7 @@ package com.xz.service.impl;
 
 import com.xz.mapper.MachineMapper;
 import com.xz.pojo.Machine;
+import com.xz.pojo.Top.MachineTop;
 import com.xz.pojo.User;
 import com.xz.service.MachineService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,12 @@ public class MachineServiceImpl implements MachineService {
     @Override
     public List<Machine> selectDamageMachine() {
         List<Machine> list = machineMapper.select_DamageMachine();
+        return list;
+    }
+
+    @Override
+    public List<MachineTop> selectMachineTop() {
+        List<MachineTop> list = machineMapper.select_MachineTop();
         return list;
     }
 }

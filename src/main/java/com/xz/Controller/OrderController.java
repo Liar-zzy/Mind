@@ -1,6 +1,8 @@
 package com.xz.Controller;
 
-import com.xz.pojo.MerchandiseTop3;
+import com.xz.pojo.Top.DaySoldSumTop;
+import com.xz.pojo.Top.MerchandiseSoldNumTop;
+import com.xz.pojo.Top.MerchandiseTop3;
 import com.xz.pojo.Order;
 import com.xz.pojo.User;
 import com.xz.service.OrderService;
@@ -8,15 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/order")
@@ -84,4 +82,17 @@ public class OrderController {
         return "xxx";
     }
 
+    @RequestMapping("/getMerchandiseSoldNumTop")
+    public String GetMerchandiseSoldNumTop(Model model){
+        List<MerchandiseSoldNumTop> list = orderService.get_MerchandiseSoldNumTop();
+        model.addAttribute("ListMerchandiseSoldNumTop",list);
+        return "xxx";
+    }
+
+    @RequestMapping("/getDaySoldSumTop")
+    public String GetDaySoldSumTop(Model model){
+        List<DaySoldSumTop> list = orderService.get_DaySoldSumTop();
+        model.addAttribute("ListDaySoldSumTop",list);
+        return "xxx";
+    }
 }

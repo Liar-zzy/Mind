@@ -16,9 +16,20 @@
         delete from j2ee.order where o_id = #{oId}
     </delete>
 
-    <select id="getTop3" resultType="com.xz.pojo.MerchandiseTop3">
+    <select id="getTop3" resultType="com.xz.pojo.Top.MerchandiseTop3">
         select merchandise.merchandise_id, merchandise.name, SUM(order.o_price) as sumPrice
         from merchandise JOIN j2ee.order on merchandise.merchandise_id = order.machine_id
         GROUP BY merchandise.merchandise_id ORDER BY sumPrice DESC
+    </select>
+
+    <select id="getMerchandiseHeat" resultType="com.xz.pojo.Top.MerchandiseSoldNumTop">
+        select merchandise.merchandise_id, merchandise.name, SUM(order.o_num) as sumNum
+        from merchandise JOIN j2ee.order on merchandise.merchandise_id = order.machine_id
+        GROUP BY merchandise.merchandise_id ORDER BY sumNum DESC
+    </select>
+
+    <select id="getDaySoldSumTop" resultType="com.xz.pojo.Top.DaySoldSumTop">
+        select   SUM(order.o_price) as sumPrice, DATE_FORMAT(order.date,'%Y-%m-%d') as Date
+        from j2ee.order GROUP BY DATE_FORMAT(order.date,'%Y-%m-%d') ORDER BY Date;
     </select>
 </mapper>
