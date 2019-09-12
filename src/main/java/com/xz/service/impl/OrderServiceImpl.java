@@ -1,6 +1,7 @@
 package com.xz.service.impl;
 
 import com.xz.mapper.OrderMapper;
+import com.xz.pojo.MerchandiseTop3;
 import com.xz.pojo.Order;
 import com.xz.service.OrderService;
 import org.aspectj.weaver.ast.Or;
@@ -31,5 +32,11 @@ public class OrderServiceImpl  implements OrderService {
     public boolean deleteAnOrder(int oId) {
         int row = orderMapper.delete_AnOrder(oId);
         return row == 1 ? true:false;
+    }
+
+    @Override
+    public List<MerchandiseTop3> get_Top3() {
+        List<MerchandiseTop3> list = orderMapper.getTop3();
+        return list;
     }
 }

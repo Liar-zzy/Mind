@@ -16,4 +16,9 @@
         delete from j2ee.order where o_id = #{oId}
     </delete>
 
+    <select id="getTop3" resultType="com.xz.pojo.MerchandiseTop3">
+        select merchandise.merchandise_id, merchandise.name, SUM(order.o_price) as sump
+        from merchandise JOIN j2ee.order on merchandise.merchandise_id = order.machine_id
+        GROUP BY merchandise.merchandise_id ORDER BY sump DESC
+    </select>
 </mapper>
