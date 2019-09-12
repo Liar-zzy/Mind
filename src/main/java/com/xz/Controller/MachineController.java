@@ -2,6 +2,7 @@ package com.xz.Controller;
 
 
 import com.xz.pojo.Machine;
+import com.xz.pojo.User;
 import com.xz.service.MachineService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -126,12 +128,29 @@ public class MachineController {
     }
 
     @RequestMapping("/getFixList")
-    public String SelectAllFix(Model model){
+    public String SelectAllFix(Model model, HttpServletRequest request){
+        HttpSession session = request.getSession();
+        User user = (User)session.getAttribute("SESSION_USER");
 
         List<Machine> list = machineService.selectDamageMachine();
+
+        for (int i = 0; i < list.size(); i++)
+        {
+            System.out.println(list.get(i).getMachineId()+list.get(i).getPossessor());
+        }
         model.addAttribute("AllDamageMachine",list);
 
-
-        return "machine-fix-fixer";
+        if(user.getRole().equals("ACE")){
+            return "machine-fix";
+        }
+        else if(user.getRole().equals("FIX")){
+            return "machine-fix-fixer";
+        }
+        else if(user.getRole().equals("MAC")){
+            return "machine-fix-machine";
+        }
+        else {
+            return "redirect:/jsp/.jsp";
+        }
     }
 }

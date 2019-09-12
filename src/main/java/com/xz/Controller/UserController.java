@@ -221,10 +221,11 @@ public class UserController {
     }
 
     @RequestMapping("logout")
-    public String logout(@ModelAttribute("User") User user, SessionStatus sessionStatus){
-        //@ModelAttribute("User")相当于将session中名为"User"的对象注入user对象中
-        //sessionStatus中的setComplete方法可以将session中的内容全部清空
-        sessionStatus.setComplete();
+    public String logout(HttpSession session){
+        session.removeAttribute("SESSION_USER");
+        session.removeAttribute("SESSION_MACHINE");
+        session.invalidate();
+
         return "login";
     }
 }
