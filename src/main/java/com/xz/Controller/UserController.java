@@ -225,7 +225,6 @@ public class UserController {
         session.removeAttribute("SESSION_USER");
         session.removeAttribute("SESSION_MACHINE");
         session.invalidate();
-
-        return "login";
+        return "redirect:/jsp/login.jsp";
     }
 }

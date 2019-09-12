@@ -393,19 +393,20 @@
 
 						<!-- jsp 循环输入  改一下 各个变量名 然后循环 -->
 						<tbody>
-						<tr>
-							<td class="center">
-								<label class="pos-rel">
-									<input type="checkbox" class="ace" />
-									<span class="lbl"></span>
-								</label>
-							</td>
 
-
-							<td>商品id1</td>
-							<td>商品名1</td>
-							<td class="hidden-480"> 数量1</td>
-						</tr>
+						<c:forEach items="${ListOrderTop3}" var="obj">
+							<tr>
+								<td class="center">
+									<label class="pos-rel">
+										<input type="checkbox" class="ace"/>
+										<span class="lbl"></span>
+									</label>
+								</td>
+								<td>${obj.merchandiseId}</td>
+								<td>${obj.name}</td>
+								<td>${obj.sumPrice}</td>
+							</tr>
+						</c:forEach>
 						</tbody>
 
 
@@ -498,25 +499,6 @@
 								{ "bSortable": false }
 							],
 							"aaSorting": [],
-
-
-							//"bProcessing": true,
-							//"bServerSide": true,
-							//"sAjaxSource": "http://127.0.0.1/table.php"	,
-
-							//,
-							//"sScrollY": "200px",
-							//"bPaginate": false,
-
-							//"sScrollX": "100%",
-							//"sScrollXInner": "120%",
-							//"bScrollCollapse": true,
-							//Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
-							//you may want to wrap the table inside a "div.dataTables_borderWrap" element
-
-							//"iDisplayLength": 50
-
-
 							select: {
 								style: 'multi'
 							}
@@ -732,24 +714,6 @@
 
 							],
 							"aaSorting": [],
-
-
-							//"bProcessing": true,
-							//"bServerSide": true,
-							//"sAjaxSource": "http://127.0.0.1/table.php"	,
-
-							//,
-							//"sScrollY": "200px",
-							//"bPaginate": false,
-
-							//"sScrollX": "100%",
-							//"sScrollXInner": "120%",
-							//"bScrollCollapse": true,
-							//Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
-							//you may want to wrap the table inside a "div.dataTables_borderWrap" element
-
-							//"iDisplayLength": 50
-
 
 							select: {
 								style: 'multi'
