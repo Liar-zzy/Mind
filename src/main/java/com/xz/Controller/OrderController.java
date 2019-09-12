@@ -48,6 +48,13 @@ public class OrderController {
         List<MerchandiseTop3> listTop3 = orderService.get_Top3();
         model.addAttribute("ListOrderTop3",listTop3);
 
+        for (int i = 0; i < listTop3.size(); i++)
+        {
+            System.out.println(listTop3.get(i).getMerchandiseId());
+            System.out.println(listTop3.get(i).getName());
+            System.out.println(listTop3.get(i).getSumPrice());
+        }
+
         if(user.getRole().equals("ACE")){
             System.out.println("data-all-admin");
             return "data-all-admin";

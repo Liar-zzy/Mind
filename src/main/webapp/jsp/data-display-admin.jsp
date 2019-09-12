@@ -385,8 +385,8 @@
 <script src="../ace-master/assets/js/jquery.flot.resize.min.js"></script>
 
 <!-- ace scripts -->
-<script src="assets/js/ace-elements.min.js"></script>
-<script src="assets/js/ace.min.js"></script>
+<script src="../ace-master/assets/js/ace-elements.min.js"></script>
+<script src="../ace-master/assets/js/ace.min.js"></script>
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
@@ -435,10 +435,11 @@
 			type: 'pie',
 			radius: '55%',
 			center: ['50%', '50%'],
-			data: [{
+			data: [
+				{
 				value: 335,
 				name: '商品名1'
-			},
+				},
 				{
 					value: 310,
 					name: '商品名2'
@@ -496,14 +497,6 @@
 	}
 </script>
 
-<script type="text/javascript">
-	// 点击消失
-	$(document).ready(function() {
-		$("#closealert").click(function() {
-			$("#alert1").hide();
-		});
-	});
-</script>
 
 <script type="text/javascript">
 	// 柱状图
