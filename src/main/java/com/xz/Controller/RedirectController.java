@@ -115,13 +115,13 @@ public class RedirectController {
         HttpSession session = request.getSession();
         User user = (User)session.getAttribute("SESSION_USER");
         if(user.getRole().equals("ACE")){
-            return "redirect:/jsp/machine-fix.jsp";
+            return "redirect:/machine/getFixList";
         }
         else if(user.getRole().equals("FIX")){
             return "redirect:/machine/getFixList";
         }
         else if(user.getRole().equals("MAC")){
-            return "redirect:/jsp/machine-fix-machine.jsp";
+            return "redirect:/machine/getFixList";
         }
         else {
             return "redirect:/jsp/.jsp";

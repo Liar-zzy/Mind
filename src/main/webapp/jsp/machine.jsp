@@ -3,46 +3,45 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta charset="utf-8"/>
-    <title>Machine-Mind</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>Machine-fix-fixer-Mind</title>
 
-    <meta name="description" content="overview &amp; stats"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="description" content="overview &amp; stats" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 
-    <!-- bootstrap & fontawesome -->
-    <link rel="stylesheet" href="../ace-master/assets/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css"/>
+	<!-- bootstrap & fontawesome -->
+	<link rel="stylesheet" href="../ace-master/assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../ace-master/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-    <!-- font awesome -->
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<!-- font awesome -->
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-    <!-- text fonts -->
-    <link rel="stylesheet" href="../ace-master/assets/css/fonts.googleapis.com.css"/>
+	<!-- text fonts -->
+	<link rel="stylesheet" href="../ace-master/assets/css/fonts.googleapis.com.css" />
 
-    <!-- ace styles -->
-    <link rel="stylesheet" href="../ace-master/assets/css/ace.min.css" class="../ace-master/ace-main-stylesheet"
-          id="main-ace-style"/>
+	<!-- ace styles -->
+	<link rel="stylesheet" href="../ace-master/assets/css/ace.min.css" class="../ace-master/ace-main-stylesheet" id="main-ace-style" />
 
-    <link rel="stylesheet" href="../ace-master/assets/css/ace-skins.min.css"/>
-    <link rel="stylesheet" href="../ace-master/assets/css/ace-rtl.min.css"/>
+	<link rel="stylesheet" href="../ace-master/assets/css/ace-skins.min.css" />
+	<link rel="stylesheet" href="../ace-master/assets/css/ace-rtl.min.css" />
 
-    <script src="../ace-master/assets/js/ace-extra.min.js"></script>
+	<script src="../ace-master/assets/js/ace-extra.min.js"></script>
 </head>
 <body class="no-skin">
 
 <!-- 头部bar -->
 <div id="navbar" class="navbar navbar-default ace-save-state">
-    <div class="navbar-container ace-save-state" id="navbar-container">
-        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-            <span class="sr-only">Toggle sidebar</span>
+	<div class="navbar-container ace-save-state" id="navbar-container">
+		<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+			<span class="sr-only">Toggle sidebar</span>
 
-            <span class="icon-bar"></span>
+			<span class="icon-bar"></span>
 
-            <span class="icon-bar"></span>
+			<span class="icon-bar"></span>
 
-            <span class="icon-bar"></span>
+			<span class="icon-bar"></span>
 
         </button>
 

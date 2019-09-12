@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh">
@@ -55,7 +56,7 @@
 
 		<div class="navbar-buttons navbar-header pull-right " role="navigation">
 			<ul class="nav ace-nav">
-				
+
 
 				<!-- 蓝色 方块 个人中心 必要 -->
 				<li class="light-blue dropdown-modal">
@@ -124,7 +125,6 @@
 				//TODO handle the exception
 			}
 		</script>
-
 
 		<!-- 侧边菜单选项 -->
 		<ul class="nav nav-list">
@@ -234,9 +234,7 @@
 				<b class="arrow"></b>
 			</li>
 		</ul>
-		<!-- <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-        <i id="sidebar-toggle-icon" class="ace-icon fa fa-angle-double-left ace-save-state" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-    </div> -->
+
 	</div>
 	<!-- 结束侧边菜单 -->
 
@@ -277,7 +275,6 @@
 
 			<!-- 页面内容 -->
 
-
 			<div class="page-content">
 				<div class="page-header">
 							<span style="font-family: microsoft yahei">
@@ -300,8 +297,7 @@
 						<div class="table-header" style="background-color: #FFFFFF;">
 
 
-							<i class="ace-icon fa fa-hand-o-right icon-animated-hand-pointer blue"></i>
-							<a href="" class=""> 请选择操作 </a>
+
 
 						</div>
 
@@ -332,66 +328,48 @@
 
 							<!-- jsp 循环输入  改一下 各个变量名 然后循环 -->
 							<tbody>
-							<tr>
-								<td class="center">
-									<label class="pos-rel">
-										<input type="checkbox" class="ace" />
-										<span class="lbl"></span>
-									</label>
-								</td>
-
-								<td>
-									<a href="#"> id 1</a>
-								</td>
-
-								<td class="hidden-480"> 持有人 id1</td>
-							</tr>
+							<c:forEach items="${AllDamageMachine}" var="obj">
+								<tr>
+									<td class="center">
+										<label class="pos-rel">
+											<input type="checkbox" class="ace"/>
+											<span class="lbl"></span>
+										</label>
+									</td>
+									<td>${obj.machineId}</td>
+									<td>${obj.possessor}</td>
+								</tr>
+							</c:forEach>
 							</tbody>
-
-
 						</table>
 					</div>
-
-
-
-
-
-
 				</div>
 			</div>
-
-
-
-
-
-
-
 		</div><!-- page-content -->
-
 	</div>
 </div>
 <!-- 页面脚底 -->
 <div class="footer">
 	<div class="footer-inner">
 		<div class="footer-content">
-						<span class="bigger-120">
-							<span class="blue bolder">Mind</span>
-							Application &copy; 2019-2020
-						</span>
+					<span class="bigger-120">
+						<span class="blue bolder">Mind</span>
+						Application &copy; 2019-2020
+					</span>
 			&nbsp; &nbsp;
 			<span class="action-buttons">
-							<a href="#">
-								<i class="ace-icon fa fa-qq light-blue bigger-150"></i>
-							</a>
+						<a href="#">
+							<i class="ace-icon fa fa-qq light-blue bigger-150"></i>
+						</a>
 
-							<a href="#">
-								<i class="ace-icon fa fa-weibo text-primary bigger-150"></i>
-							</a>
+						<a href="#">
+							<i class="ace-icon fa fa-weibo text-primary bigger-150"></i>
+						</a>
 
-							<a href="#">
-								<i class="ace-icon fa fa-weixin  bigger-150"></i>
-							</a>
-						</span>
+						<a href="#">
+							<i class="ace-icon fa fa-weixin  bigger-150"></i>
+						</a>
+					</span>
 		</div>
 	</div>
 </div>
@@ -403,14 +381,16 @@
 </div>
 
 <script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
-
+<script src="../layui-v2.5.4/layui/layui.all.js"></script>
+<script src="../layui-v2.5.4/layui/layui.js"></script>
 <!-- <![endif]-->
 
 <!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="../ace-master/assets/js/jquery-1.11.3.min.js"></script>
 <![endif]-->
 <script type="text/javascript">
-	if('ontouchstart' in document.documentElement) document.write("<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+	if ('ontouchstart' in document.documentElement) document.write(
+			"<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
 <script src="../ace-master/assets/js/bootstrap.min.js"></script>
 
@@ -430,54 +410,41 @@
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
+	layui.use(['element','jquery','layer'],function () {
+		var element=layui.element;
+		var jquery=layui.jquery;
+		var layer=layui.layer;
+	})
 	jQuery(function($) {
 		//initiate dataTables plugin
 		var myTable =
 				$('#dynamic-table')
 				//.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
-						.DataTable( {
+						.DataTable({
 							bAutoWidth: false,
-							"aoColumns": [
-								{ "bSortable": false },
+							"aoColumns": [{
+								"bSortable": false
+							},
 								null, null
 							],
 							"aaSorting": [],
 
-
-							//"bProcessing": true,
-							//"bServerSide": true,
-							//"sAjaxSource": "http://127.0.0.1/table.php"	,
-
-							//,
-							//"sScrollY": "200px",
-							//"bPaginate": false,
-
-							//"sScrollX": "100%",
-							//"sScrollXInner": "120%",
-							//"bScrollCollapse": true,
-							//Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
-							//you may want to wrap the table inside a "div.dataTables_borderWrap" element
-
-							//"iDisplayLength": 50
-
-
 							select: {
 								style: 'multi'
 							}
-						} );
+						});
 
 
 
 		$.fn.dataTable.Buttons.defaults.dom.container.className = 'dt-buttons btn-overlap btn-group btn-overlap';
 
-		new $.fn.dataTable.Buttons( myTable, {
-			buttons: [
-				{
-					"extend": "colvis",
-					"text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
-					"className": "btn btn-white btn-primary btn-bold",
-					columns: ':not(:first):not(:last)'
-				},
+		new $.fn.dataTable.Buttons(myTable, {
+			buttons: [{
+				"extend": "colvis",
+				"text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
+				"className": "btn btn-white btn-primary btn-bold",
+				columns: ':not(:first):not(:last)'
+			},
 				{
 					"extend": "copy",
 					"text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copy to clipboard</span>",
@@ -506,24 +473,24 @@
 					message: 'This print was produced using the Print button for DataTables'
 				}
 			]
-		} );
-		myTable.buttons().container().appendTo( $('.tableTools-container') );
+		});
+		myTable.buttons().container().appendTo($('.tableTools-container'));
 
 		//style the message box
 		var defaultCopyAction = myTable.button(1).action();
-		myTable.button(1).action(function (e, dt, button, config) {
+		myTable.button(1).action(function(e, dt, button, config) {
 			defaultCopyAction(e, dt, button, config);
 			$('.dt-button-info').addClass('gritter-item-wrapper gritter-info gritter-center white');
 		});
 
 
 		var defaultColvisAction = myTable.button(0).action();
-		myTable.button(0).action(function (e, dt, button, config) {
+		myTable.button(0).action(function(e, dt, button, config) {
 
 			defaultColvisAction(e, dt, button, config);
 
 
-			if($('.dt-button-collection > .dropdown-menu').length == 0) {
+			if ($('.dt-button-collection > .dropdown-menu').length == 0) {
 				$('.dt-button-collection')
 						.wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
 						.find('a').attr('href', '#').wrap("<li />")
@@ -536,8 +503,14 @@
 		setTimeout(function() {
 			$($('.tableTools-container')).find('a.dt-button').each(function() {
 				var div = $(this).find(' > div').first();
-				if(div.length == 1) div.tooltip({container: 'body', title: div.parent().text()});
-				else $(this).tooltip({container: 'body', title: $(this).text()});
+				if (div.length == 1) div.tooltip({
+					container: 'body',
+					title: div.parent().text()
+				});
+				else $(this).tooltip({
+					container: 'body',
+					title: $(this).text()
+				});
 			});
 		}, 500);
 
@@ -545,16 +518,16 @@
 
 
 
-		myTable.on( 'select', function ( e, dt, type, index ) {
-			if ( type === 'row' ) {
-				$( myTable.row( index ).node() ).find('input:checkbox').prop('checked', true);
+		myTable.on('select', function(e, dt, type, index) {
+			if (type === 'row') {
+				$(myTable.row(index).node()).find('input:checkbox').prop('checked', true);
 			}
-		} );
-		myTable.on( 'deselect', function ( e, dt, type, index ) {
-			if ( type === 'row' ) {
-				$( myTable.row( index ).node() ).find('input:checkbox').prop('checked', false);
+		});
+		myTable.on('deselect', function(e, dt, type, index) {
+			if (type === 'row') {
+				$(myTable.row(index).node()).find('input:checkbox').prop('checked', false);
 			}
-		} );
+		});
 
 
 
@@ -564,21 +537,54 @@
 		$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
 
 		//select/deselect all rows according to table header checkbox
-		$('#dynamic-table > thead > tr > th input[type=checkbox], #dynamic-table_wrapper input[type=checkbox]').eq(0).on('click', function(){
-			var th_checked = this.checked;//checkbox inside "TH" table header
+		$('#dynamic-table > thead > tr > th input[type=checkbox], #dynamic-table_wrapper input[type=checkbox]').eq(0).on(
+				'click',
+				function() {
+					var th_checked = this.checked; //checkbox inside "TH" table header
 
-			$('#dynamic-table').find('tbody > tr').each(function(){
-				var row = this;
-				if(th_checked) myTable.row(row).select();
-				else  myTable.row(row).deselect();
-			});
-		});
+					$('#dynamic-table').find('tbody > tr').each(function() {
+						var row = this;
+						if (th_checked) myTable.row(row).select();
+						else myTable.row(row).deselect();
+					});
+				});
 
 		//select/deselect a row when the checkbox is checked/unchecked
-		$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
+		$('#dynamic-table').on('click', 'td input[type=checkbox]', function() {
 			var row = $(this).closest('tr').get(0);
-			if(this.checked) myTable.row(row).deselect();
-			else myTable.row(row).select();
+			if (this.checked) myTable.row(row).deselect();
+			else {
+				myTable.row(row).select();
+				var data=myTable.row(row).data();
+				console.log(data)
+
+				$('#deletefix').click(function () {
+					var machineid=data[1];
+					console.log(machineid)
+					var deleteobj={
+						machineId:machineid,
+						state:1,
+					}
+					$.ajax({
+						url:'${ctx}/machine/updateAMachine',
+						type:'post',
+						contentType:'application/json',
+						data:JSON.stringify(deleteobj),
+						success:function (data) {
+							if(data.update=="success"){
+								layer.msg("删除成功");
+								setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+									window.location.reload();//页面刷新
+								},2000);
+							}
+
+						}
+					})
+				})
+
+
+
+			}
 		});
 
 
@@ -594,21 +600,21 @@
 		//And for the first simple table, which doesn't have TableTools or dataTables
 		//select/deselect all rows according to table header checkbox
 		var active_class = 'active';
-		$('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
-			var th_checked = this.checked;//checkbox inside "TH" table header
+		$('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function() {
+			var th_checked = this.checked; //checkbox inside "TH" table header
 
-			$(this).closest('table').find('tbody > tr').each(function(){
+			$(this).closest('table').find('tbody > tr').each(function() {
 				var row = this;
-				if(th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
+				if (th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
 				else $(row).removeClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', false);
 			});
 		});
 
 		//select/deselect a row when the checkbox is checked/unchecked
-		$('#simple-table').on('click', 'td input[type=checkbox]' , function(){
+		$('#simple-table').on('click', 'td input[type=checkbox]', function() {
 			var $row = $(this).closest('tr');
-			if($row.is('.detail-row ')) return;
-			if(this.checked) $row.addClass(active_class);
+			if ($row.is('.detail-row ')) return;
+			if (this.checked) $row.addClass(active_class);
 			else $row.removeClass(active_class);
 		});
 
@@ -616,7 +622,9 @@
 
 		/********************************/
 		//add tooltip for small view action buttons in dropdown menu
-		$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+		$('[data-rel="tooltip"]').tooltip({
+			placement: tooltip_placement
+		});
 
 		//tooltip placement on right or left
 		function tooltip_placement(context, source) {
@@ -628,7 +636,7 @@
 			var off2 = $source.offset();
 			//var w2 = $source.width();
 
-			if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+			if (parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2)) return 'right';
 			return 'left';
 		}
 
@@ -641,25 +649,6 @@
 			$(this).closest('tr').next().toggleClass('open');
 			$(this).find(ace.vars['.icon']).toggleClass('fa-angle-double-down').toggleClass('fa-angle-double-up');
 		});
-		/***************/
-
-
-
-
-
-		/**
-		 //add horizontal scrollbars to a simple table
-		 $('#simple-table').css({'width':'2000px', 'max-width': 'none'}).wrap('<div style="width: 1000px;" />').parent().ace_scroll(
-		 {
-					horizontal: true,
-					styleClass: 'scroll-top scroll-dark scroll-visible',//show the scrollbars on top(default is bottom)
-					size: 2000,
-					mouseWheelLock: true
-				  }
-		 ).css('padding-top', '12px');
-		 */
-
-
 	})
 </script>
 </body>
