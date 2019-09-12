@@ -157,9 +157,9 @@ public class MachineController {
 
     @RequestMapping("/getMachineTop")
     @ResponseBody
-    public String getMachineTop(Model  model){
+    public List<MachineTop> getMachineTop(){
         List<MachineTop> list = machineService.selectMachineTop();
-        model.addAttribute("listMachineTop",list);
-        return "xxx";
+
+        return list;
     }
 }
