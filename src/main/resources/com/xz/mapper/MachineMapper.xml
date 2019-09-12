@@ -56,4 +56,9 @@
     <select id="select_DamageMachine" resultType="com.xz.pojo.Machine">
         select * from j2ee.machine where state = 0
     </select>
+
+    <select id="select_MachineTop" resultType="com.xz.pojo.Top.MachineTop">
+        SELECT m_merchandise.machine_id, machine.name, machine.type, machine.possessor, SUM(m_merchandise.sold_sum) as sumPrice
+        from machine NATURAL JOIN m_merchandise GROUP BY machine_id ORDER BY sumPrice DESC;
+    </select>
 </mapper>

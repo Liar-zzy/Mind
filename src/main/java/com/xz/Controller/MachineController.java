@@ -2,6 +2,7 @@ package com.xz.Controller;
 
 
 import com.xz.pojo.Machine;
+import com.xz.pojo.Top.MachineTop;
 import com.xz.pojo.User;
 import com.xz.service.MachineService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -152,5 +153,13 @@ public class MachineController {
         else {
             return "redirect:/jsp/.jsp";
         }
+    }
+
+    @RequestMapping("/getMachineTop")
+    @ResponseBody
+    public String getMachineTop(Model  model){
+        List<MachineTop> list = machineService.selectMachineTop();
+        model.addAttribute("listMachineTop",list);
+        return "xxx";
     }
 }

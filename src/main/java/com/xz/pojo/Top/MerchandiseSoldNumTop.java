@@ -1,12 +1,12 @@
-package com.xz.pojo;
+package com.xz.pojo.Top;
 
-public class MerchandiseTop3 {
+public class MerchandiseSoldNumTop {
 
     private int merchandiseId;
 
     private String name;
 
-    private double sumPrice;
+    private double sumNum;
 
     public int getMerchandiseId() {
         return merchandiseId;
@@ -24,11 +24,11 @@ public class MerchandiseTop3 {
         this.name = name;
     }
 
-    public double getSumPrice() {
-        return sumPrice;
+    public double getSumNum() {
+        return sumNum;
     }
 
-    public void setSumPrice(double sumPrice) {
-        this.sumPrice = sumPrice;
+    public void setSumNum(double sumNum) {
+        this.sumNum = sumNum;
     }
 }

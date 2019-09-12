@@ -1,10 +1,11 @@
 package com.xz.service.impl;
 
 import com.xz.mapper.OrderMapper;
-import com.xz.pojo.MerchandiseTop3;
+import com.xz.pojo.Top.DaySoldSumTop;
+import com.xz.pojo.Top.MerchandiseSoldNumTop;
+import com.xz.pojo.Top.MerchandiseTop3;
 import com.xz.pojo.Order;
 import com.xz.service.OrderService;
-import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +38,18 @@ public class OrderServiceImpl  implements OrderService {
     @Override
     public List<MerchandiseTop3> get_Top3() {
         List<MerchandiseTop3> list = orderMapper.getTop3();
+        return list;
+    }
+
+    @Override
+    public List<MerchandiseSoldNumTop> get_MerchandiseSoldNumTop() {
+        List<MerchandiseSoldNumTop> list = orderMapper.getMerchandiseHeat();
+        return list;
+    }
+
+    @Override
+    public List<DaySoldSumTop> get_DaySoldSumTop() {
+        List<DaySoldSumTop> list = orderMapper.getDaySoldSumTop();
         return list;
     }
 }

@@ -1,9 +1,9 @@
 package com.xz.service;
 
 import com.xz.pojo.Machine;
+import com.xz.pojo.Top.MachineTop;
 import com.xz.pojo.User;
 
-import javax.crypto.Mac;
 import java.util.List;
 
 public interface MachineService {
@@ -21,4 +21,6 @@ public interface MachineService {
     Machine selectAMachine(User user);
 
     List<Machine> selectDamageMachine();
+
+    List<MachineTop> selectMachineTop();
 }
