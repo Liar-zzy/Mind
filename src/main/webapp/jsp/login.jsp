@@ -231,14 +231,16 @@
 <script src ="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"> </script>
 <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
 
-
 <!-- 注册验证 -->
 <script>
-    layui.use(['element','jquery','layer'],function () {
-        var element=layui.element;
-        var jquery=layui.jquery;
-        var layer=layui.layer;
-    })
+    layui.use(['layer', 'form', 'element'], function(){
+        var layer = layui.layer
+            ,form = layui.form
+            ,element = layui.element
+        window.test = function(){
+            //JS代码
+        }
+    });
     $('#register').click(function () {
         var name=$('input[id=register_name]').val();
         console.log(name);
@@ -293,12 +295,14 @@
 
 <!-- 验证 登录是否成功 -->
 <script>
-    layui.use(['element','jquery','layer'],function () {
-        var element=layui.element;
-        var jquery=layui.jquery;
-        var layer=layui.layer;
-    })
-
+    layui.use(['layer', 'form', 'element'], function(){
+        var layer = layui.layer
+            ,form = layui.form
+            ,element = layui.element
+        window.test = function(){
+            //JS代码
+        }
+    });
     $('#login').click(function () {
 
         var name=$('input[id=login_username]').val();
@@ -319,22 +323,26 @@
                     window.setTimeout( function(){}, 2 * 1000 );
                     if(data.role=="ACE"){
                         window.location.href="index-admin.jsp";
+                        return false;
                     }
                     else if(data.role=="FIX"){
                         window.location.href="index-fix.jsp";
+                        return false
                     }
                     else if(data.role=="MAC"){
                         window.location.href="index-machine.jsp";
+                        return false
                     }
                     else if(data.role=="CH"){
                         window.location.href="index-manufac.jsp";
+                        return false
                     }
                 }
                 else{
 
                     layer.msg('账号密码错误');
-                    $('input[id=username]').val("");
-                    $('input[id=password]').val("");
+                    $('input[id=login_username]').val("");
+                    $('input[id=login_password]').val("");
                 }
             }
 
