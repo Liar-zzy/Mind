@@ -25,6 +25,17 @@
             <mvc:exclude-mapping path="/user/login"/>
             <mvc:exclude-mapping path="/user/register"/>
             <mvc:exclude-mapping path="/user/checkname"/>
+            <mvc:exclude-mapping path="/**/*.css"/>
+            <mvc:exclude-mapping path="/**/fonts/*"/>
+            <mvc:exclude-mapping path="/**/*.jpg"/>
+            <mvc:exclude-mapping path="/**/*.jpeg"/>
+            <mvc:exclude-mapping path="/**/*.eot"/>
+            <mvc:exclude-mapping path="/**/*.svg"/>
+            <mvc:exclude-mapping path="/**/*.ttf"/>
+            <mvc:exclude-mapping path="/**/*.woff"/>
+            <mvc:exclude-mapping path="/**/*.woff2"/>
+            <mvc:exclude-mapping path="/**/*.png"/>
+            <mvc:exclude-mapping path="/**/*.swf"/>
             <bean class="com.xz.Interceptor.SessionInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

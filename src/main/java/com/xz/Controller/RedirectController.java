@@ -13,6 +13,12 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequestMapping("/redirectTo")
 public class RedirectController {
+    @RequestMapping("/login")
+    public String login(){
+        return "redirect:/jsp/login.jsp";
+    }
+
+
     /**
      * 用于主页的跳转
      */
