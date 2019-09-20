@@ -1,10 +1,12 @@
 package com.xz.Controller;
 
 import com.xz.pojo.Top.DaySoldSumTop;
+import com.xz.pojo.Top.MachineTop;
 import com.xz.pojo.Top.MerchandiseSoldNumTop;
 import com.xz.pojo.Top.MerchandiseTop3;
 import com.xz.pojo.Order;
 import com.xz.pojo.User;
+import com.xz.service.MachineService;
 import com.xz.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +26,9 @@ public class OrderController {
 
     @Autowired
     public OrderService orderService;
+
+    @Autowired
+    public MachineService machineService;
 
     @RequestMapping("/addOrder")
     public String add_Order(@ModelAttribute("order") Order order, HttpSession session ){
@@ -56,6 +61,18 @@ public class OrderController {
             System.out.println(listTop3.get(i).getName());
             System.out.println(listTop3.get(i).getSumPrice());
         }
+
+        //设备销售额
+
+        List<MachineTop> machineTops = machineService.selectMachineTop();
+        model.addAttribute("MachineOrder",machineTops);
+        double machineSum=0;
+        for(int i=0;i<machineTops.size();i++){
+            machineSum+=machineTops.get(i).getSumPrice();
+        }
+        session.setAttribute("machineSum",machineSum);
+
+
 
         if(user.getRole().equals("ACE")){
             System.out.println("data-all-admin");
@@ -107,4 +124,5 @@ public class OrderController {
 
         return list;
     }
+
 }

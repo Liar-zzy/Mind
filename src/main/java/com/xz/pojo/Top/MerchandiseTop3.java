@@ -6,6 +6,8 @@ public class MerchandiseTop3 {
 
     private String name;
 
+    private String manufacturer;
+
     private double sumPrice;
 
     public int getMerchandiseId() {
@@ -22,6 +24,14 @@ public class MerchandiseTop3 {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
     public double getSumPrice() {

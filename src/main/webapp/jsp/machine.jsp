@@ -471,7 +471,7 @@
                                     <label class="col-sm-3 control-label no-padding-right" for="alter_state"> <span
                                             style="color: #FF0000;">*</span>设备状态</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="alter_state" class="col-xs-10 col-sm-5"/>
+                                        <input type="text" id="alter_state" readonly="" class="col-xs-10 col-sm-5"/>
                                     </div>
                                 </div>
                             </form>

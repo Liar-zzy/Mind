@@ -319,6 +319,9 @@
                     <div class="space-6"></div>
                     <div id="containerzhe" style="height: 600px">
                     </div>
+                    <div class="space-6"></div>
+                    <div id="containermap" style="height: 600px">
+                    </div>
 
 
                 </div><!-- page-content -->
@@ -676,6 +679,7 @@
 
 
 </script>
+
 <script type="text/javascript">
     jQuery(function ($) {
         $('.easy-pie-chart.percentage').each(function () {
