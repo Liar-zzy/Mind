@@ -318,9 +318,11 @@
             contentType:'application/json',
             data:JSON.stringify(obj),
             success:function (data) {
+                console.log(data)
                 if(data.logincheck=="success"){
                     layer.msg('登录成功');
                     window.setTimeout( function(){}, 2 * 1000 );
+
                     if(data.role=="ACE"){
                         window.location.href="index-admin.jsp";
                         return false;
@@ -341,8 +343,13 @@
                 else{
 
                     layer.msg('账号密码错误');
+
+                    setTimeout(function(){
+                    },2000);
+
                     $('input[id=login_username]').val("");
                     $('input[id=login_password]').val("");
+
                 }
             }
 
@@ -356,6 +363,9 @@
 
         if(checkpwd!=pwd){
             layer.msg('密码不一致')
+            setTimeout(function(){
+            },2000);
+
         }
     })
 
@@ -439,6 +449,7 @@
             data:JSON.stringify(obj),
             success:function (data) {
                 if(data.code==2000){
+
                     layer.msg('用户名可使用')
 
                 }

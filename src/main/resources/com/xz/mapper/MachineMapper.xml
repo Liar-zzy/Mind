@@ -35,7 +35,7 @@
                 addr = #{updateMachine.addr},
             </if>
 
-            <if test="updateMachine.state != null and updateMachine.state != ''">
+            <if test="updateMachine.state != null ">
                 state = #{updateMachine.state}
             </if>
         </set>

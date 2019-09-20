@@ -57,6 +57,8 @@
 		<div class="navbar-buttons navbar-header pull-right " role="navigation">
 			<ul class="nav ace-nav">
 
+
+
 				<!-- 蓝色 方块 个人中心 必要 -->
 				<li class="light-blue dropdown-modal">
 					<a data-toggle="dropdown" href="#" class="dropdown-toggle">
@@ -387,6 +389,7 @@
 							</th>
 							<th>商品ID</th>
 							<th>商品名</th>
+							<th>生产商</th>
 							<th class="hidden-480">总销量</th>
 						</tr>
 						</thead>
@@ -404,6 +407,7 @@
 								</td>
 								<td>${obj.merchandiseId}</td>
 								<td>${obj.name}</td>
+								<td>${obj.manufacturer}</td>
 								<td>${obj.sumPrice}</td>
 							</tr>
 						</c:forEach>
@@ -413,6 +417,78 @@
 					</table>
 				</div>
 			</div>
+
+			<div class="cow">
+				<div class="col">
+
+					<!-- 表格的头部 -->
+					<div class="table-header" style="background-color: #FFFFFF">
+
+									<span style="font-family: microsoft yahei;color: #000000;font-size: 20px;">
+										设备销售额排行
+									</span>
+						<div class="hr hr-18 dotted hr-double"></div>
+					</div>
+
+				</div><!-- 表格的头部  结束-->
+
+
+
+				<!-- 表格主体部分 -->
+				<div>
+					<table id="my2dynamic-table" class="table table-striped table-bordered table-hover">
+						<thead>
+						<tr>
+							<th class="center">
+								<label class="pos-rel">
+									<input type="checkbox" class="ace" />
+									<span class="lbl"></span>
+								</label>
+							</th>
+							<th>设备ID</th>
+							<th>设备名</th>
+
+							<th class="hidden-480">总销量</th>
+						</tr>
+						</thead>
+
+						<!-- jsp 循环输入  改一下 各个变量名 然后循环 -->
+						<tbody>
+
+						<c:forEach items="${MachineOrder}" var="obj">
+							<tr>
+								<td class="center">
+									<label class="pos-rel">
+										<input type="checkbox" class="ace"/>
+										<span class="lbl"></span>
+									</label>
+								</td>
+								<td>${obj.machineId}</td>
+								<td>${obj.name}</td>
+								<td>${obj.sumPrice}</td>
+							</tr>
+						</c:forEach>
+						<tr>
+							<td class="center">
+								<label class="pos-rel">
+									<input type="checkbox" class="ace"/>
+									<span class="lbl"></span>
+								</label>
+							</td>
+							<td></td>
+							<td>总计</td>
+							<td>${machineSum}</td>
+						</tr>>
+						</tbody>
+
+
+					</table>
+				</div>
+			</div>
+
+            <div class="space-6"></div>
+            <div id="containermap" style="height: 600px">
+            </div>
 		</div>
 
 
@@ -460,11 +536,7 @@
 
 <script src="../ace-master/assets/js/jquery-2.1.4.min.js"></script>
 
-<!-- <![endif]-->
 
-<!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
-<![endif]-->
 <script type="text/javascript">
 	if('ontouchstart' in document.documentElement) document.write("<script src='../ace-master/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
 </script>
@@ -484,12 +556,444 @@
 <script src="../ace-master/assets/js/ace-elements.min.js"></script>
 <script src="../ace-master/assets/js/ace.min.js"></script>
 
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=3c4UMfDzxTF0X3CCRpvUNaKvQHwIXjf7&__ec_v__=20190126"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+
 <!-- inline scripts related to this page -->
+<script type="text/javascript">
+    var dom = document.getElementById("containermap");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    var data = [
+        {name: '海门', value: 100},{name: '青岛', value: 100},{name: '张家口', value: 100},{name: '湛江', value: 100},
+        {name: '葫芦岛', value: 100},{name: '广州', value: 100},{name: '深圳', value: 100},{name: '大连', value: 100},
+        {name: '三门峡', value: 100},{name: '齐齐哈尔', value: 100},{name: '长沙', value: 100},{name: '徐州', value: 100}
+    ];
+    var geoCoordMap = {
+        '海门':[121.15,31.89],'齐齐哈尔':[123.97,47.33],'青岛':[120.33,36.07],'张家口':[114.87,40.82],'湛江':[110.359377,21.270708],
+        '葫芦岛':[120.836932,40.711052],'淮安':[119.15,33.5],'广州':[113.23,23.16],'深圳':[114.07,22.62],'大连':[121.62,38.92],
+        '三门峡':[111.19,34.76],'徐州':[117.2,34.26],'杭州':[120.19,30.26],'丽水':[119.92,28.45],'长沙':[113,28.21]
+    };
+
+    var convertData = function (data) {
+        var res = [];
+        for (var i = 0; i < data.length; i++) {
+            var geoCoord = geoCoordMap[data[i].name];
+            if (geoCoord) {
+                res.push({
+                    name: data[i].name,
+                    value: geoCoord.concat(data[i].value)
+                });
+            }
+        }
+        return res;
+    };
+
+    option = {
+        title: {
+            text: '售后机分布图 - 百度地图',
+
+            left: 'center'
+        },
+        tooltip : {
+            trigger: 'item'
+        },
+        bmap: {
+            center: [104.114129, 37.550339],
+            zoom: 5,
+            roam: true,
+            mapStyle: {
+                styleJson: [{
+                    'featureType': 'water',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#d1d1d1'
+                    }
+                }, {
+                    'featureType': 'land',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#f3f3f3'
+                    }
+                }, {
+                    'featureType': 'railway',
+                    'elementType': 'all',
+                    'stylers': {
+                        'visibility': 'off'
+                    }
+                }, {
+                    'featureType': 'highway',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#fdfdfd'
+                    }
+                }, {
+                    'featureType': 'highway',
+                    'elementType': 'labels',
+                    'stylers': {
+                        'visibility': 'off'
+                    }
+                }, {
+                    'featureType': 'arterial',
+                    'elementType': 'geometry',
+                    'stylers': {
+                        'color': '#fefefe'
+                    }
+                }, {
+                    'featureType': 'arterial',
+                    'elementType': 'geometry.fill',
+                    'stylers': {
+                        'color': '#fefefe'
+                    }
+                }, {
+                    'featureType': 'poi',
+                    'elementType': 'all',
+                    'stylers': {
+                        'visibility': 'off'
+                    }
+                }, {
+                    'featureType': 'green',
+                    'elementType': 'all',
+                    'stylers': {
+                        'visibility': 'off'
+                    }
+                }, {
+                    'featureType': 'subway',
+                    'elementType': 'all',
+                    'stylers': {
+                        'visibility': 'off'
+                    }
+                }, {
+                    'featureType': 'manmade',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#d1d1d1'
+                    }
+                }, {
+                    'featureType': 'local',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#d1d1d1'
+                    }
+                }, {
+                    'featureType': 'arterial',
+                    'elementType': 'labels',
+                    'stylers': {
+                        'visibility': 'off'
+                    }
+                }, {
+                    'featureType': 'boundary',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#fefefe'
+                    }
+                }, {
+                    'featureType': 'building',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#d1d1d1'
+                    }
+                }, {
+                    'featureType': 'label',
+                    'elementType': 'labels.text.fill',
+                    'stylers': {
+                        'color': '#999999'
+                    }
+                }]
+            }
+        },
+        series : [
+            {
+                name: '',
+                type: 'scatter',
+                coordinateSystem: 'bmap',
+                data: convertData(data),
+                symbolSize: function (val) {
+                    return val[2] / 10;
+                },
+                label: {
+                    normal: {
+                        formatter: '{b}',
+                        position: 'right',
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: 'purple'
+                    }
+                }
+            },
+        ]
+    };;
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+
+	$.ajax({
+		type: "get",
+		url: "${ctx}/order/getMerchandiseSoldNumTop",
+		cache : false,    //禁用缓存
+		dataType: "json",
+		success: function(result) {
+			var names=[];//定义两个数组
+			var nums=[];
+			console.log(result)
+			for(var i=0;i<result.length;i++) {
+
+				names.push(result[i].name);
+				var obj = new Object();
+				obj.name = result[i].name;
+				obj.value = result[i].value;
+
+				console.log(result[i].name)
+				console.log(result[i].value)
+
+				nums.push(obj);
+			}
+
+			Chart.setOption({ //加载数据图表
+				series: {
+
+					data: nums
+				}
+			});
+		},
+	});
+</script>
+
 <script type="text/javascript">
 	jQuery(function($) {
 		//initiate dataTables plugin
 		var myTable =
 				$('#dynamic-table')
+				//.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
+						.DataTable( {
+							bAutoWidth: false,
+							"aoColumns": [
+								{ "bSortable": false },
+								null, null,null, null, null,null,
+								{ "bSortable": false }
+							],
+							"aaSorting": [],
+							select: {
+								style: 'multi'
+							}
+						} );
+
+
+
+		$.fn.dataTable.Buttons.defaults.dom.container.className = 'dt-buttons btn-overlap btn-group btn-overlap';
+
+		new $.fn.dataTable.Buttons( myTable, {
+			buttons: [
+				{
+					"extend": "colvis",
+					"text": "<i class='fa fa-search bigger-110 blue'></i> <span class='hidden'>Show/hide columns</span>",
+					"className": "btn btn-white btn-primary btn-bold",
+					columns: ':not(:first):not(:last)'
+				},
+				{
+					"extend": "copy",
+					"text": "<i class='fa fa-copy bigger-110 pink'></i> <span class='hidden'>Copy to clipboard</span>",
+					"className": "btn btn-white btn-primary btn-bold"
+				},
+				{
+					"extend": "csv",
+					"text": "<i class='fa fa-database bigger-110 orange'></i> <span class='hidden'>Export to CSV</span>",
+					"className": "btn btn-white btn-primary btn-bold"
+				},
+				{
+					"extend": "excel",
+					"text": "<i class='fa fa-file-excel-o bigger-110 green'></i> <span class='hidden'>Export to Excel</span>",
+					"className": "btn btn-white btn-primary btn-bold"
+				},
+				{
+					"extend": "pdf",
+					"text": "<i class='fa fa-file-pdf-o bigger-110 red'></i> <span class='hidden'>Export to PDF</span>",
+					"className": "btn btn-white btn-primary btn-bold"
+				},
+				{
+					"extend": "print",
+					"text": "<i class='fa fa-print bigger-110 grey'></i> <span class='hidden'>Print</span>",
+					"className": "btn btn-white btn-primary btn-bold",
+					autoPrint: false,
+					message: 'This print was produced using the Print button for DataTables'
+				}
+			]
+		} );
+		myTable.buttons().container().appendTo( $('.tableTools-container') );
+
+		//style the message box
+		var defaultCopyAction = myTable.button(1).action();
+		myTable.button(1).action(function (e, dt, button, config) {
+			defaultCopyAction(e, dt, button, config);
+			$('.dt-button-info').addClass('gritter-item-wrapper gritter-info gritter-center white');
+		});
+
+
+		var defaultColvisAction = myTable.button(0).action();
+		myTable.button(0).action(function (e, dt, button, config) {
+
+			defaultColvisAction(e, dt, button, config);
+
+
+			if($('.dt-button-collection > .dropdown-menu').length == 0) {
+				$('.dt-button-collection')
+						.wrapInner('<ul class="dropdown-menu dropdown-light dropdown-caret dropdown-caret" />')
+						.find('a').attr('href', '#').wrap("<li />")
+			}
+			$('.dt-button-collection').appendTo('.tableTools-container .dt-buttons')
+		});
+
+		////
+
+		setTimeout(function() {
+			$($('.tableTools-container')).find('a.dt-button').each(function() {
+				var div = $(this).find(' > div').first();
+				if(div.length == 1) div.tooltip({container: 'body', title: div.parent().text()});
+				else $(this).tooltip({container: 'body', title: $(this).text()});
+			});
+		}, 500);
+
+
+
+
+
+		myTable.on( 'select', function ( e, dt, type, index ) {
+			if ( type === 'row' ) {
+				$( myTable.row( index ).node() ).find('input:checkbox').prop('checked', true);
+			}
+		} );
+		myTable.on( 'deselect', function ( e, dt, type, index ) {
+			if ( type === 'row' ) {
+				$( myTable.row( index ).node() ).find('input:checkbox').prop('checked', false);
+			}
+		} );
+
+
+
+
+		/////////////////////////////////
+		//table checkboxes
+		$('th input[type=checkbox], td input[type=checkbox]').prop('checked', false);
+
+		//select/deselect all rows according to table header checkbox
+		$('#dynamic-table > thead > tr > th input[type=checkbox], #dynamic-table_wrapper input[type=checkbox]').eq(0).on('click', function(){
+			var th_checked = this.checked;//checkbox inside "TH" table header
+
+			$('#dynamic-table').find('tbody > tr').each(function(){
+				var row = this;
+				if(th_checked) myTable.row(row).select();
+				else  myTable.row(row).deselect();
+			});
+		});
+
+		//select/deselect a row when the checkbox is checked/unchecked
+		$('#dynamic-table').on('click', 'td input[type=checkbox]' , function(){
+			var row = $(this).closest('tr').get(0);
+			if(this.checked) myTable.row(row).deselect();
+			else myTable.row(row).select();
+		});
+
+
+
+		$(document).on('click', '#dynamic-table .dropdown-toggle', function(e) {
+			e.stopImmediatePropagation();
+			e.stopPropagation();
+			e.preventDefault();
+		});
+
+
+
+		//And for the first simple table, which doesn't have TableTools or dataTables
+		//select/deselect all rows according to table header checkbox
+		var active_class = 'active';
+		$('#simple-table > thead > tr > th input[type=checkbox]').eq(0).on('click', function(){
+			var th_checked = this.checked;//checkbox inside "TH" table header
+
+			$(this).closest('table').find('tbody > tr').each(function(){
+				var row = this;
+				if(th_checked) $(row).addClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', true);
+				else $(row).removeClass(active_class).find('input[type=checkbox]').eq(0).prop('checked', false);
+			});
+		});
+
+		//select/deselect a row when the checkbox is checked/unchecked
+		$('#simple-table').on('click', 'td input[type=checkbox]' , function(){
+			var $row = $(this).closest('tr');
+			if($row.is('.detail-row ')) return;
+			if(this.checked) $row.addClass(active_class);
+			else $row.removeClass(active_class);
+		});
+
+
+
+		/********************************/
+		//add tooltip for small view action buttons in dropdown menu
+		$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+
+		//tooltip placement on right or left
+		function tooltip_placement(context, source) {
+			var $source = $(source);
+			var $parent = $source.closest('table')
+			var off1 = $parent.offset();
+			var w1 = $parent.width();
+
+			var off2 = $source.offset();
+			//var w2 = $source.width();
+
+			if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+			return 'left';
+		}
+
+
+
+
+		/***************/
+		$('.show-details-btn').on('click', function(e) {
+			e.preventDefault();
+			$(this).closest('tr').next().toggleClass('open');
+			$(this).find(ace.vars['.icon']).toggleClass('fa-angle-double-down').toggleClass('fa-angle-double-up');
+		});
+		/***************/
+
+
+
+
+
+		/**
+		 //add horizontal scrollbars to a simple table
+		 $('#simple-table').css({'width':'2000px', 'max-width': 'none'}).wrap('<div style="width: 1000px;" />').parent().ace_scroll(
+		 {
+					horizontal: true,
+					styleClass: 'scroll-top scroll-dark scroll-visible',//show the scrollbars on top(default is bottom)
+					size: 2000,
+					mouseWheelLock: true
+				  }
+		 ).css('padding-top', '12px');
+		 */
+
+
+	})
+</script>
+<script type="text/javascript">
+	jQuery(function($) {
+		//initiate dataTables plugin
+		var myTable =
+				$('#my2dynamic-table-table')
 				//.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
 						.DataTable( {
 							bAutoWidth: false,
