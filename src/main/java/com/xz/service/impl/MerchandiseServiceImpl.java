@@ -45,4 +45,10 @@ public class MerchandiseServiceImpl implements MerchandiseService {
         Merchandise m = merchandiseMapper.getAMerchandise(merchandise);
         return m;
     }
+
+    @Override
+    public Merchandise getAMerchandise(Merchandise merchandise) {
+        Merchandise m = merchandiseMapper.getAMerchandise(merchandise);
+        return m;
+    }
 }

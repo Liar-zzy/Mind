@@ -486,7 +486,7 @@
 				</div>
 			</div>
 
-            <div class="space-6"></div>
+            <div class="space-6"> </div>
             <div id="containermap" style="height: 600px">
             </div>
 		</div>
@@ -556,16 +556,25 @@
 <script src="../ace-master/assets/js/ace-elements.min.js"></script>
 <script src="../ace-master/assets/js/ace.min.js"></script>
 
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>--%>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>--%>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>--%>
 
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>--%>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>--%>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>--%>
+<%--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=3c4UMfDzxTF0X3CCRpvUNaKvQHwIXjf7&__ec_v__=20190126"></script>--%>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>--%>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>--%>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
 <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=3c4UMfDzxTF0X3CCRpvUNaKvQHwIXjf7&__ec_v__=20190126"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
 
 <!-- inline scripts related to this page -->
 <script type="text/javascript">
@@ -741,6 +750,37 @@
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
+
+	$.ajax({
+		type: "get",
+		url: "${ctx}/order/getMerchandiseSoldNumTop",
+		cache : false,    //禁用缓存
+		dataType: "json",
+		success: function(result) {
+			var names=[];//定义两个数组
+			var nums=[];
+			console.log(result)
+			for(var i=0;i<result.length;i++) {
+
+				names.push(result[i].name);
+				var obj = new Object();
+				obj.name = result[i].name;
+				obj.value = result[i].value;
+
+				console.log(result[i].name)
+				console.log(result[i].value)
+
+				nums.push(obj);
+			}
+
+			Chart.setOption({ //加载数据图表
+				series: {
+
+					data: nums
+				}
+			});
+		},
+	});
 </script>
 
 <script type="text/javascript">

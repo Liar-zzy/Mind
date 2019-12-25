@@ -18,13 +18,13 @@
 
     <select id="getTop3" resultType="com.xz.pojo.Top.MerchandiseTop3">
         select merchandise.merchandise_id, merchandise.name, merchandise.manufacturer, SUM(order.o_price) as sumPrice
-        from merchandise JOIN j2ee.order on merchandise.merchandise_id = order.machine_id
+        from merchandise JOIN j2ee.order on merchandise.merchandise_id = order.merchandise_id
         GROUP BY merchandise.merchandise_id ORDER BY sumPrice DESC
     </select>
 
     <select id="getMerchandiseHeat" resultType="com.xz.pojo.Top.MerchandiseSoldNumTop">
         select  merchandise.name, SUM(order.o_num) as value
-        from merchandise JOIN j2ee.order on merchandise.merchandise_id = order.machine_id
+        from merchandise JOIN j2ee.order on merchandise.merchandise_id = order.merchandise_id
         GROUP BY merchandise.merchandise_id ORDER BY value DESC
     </select>
 

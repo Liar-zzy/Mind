@@ -273,19 +273,10 @@
             success:function (data) {
                 if(data.registered=="success"){
                     layer.msg('注册成功');
-                    window.setTimeout( function(){}, 5 * 1000 );
-                    if(data.role=="ACE"){
-                        window.location.href="index-admin.jsp";
-                    }
-                    else if(data.role=="FIX"){
-                        window.location.href="index-fix.jsp";
-                    }
-                    else if(data.role=="MAC"){
-                        window.location.href="index-machine.jsp";
-                    }
-                    else if(data.role=="CH"){
-                        window.location.href="index-manufac.jsp";
-                    }
+                    setTimeout(function(){  //使用  setTimeout（）方法设定定时2000毫秒
+                        window.location.reload();//页面刷新
+                    },2000);
+
                 }
             }
         })
