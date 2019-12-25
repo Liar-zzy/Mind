@@ -386,16 +386,24 @@
 <script src="../ace-master/assets/js/ace.min.js"></script>
 
 <!-- inline scripts related to this page -->
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
-<script type="text/javascript"
-        src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>--%>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>--%>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>--%>
+<%--<script type="text/javascript"--%>
+<%--        src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>--%>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>--%>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>--%>
 
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>--%>
+<%--<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>--%>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=3c4UMfDzxTF0X3CCRpvUNaKvQHwIXjf7&__ec_v__=20190126"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
 
 <script type="text/javascript">
 
@@ -476,36 +484,36 @@
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
-	$.ajax({
-		type: "get",
-		url: "${ctx}/order/getMerchandiseSoldNumTop",
-		cache : false,    //禁用缓存
-		dataType: "json",
-		success: function(result) {
-			var names=[];//定义两个数组
-			var nums=[];
-			console.log(result)
-			for(var i=0;i<result.length;i++) {
+    $.ajax({
+        type: "get",
+        url: "${ctx}/order/getMerchandiseSoldNumTop",
+        cache : false,    //禁用缓存
+        dataType: "json",
+        success: function(result) {
+            var names=[];//定义两个数组
+            var nums=[];
+            console.log(result)
+            for(var i=0;i<result.length;i++) {
 
-				names.push(result[i].name);
-				var obj = new Object();
-				obj.name = result[i].name;
-				obj.value = result[i].value;
+                names.push(result[i].name);
+                var obj = new Object();
+                obj.name = result[i].name;
+                obj.value = result[i].value;
 
-				console.log(result[i].name)
-				console.log(result[i].value)
+                console.log(result[i].name)
+                console.log(result[i].value)
 
-				nums.push(obj);
-			}
+                nums.push(obj);
+            }
 
-			myChart.setOption({ //加载数据图表
-				series: {
+            myChart.setOption({ //加载数据图表
+                series: {
 
-					data: nums
-				}
-			});
-		},
-	});
+                    data: nums
+                }
+            });
+        },
+    });
 
 </script>
 
@@ -574,36 +582,36 @@
         dataType: "json",
         success: function (result) {
 
-			var json =result.receiveList;
+            var json =result.receiveList;
 
 
             var names = [];//定义两个数组
             var nums = [];
 
-            	//此处我返回的是list<String,map<String,String>>循环map
-                    console.log(result);
-                    var linNames = [];
-                    var linNums = [];
+            //此处我返回的是list<String,map<String,String>>循环map
+            console.log(result);
+            var linNames = [];
+            var linNums = [];
 
-					for(var i=0;i<result.length;i++) {
-						linNames.push(result[i].machineId);
-						console.log(result[i].machineId)
-						linNums.push(result[i].sumPrice);
-						console.log(result[i].sumPrice)
-					}
+            for(var i=0;i<result.length;i++) {
+                linNames.push(result[i].machineId);
+                console.log(result[i].machineId)
+                linNums.push(result[i].sumPrice);
+                console.log(result[i].sumPrice)
+            }
 
-                    myChart2.setOption({
-                        xAxis: {
-                            data: linNames
-                        },
-                        series: {
-                            // 根据名字对应到相应的系列
-                            name: ['数量'],
-                            data: linNums
-                        }
-                    });
+            myChart2.setOption({
+                xAxis: {
+                    data: linNames
+                },
+                series: {
+                    // 根据名字对应到相应的系列
+                    name: ['数量'],
+                    data: linNums
                 }
-        });
+            });
+        }
+    });
 </script>
 <script type="text/javascript">
     // 折线图
@@ -622,14 +630,14 @@
         },
         xAxis: {
             type: 'category',
-			//date
+            //date
             data: []
         },
         yAxis: {
             type: 'value'
         },
         series: [{
-        	//value
+            //value
             data: [],
             type: 'line',
             smooth: true
@@ -640,41 +648,41 @@
         myChart3.setOption(option, true);
     }
 
-	$.ajax({
-		type: "get",
-		url: "${ctx}/order/getDaySoldSumTop",
-		cache: false,    //禁用缓存
-		dataType: "json",
-		success: function (result) {
-			var names = [];//定义两个数组
-			var nums = [];
+    $.ajax({
+        type: "get",
+        url: "${ctx}/order/getDaySoldSumTop",
+        cache: false,    //禁用缓存
+        dataType: "json",
+        success: function (result) {
+            var names = [];//定义两个数组
+            var nums = [];
 
-			//此处我返回的是list<String,map<String,String>>循环map
-			console.log(result);
-			var linNames = [];
-			var linNums = [];
+            //此处我返回的是list<String,map<String,String>>循环map
+            console.log(result);
+            var linNames = [];
+            var linNums = [];
 
-			for(var i=0;i<result.length;i++) {
-				linNames.push(result[i].date);
-				console.log(result[i].date)
-				linNums.push(result[i].sumPrice);
-				console.log(result[i].sumPrice)
-			}
+            for(var i=0;i<result.length;i++) {
+                linNames.push(result[i].date);
+                console.log(result[i].date)
+                linNums.push(result[i].sumPrice);
+                console.log(result[i].sumPrice)
+            }
 
-			myChart3.setOption({
-				xAxis: {
-					type: 'category',
-					//date
-					data:linNames
-				},
-				series: {
-					data: linNums,
-					type: 'line',
-					smooth: true
-				}
-			});
-		}
-	});
+            myChart3.setOption({
+                xAxis: {
+                    type: 'category',
+                    //date
+                    data:linNames
+                },
+                series: {
+                    data: linNums,
+                    type: 'line',
+                    smooth: true
+                }
+            });
+        }
+    });
 
 
 

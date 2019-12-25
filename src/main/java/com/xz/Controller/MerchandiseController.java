@@ -135,4 +135,19 @@ public class MerchandiseController {
         map.put("IsExist", code);
         return map;
     }
+
+
+    @RequestMapping("/getAMerchandise")
+    @ResponseBody
+    public Merchandise getAMerchandise(@RequestBody Merchandise merchandise){
+        System.out.println("getAMerchandise");
+        System.out.println(merchandise.getMerchandiseId());
+        merchandise=merchandiseService.getAMerchandise(merchandise);
+        return merchandise;
+    }
+
+
+
+
+
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.lang.reflect.Array;
@@ -52,6 +53,7 @@ public class OrderController {
         }
         System.out.println("list all user");
 
+
         List<MerchandiseTop3> listTop3 = orderService.get_Top3();
         model.addAttribute("ListOrderTop3",listTop3);
 
@@ -69,6 +71,7 @@ public class OrderController {
         double machineSum=0;
         for(int i=0;i<machineTops.size();i++){
             machineSum+=machineTops.get(i).getSumPrice();
+            System.out.println(machineTops.get(i).getSumPrice());
         }
         session.setAttribute("machineSum",machineSum);
 

@@ -16,4 +16,5 @@ public interface MerchandiseMapper {
     int update_AMerchandise(@Param("updateMerchandise") Merchandise merchandise);
 
     Merchandise getAMerchandise(@Param("getMerchandise") Merchandise merchandise);
+
 }

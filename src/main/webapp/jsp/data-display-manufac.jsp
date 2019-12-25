@@ -259,12 +259,7 @@
 							</strong>
 						</div>
 
-
 						<div class="space-6"></div>
-
-
-
-
 
 					</div>
 				</div>

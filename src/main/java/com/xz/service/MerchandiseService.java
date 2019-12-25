@@ -15,4 +15,6 @@ public interface MerchandiseService {
     boolean updateAMerchandise(Merchandise merchandise);
 
     Merchandise checkMerchandise(Merchandise merchandise);
+
+    Merchandise getAMerchandise(Merchandise merchandise);
 }
